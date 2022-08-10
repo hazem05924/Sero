@@ -48,17 +48,17 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-6">
                                 <label for="accommodation_type"> نوع الاقامة</label>
                                 <input type="text" name="accommodation_type" class="form-control" id="accommodation_type"
                                     placeholder="ادخل  نوع الاقامة">
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-6">
                                 <label for="price"> السعر</label>
                                 <input type="text" name="price" class="form-control" id="price"
                                     placeholder="ادخل السعر">
                             </div>
-                            <div class="form-group col-md-4">
+                            {{-- <div class="form-group col-md-4">
                                 <label for="hotel_id">الفنادق</label>
                                 <select type="text" name="hotel_id" class="form-control" id="hotel_id">
                                     @foreach ($hotels as  $hotel)
@@ -67,7 +67,8 @@
                                     @endforeach
                                     
                                 </select>
-                            </div>
+                            </div> --}}
+                            <input type="text" id="hotel_id" name="hotel_id" value="{{ $id }}" hidden >
                             <div class="form-group col-md-12">
                                 <label for="discreption">الوصف</label>
                                 <textarea class="form-control" name="discreption"  rows="3" id="discreption" placeholder="Enter ..."></textarea>

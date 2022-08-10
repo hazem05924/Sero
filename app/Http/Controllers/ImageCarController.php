@@ -15,8 +15,8 @@ class ImageCarController extends Controller
      * 
      */public function indexImage($id)
     {
-        $images=ImageCar::where('car_id', $id)->orderBy('created_at', 'desc')->paginate(5);
-        return response()->view('cms.imageCar.index1', compact('images','id'));
+        $images=ImageCar::where('car_id', $id)->orderBy('created_at', 'desc')->paginate(4);
+        return response()->view('cms.imageCar.show', compact('images','id'));
     }
 
     public function createImage($id)

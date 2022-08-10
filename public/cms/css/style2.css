@@ -1,0 +1,610 @@
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Open Sans', sans-serif;
+        scroll-behavior: smooth;
+    }
+    
+    @media (max-width: 991px) {
+        .navbar-scroll {
+            background-color: #fff;
+        }
+        .navbar-scroll .navbar-brand,
+        .navbar-scroll .nav-link,
+        .navbar-scroll .fa-bars {
+            color: #4f4f4f !important;
+        }
+    }
+    
+    .navbar-brand {
+        letter-spacing: 3px;
+        font-size: 2rem;
+        font-weight: 500;
+    }
+    
+    .navbar-scroll .navbar-brand,
+    .navbar-scroll .nav-link,
+    .navbar-scroll .fa-bars {
+        color: #fff;
+    }
+    
+    .navbar-scroll {
+        box-shadow: none;
+    }
+    
+    .navbar-scrolled {
+        box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.05);
+    }
+    
+    .navbar-scrolled .navbar-brand,
+    .navbar-scrolled .nav-link,
+    .navbar-scrolled .fa-bars {
+        color: #4f4f4f;
+    }
+    
+    .navbar-scrolled {
+        background-color: #fff;
+    }
+    
+    @media (max-width: 450px) {
+        #intro {
+            height: 950px !important;
+        }
+    }
+    
+    @media (min-width: 550px) and (max-width: 750px) {
+        #intro {
+            height: 1100px !important;
+        }
+    }
+    
+    @media (min-width: 800px) and (max-width: 990px) {
+        #intro {
+            height: 600px !important;
+        }
+    }
+    
+    .display-1 {
+        font-weight: 500 !important;
+        letter-spacing: 40px;
+    }
+    
+    @media (min-width: 1600px) {
+        .display-1 {
+            font-size: 10rem;
+        }
+    }
+    
+    .label {
+        position: absolute;
+        left: 10px;
+        top: 14px;
+        transition: all 0.5s;
+        padding: 0 2px;
+        z-index: 1;
+        color: #b3b3b3;
+    }
+    
+    .text-input {
+        padding: 0.8rem;
+        width: 100%;
+        /* height: 100%; */
+        border: 2px solid #2f2c43;
+        /* background: #272530; */
+        border-radius: 5px;
+        font-size: 18px;
+        outline: none;
+        transition: all 0.5s;
+        color: #fff;
+    }
+    
+    .label::before {
+        content: "";
+        height: 5px;
+        /* background: #272530; */
+        position: absolute;
+        left: 0px;
+        top: 10px;
+        width: 100px;
+        z-index: -1;
+    }
+    
+    .text-input:focus {
+        border: 2px solid #7e4ccb;
+    }
+    
+    .text-input:focus+.label,
+    .filled {
+        top: -10px;
+        color: #777;
+        font-size: 14px;
+    }
+    
+    .text-input::placeholder {
+        font-size: 16px;
+        opacity: 0;
+        transition: all 0.5s;
+    }
+    
+    .text-input:focus::placeholder {
+        opacity: 1;
+    }
+    
+    main {
+        /* height: 100vh; */
+        /* background-image: url(../img/0003.jpg); */
+        background-repeat: no-repeat;
+        background-position: 100% 100%;
+        background-size: cover;
+        position: relative;
+    }
+    
+    main .para {
+        Text-align-last: center;
+        color: rgb(39, 49, 138);
+        position: relative;
+        font-weight: bold;
+        width: 100%;
+        height: 50%;
+        display: flex;
+        align-content: flex-end;
+        justify-content: flex-end;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    main .para h1 {
+        font-weight: bold;
+    }
+    
+    main .para p {
+        color: white;
+    }
+    
+    .add1 div {
+        padding: 5px;
+    }
+    
+    .add2 div {
+        padding: 5px;
+    }
+    
+    .btn1 .btn {
+        padding: 7.5px;
+        background-color: rgb(39, 49, 138);
+        color: white;
+        font-weight: bold;
+    }
+    
+    .btn :hover {
+        color: rgba(39, 49, 138) !important;
+        background-color: white !important;
+        padding: 5px 15px !important;
+        transition: 1s;
+    }
+    
+    .panels div {
+        font-weight: bold;
+    }
+    
+    .panels span {
+        color: red;
+    }
+    
+    @import url('https://fonts.googleapis.com/css?family=Arimo:400,700&display=swap');
+    body {
+        font-family: 'Arimo', sans-serif;
+    }
+    
+    h2 {
+        color: #000;
+        text-align: center;
+        font-size: 2em;
+    }
+    
+    .warpper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        width: 100%;
+    }
+    
+    .tab {
+        cursor: pointer;
+        padding: 10px 20px;
+        margin: 0px 2px;
+        display: inline-block;
+        color: #fff;
+        font-size: 20px;
+        font-weight: bold;
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+    }
+    
+    .panels {
+        background: rgba(0, 0, 0, 0.7);
+        box-shadow: 0 1rem 1rem rgb(0, 0, 0, 0.6);
+        color: white;
+        min-height: 200px;
+        max-width: 80%;
+        border-radius: 15px;
+        overflow: hidden;
+        padding: 20px;
+    }
+    
+    #one-panel,
+    #two-panel {
+        flex-wrap: wrap;
+    }
+    
+    #two-panel .btn {
+        padding: 7.5px;
+        background-color: rgb(39, 49, 138);
+        color: white;
+        font-weight: bold;
+    }
+    
+    .panel {
+        display: none;
+        animation: fadein .8s;
+    }
+    
+    .input-group {
+        outline: none !important;
+    }
+    
+    @keyframes fadein {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    .panel-title {
+        font-size: 1.5em;
+        font-weight: bold
+    }
+    
+    .radio {
+        display: none;
+    }
+    
+    #one:checked~.panels #one-panel,
+    #two:checked~.panels #two-panel,
+    #three:checked~.panels #three-panel {
+        display: block
+    }
+    
+    #one:checked~.tabs #one-tab,
+    #two:checked~.tabs #two-tab,
+    #three:checked~.tabs #three-tab {
+        background: linear-gradient( rgba(0, 0, 0) 50%, rgba(255, 255, 255, 0.2));
+        color: #fff;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    
+    .video {
+        height: fit-content;
+        padding: 20px;
+    }
+    
+    .video h1 {
+        text-align-last: center;
+    }
+    
+    .video img {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .sero {
+        height: fit-content;
+    }
+    
+    .sero div {
+        text-align-last: center;
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .sero h1 {
+        text-align-last: center;
+        padding-bottom: 20px;
+    }
+    
+    .sero p {
+        text-align-last: center;
+        padding-bottom: 20px;
+    }
+    
+    .maincontainer {
+        width: 302px;
+        height: 299px;
+        margin: 10px;
+        position: relative;
+        /* stack each div horizontally */
+    }
+    
+    img {
+        border-radius: 10px;
+    }
+    
+    .back h2 {
+        position: absolute;
+    }
+    
+    .back p {
+        position: absolute;
+        top: 50px;
+        font-size: 15px;
+    }
+    
+    .front h2 {
+        position: absolute;
+        padding: 10px;
+        top: 200px;
+        color: #000;
+    }
+    /* style the maincontainer class with all child div's of class .front */
+    
+    .maincontainer>.front {
+        position: absolute;
+        transform: perspective(600px) rotateY(0deg);
+        width: 302px;
+        height: 290px;
+        backface-visibility: hidden;
+        /* cant see the backside elements as theyre turning around */
+        transition: transform .5s linear 0s;
+    }
+    /* style the maincontainer class with all child div's of class .back */
+    
+    .maincontainer>.back {
+        position: absolute;
+        transform: perspective(600px) rotateY(180deg);
+        background: #262626;
+        color: #fff;
+        width: 302px;
+        height: 290px;
+        border-radius: 10px;
+        padding: 5px;
+        backface-visibility: hidden;
+        /* cant see the backside elements as theyre turning around */
+        transition: transform .5s linear 0s;
+    }
+    
+    .maincontainer:hover>.front {
+        transform: perspective(600px) rotateY(-180deg);
+    }
+    
+    .maincontainer:hover>.back {
+        transform: perspective(600px) rotateY(0deg);
+    }
+    
+    .com {
+        height: fit-content;
+        padding: 10% 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: none !important;
+    }
+    
+    .com h1 {
+        text-align-last: center;
+    }
+    
+    .com .images {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    footer {
+        background-color: rgb(39, 49, 138);
+        color: white;
+        text-align-last: center;
+        width: 100%;
+        padding: 15px;
+    }
+    /* Extra small devices (phones, 600px and down) */
+    
+    @media only screen and (max-width: 600px) {
+        main {
+            height: fit-content;
+            padding: 50px;
+            background-position: center;
+            background: none;
+        }
+        .services {
+            height: fit-content;
+        }
+    }
+    /* Small devices (portrait tablets and large phones, 600px and up) */
+    
+    @media only screen and (min-width: 600px) {
+        main {
+            height: fit-content;
+            padding: 50px;
+            background-position: center;
+            background: none;
+        }
+        .services {
+            height: fit-content;
+        }
+    }
+    /* Medium devices (landscape tablets, 768px and up) */
+    
+    @media only screen and (min-width: 768px) {
+        main {
+            height: fit-content;
+            padding: 50px;
+            background-size: 100% 100%;
+            background-position: 100% 100%;
+            background-image: url(../img/0003.jpg);
+        }
+        .services {
+            height: fit-content;
+        }
+    }
+    /* Large devices (laptops/desktops, 992px and up) */
+    
+    @media only screen and (min-width: 992px) {
+        main {
+            height: fit-content;
+            padding: 50px;
+            background-size: 100% 100%;
+            background-position: 100% 100%;
+            background-image: url(../img/0003.jpg);
+        }
+        .services {
+            height: fit-content;
+        }
+    }
+    /* Extra large devices (large laptops and desktops, 1200px and up) */
+    
+    @media only screen and (min-width: 1200px) {
+        main {
+            height: auto;
+            min-height: 100vh;
+            padding: 50px;
+            background-size: 100% 100%;
+            background-position: 100% 100%;
+            background-image: url(../img/0003.jpg);
+        }
+        .btn1 .btn {
+            margin-top: 40px;
+        }
+        .services {
+            height: fit-content;
+        }
+    }
+    /* start services */
+    
+    .services {
+        background: none;
+    }
+    
+    .services h1 {
+        text-align-last: center;
+        padding: 2rem;
+    }
+    
+    .services-4 {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    
+    .services-4 div {
+        height: 280px;
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        align-items: center;
+    }
+    
+    .services-4 .one-1 {
+        background-image: linear-gradient(to bottom rgba(39, 49, 139, 0.5), url(../assets/img/1-4.jpg));
+    }
+    
+    .card1 {
+        height: 360px;
+        border-radius: 10px;
+        color: #fff;
+        box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);
+        transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+        padding: 14px 80px 18px 36px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .card1:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
+    }
+    
+    .card1 h3 {
+        font-weight: 600;
+    }
+    
+    .card1 img {
+        position: absolute;
+        top: 20px;
+        right: 15px;
+        max-height: 120px;
+    }
+    
+    .card-1 {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.6) 75%), url("../assets/img/istock.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    .card-2 {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.6) 75%), url("../assets/img/2-4.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    .card-3 {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.6) 75%), url("../assets/img/3-4.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    .card-4 {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.6) 75%), url("../assets/img/4-4.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    @media(max-width: 990px) {
+        .card1 {
+            margin: 20px;
+        }
+    }
+    
+    .panel input {
+        border: 1px solid white;
+        background: none;
+        color: white;
+    }
+    
+    .panel select {
+        border: 1px solid white;
+        background: none;
+        color: white;
+    }
+    
+    .panel .input-group input {
+        border: 1px solid white !important;
+        color: white;
+        border-radius: 5px;
+    }
+    
+    .widget-contact-list ul li {
+        list-style: none !important;
+        text-decoration: none;
+    }
+    
+    .widget-contact-list a {
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.7);
+    }
+    
+    .widget-contact-list a:hover {
+        color: rgba(255, 255, 255);
+    }

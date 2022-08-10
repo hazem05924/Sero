@@ -24,49 +24,34 @@
             </div>
 
           <!-- /.card-header -->
-          <div class="card-body table-responsive p-0 ">
-            <table class="table table-hover table-bordered table-striped text-nowrap text-center  ">
-              <thead>
-                <tr class="bg-danger">
-                  <th> رقم الصور </th>
-                  <th>   الصورة </th>
-                  
-                  <th> الاعدادات </th>
-                </tr>
-              </thead>
-              <tbody>
-                @foreach ($images as $image )
-                <tr>
-                  <td>{{$image->id}}</td>
-                  <td>
-                    <img class="img-circle img-bordered-sm" src="{{asset('storage/image_hotel/'.$image->image)}}" width="60" height="60" alt="User Image">
-                  </td>
-
-                  <td>
-                    <div class="btn-group">
-                      {{-- @can('Edit-City') --}}
-                      <a href="{{route('image_hotels.edit',$image->id)}}" class="btn btn-primary" title="Edit">
-                        تعديل
-                        </a>
-                      {{-- @endcan --}}
-                      {{-- @can('Delete-City') --}}
-                      <a href="#" onclick="performDestroy({{$image->id}}, this)" class="btn btn-danger" title="Delete">
-                        حذف
-                      </a>
-                      {{-- @endcan --}}
-
+            <div class="container">
+                <div class="row" style="justify-content: space-around;">
+                 @foreach ($images as $image )
+                     
+                 
+                <div class="card card-primary card-outline col-5 mt-3 ">
+                    <div class="card-body box-profile">
+                      <div class="text-center mt-3">
+                        <img class="profile-user-img img-fluid img-circle" src="{{asset('storage/image_hotel/'.$image->image)}}" width="60" height="60" alt="Car Image">
+                      </div>
+      
+                      <h3 class="profile-username text-center mt-4">رقم الصورة <b class="badge bg-success">{{$image->id}}</b></h3>
+      
+      
+                      
+                      <a href="{{route('image_cars.edit',$image->id)}}" class="btn btn-primary mt-4" title="Edit">تعديل</a>
+                      <a href="#" onclick="performDestroy({{$image->id}}, this)" class="btn btn-danger mt-4 "><b>حذف</b></a>
                     </div>
-                  </td>
-                </tr>
-                @endforeach
-              </tbody>
-            </table>
+                    <!-- /.card-body -->
+                  </div> 
+                  @endforeach 
+                </div>      
+            </div>  
             <div class="span text-center" style="margin-top: 20px; margin-bottom:10px">
             {{-- { $cities->links()} --}}
             {{ $images->links() }}
         </span>
 
-          </div>
           <!-- /.card-body -->
 
         </div>

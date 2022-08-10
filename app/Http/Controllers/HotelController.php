@@ -15,7 +15,7 @@ class HotelController extends Controller
      */
     public function index()
     {
-        $hotels=Hotel::withCount('images','facilitie')->orderBy("id",'desc')->paginate(5);
+        $hotels=Hotel::withCount('images','facilitie','rooms')->orderBy("id",'desc')->paginate(5);
         return response()->view('cms.hotel.index',compact('hotels'));
     }
 

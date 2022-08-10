@@ -43,7 +43,8 @@
         *{
             /* font-family: 'Amiri', serif; */
             /* font-family: 'El Messiri', sans-serif; */
-            font-family: 'Markazi Text', serif;
+            /* font-family: 'Markazi Text', serif; */
+
 
 
 
@@ -61,7 +62,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
+        <a href="{{ route('home') }}" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
@@ -368,32 +369,6 @@
                     <i class="fas fa-plus nav-icon"></i>
 
                   <p>اضافة فندق </p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-                {{-- <i class="fas fa-room "></i> --}}
-                <i class="fa-solid fa-person-shelter nav-icon"></i>
-            <p>
-                الغرف
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{route('rooms.index')}}" class="nav-link">
-
-                    <i class="fas fa-desktop nav-icon"></i>
-                  <p>عرض الغرف</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{route('rooms.create')}}" class="nav-link">
-                    <i class="fas fa-plus nav-icon"></i>
-
-                  <p>اضافة غرفة </p>
                 </a>
               </li>
             </ul>

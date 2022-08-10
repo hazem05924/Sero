@@ -18,7 +18,7 @@
           <div class="card-header">
             <h3 class="card-title">الغرف</h3>
             <div class="card-tools">
-                <a href="{{route('rooms.create')}}"><button type="button" class="btn btn-lg btn-warning">انشاء غرفة </button></a>
+                <a href="{{route('createRoom',$id)}}"><button type="button" class="btn btn-lg btn-warning">انشاء غرفة </button></a>
               </div>
               <br>
             </div>

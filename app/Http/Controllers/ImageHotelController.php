@@ -15,7 +15,7 @@ class ImageHotelController extends Controller
      * 
      */public function indexImage($id)
     {
-        $images=ImageHotel::where('hotel_id', $id)->orderBy('created_at', 'desc')->paginate(5);
+        $images=ImageHotel::where('hotel_id', $id)->orderBy('created_at', 'desc')->paginate(4);
         return response()->view('cms.imageHotel.index1', compact('images','id'));
     }
 

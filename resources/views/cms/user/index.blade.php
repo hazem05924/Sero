@@ -18,7 +18,7 @@
           <div class="card-header">
             <h3 class="card-title"> عرض المستخدمين </h3>
             <div class="card-tools">
-                <a href="{{route('register')}}"><button type="button" class="btn btn-lg btn-warning">انشاء مشرف جديد </button></a>
+                <a href="{{route('register')}}"><button type="button" class="btn btn-lg btn-warning">انشاء مستخدم جديد </button></a>
               </div>
               <br>
             </div>

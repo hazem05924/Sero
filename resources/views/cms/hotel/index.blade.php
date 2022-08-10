@@ -73,6 +73,7 @@
                   <th>   العنوان</th>
                   <th>   اضافة صورة</th>
                   <th>   اضافة مرافق</th>
+                  <th>   اضافة غرفة</th>
 
                   <th> الاعدادات </th>
                 </tr>
@@ -107,21 +108,25 @@
                     class="btn btn-outline-success btn-sm">({{$hotel->facilitie_count}})
                     مرافق</a> </td>
 
-                  <td>
-                    <div class="btn-group">
-                      <a href="{{route('hotels.edit',$hotel->id)}}" class="btn btn-info" title="Edit">
-                        تعديل
-                        </a>
+                  
 
-                      <a href="#" onclick="performDestroy({{$hotel->id}}, this)" class="btn btn-danger" title="Delete">
-                        حذف
-                      </a>
-
-                      <a href="{{route('hotels.show',$hotel->id)}}" class="btn btn-success" title="Show">
-                        معلومات
-                      </a>
-                    </div>
-                  </td>
+                  <td ><a href="{{route('indexRoom',['id'=>$hotel->id])}}"
+                    class="btn btn-outline-warning btn-sm">({{$hotel->rooms_count}})
+                    الغرف</a> </td>
+                    <td>
+                        <div class="btn-group">
+                            <a href="{{route('hotels.edit',$hotel->id)}}" class="btn btn-info" title="Edit"><i class="fa-solid fa-pen-to-square nav-icon"></i></a>
+                                <a href="#" onclick="performDestroy({{$hotel->id}}, this)" class="btn btn-danger" title="Delete"><i class="fa-solid fa-trash nav-icon"></i></a>  
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-success dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
+                            </button>
+                            <div class="dropdown-menu" style="">
+                              <a class="dropdown-item " href="{{route('hotels.show',$hotel->id)}}" title="Show" ><i class="fa-solid fa-info nav-icon"></i> معلومات</a>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    
                 </tr>
                 @endforeach
               </tbody>

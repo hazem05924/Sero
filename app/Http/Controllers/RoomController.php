@@ -12,8 +12,24 @@ class RoomController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     * 
      */
-    public function index()
+    
+    public function indexRoom($id)
+    {
+        $rooms=Room::where('hotel_id', $id)->orderBy('created_at', 'desc')->paginate(5);
+        return response()->view('cms.room.index', compact('rooms','id'));
+    }
+
+    public function createRoom($id)
+    {
+        
+          return response()->view('cms.room.create', compact('id'));
+    }
+    
+    
+    
+     public function index()
     {
         $rooms=Room::with('hotel')->orderBy('id','desc')->paginate(5);
         return response()->view('cms.room.index',compact('rooms'));
@@ -121,7 +137,7 @@ class RoomController extends Controller
             $rooms->hotel_id = $request->get('hotel_id');
 
             $isSaved = $rooms->save();
-            return ['redirect'=>route('rooms.index')];
+            return ['redirect'=>route('indexRoom',$id)];
 
             if($isSaved){
                 return response()->json(['icon' => 'success' , 'title' => 'تم تعديل الغرفة بنجاح'] , 200);

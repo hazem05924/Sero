@@ -58,7 +58,7 @@ route::prefix('cms/admin/')->middleware('auth:admin,web')->group(function(){
 
 });
 route::prefix('cms/admin/')->middleware('auth:admin,web')->group(function(){
-    Route::view('/','cms.master');
+    Route::view('/','cms.home')->name('home');
 
     Route::resource('cities', CityController::class);
     Route::post('update_cities/{id}' , [CityController::class , 'update'])->name('update_cities');
@@ -84,10 +84,10 @@ route::prefix('cms/admin/')->middleware('auth:admin,web')->group(function(){
 
     Route::resource('companes', CompaneController::class);
     Route::post('update_companes/{id}' , [CompaneController::class , 'update'])->name('update_companes');
-    
+
     Route::resource('cars', CarController::class);
     Route::post('update_cars/{id}' , [CarController::class , 'update'])->name('update_cars');
-    
+
     Route::resource('image_cars', ImageCarController::class);
     Route::post('update_image_cars/{id}' , [ImageCarController::class , 'update'])->name('update_image_cars');
     Route::get('/create/image-cars/{id}', [ImageCarController::class, 'createImage'])->name('create.image-cars');
@@ -95,12 +95,14 @@ route::prefix('cms/admin/')->middleware('auth:admin,web')->group(function(){
     
     Route::resource('rooms', RoomController::class);
     Route::post('update_rooms/{id}' , [RoomController::class , 'update'])->name('update_rooms');
-    
+    Route::get('/create/hotel-rooms/{id}', [RoomController::class, 'createRoom'])->name('createRoom');
+    Route::get('/index/hotel-rooms/{id}', [RoomController::class, 'indexRoom'])->name('indexRoom');
+
     Route::resource('ways', WayController::class);
     Route::post('update_ways/{id}' , [WayController::class , 'update'])->name('update_ways');
-    
-    
-    
+
+
+
 
 
     Route::resource('roles', RoleController::class);
