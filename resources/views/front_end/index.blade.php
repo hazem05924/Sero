@@ -7,32 +7,32 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Sero</title>
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('cms/assets/favicon.ico') }}" />
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style2.css">
+    <link href="{{ asset('cms/css/styles.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('cms/css/style2.css') }}">
 </head>
 
 <body id="page-top">
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="#page-top"><img src="assets/img/551).svg" alt="" style="width: 65px; height: 65px;"></a>
+            <a class="navbar-brand" href="{{ route("home") }}"><img src="{{asset('cms/assets/img/551).svg')}}" alt="" style="width: 65px; height: 65px;"></a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     
                     <i class="fas fa-bars"></i>
                 </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto d-flex justify-content-center align-content-center align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="local.html">Tourism inside Saudi Arabia</a></li>
-                    <li class="nav-item"><a class="nav-link" href="b2c.html">Visit Saudi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route("local") }}">Tourism inside Saudi Arabia</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route("b2c") }}">Visit Saudi</a></li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.arabic.html"><img src="assets/img/ar-AE.png" alt="" style="width: 25px; height: 25px; border-radius: 50%;"> Ar - العربية</a>
+                        <a class="nav-link" href="{{route('index.arabic')}}"><img src="{{asset('cms/assets/img/ar-AE.png')}}" alt="" style="width: 25px; height: 25px; border-radius: 50%;"> Ar - العربية</a>
                     </li>
                     <!-- <div class="dropdown">
                         <button type="button" class="form-select" value="#EN" data-bs-toggle="dropdown">
@@ -389,7 +389,7 @@
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
+    <script src="{{ asset('cms/js/scripts.js') }}"></script>
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 </body>
 

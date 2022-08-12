@@ -70,11 +70,11 @@
       </div> --}}
       <!-- /.social-auth-links -->
 
-      <p class="mb-1">
+      {{-- <p class="mb-1">
         <a href="">I forgot my password</a>
-      </p>
+      </p> --}}
       <p class="mb-0">
-        <a href="" class="text-center">Register a new membership</a>
+        <a href="{{ url('/register') }}" class="text-center">انشاء حساب جديد</a>
       </p>
     </div>
     <!-- /.card-body -->

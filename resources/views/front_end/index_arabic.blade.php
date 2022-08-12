@@ -7,32 +7,32 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Sero</title>
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('cms/assets/favicon.ico') }}" />
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style2.css">
+    <link href="{{ asset('cms/css/styles.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('cms/css/style2.css') }}">
 </head>
 
 <body id="page-top">
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="#page-top"><img src="assets/img/551).svg" alt="" style="width: 65px; height: 65px;"></a>
+            <a class="navbar-brand" href="{{ route("home") }}"><img src="{{ asset('cms/assets/img/551).svg') }}" alt="" style="width: 65px; height: 65px;"></a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     
                     <i class="fas fa-bars"></i>
                 </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto d-flex justify-content-center align-content-center align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="local.html">السياحة داخل السعودية</a></li>
-                    <li class="nav-item"><a class="nav-link" href="b2c.arabic.html">زيارة السعودية</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route("local_arabic") }}">السياحة داخل السعودية</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route("b2c_arabic") }}">زيارة السعودية</a></li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html"><img src="assets/img/en-US.png" alt="" style="width: 25px; height: 25px; border-radius: 50%;"> EN - English</a>
+                        <a class="nav-link" href="{{ route('home') }}"><img src="{{ asset('cms/assets/img/en-US.png') }}" alt="" style="width: 25px; height: 25px; border-radius: 50%;"> EN - English</a>
                     </li>
                     <!-- <div class="dropdown">
                         <button type="button" class="form-select" value="#EN" data-bs-toggle="dropdown">
@@ -68,7 +68,7 @@
         <div class="container px-4 px-lg-5">
             <!-- Featured Project Row-->
             <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-                <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/WhatsApp Image 2022-06-19 at 4.08.40 PM.svg" alt="..." /></div>
+                <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="{{ asset("cms/assets/img/WhatsApp Image 2022-06-19 at 4.08.40 PM.svg") }}" alt="..." /></div>
                 <div class="col-xl-4 col-lg-5">
                     <div class="featured-text text-center text-lg-left">
                         <h4>نبذة عنا</h4>
@@ -357,7 +357,7 @@
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
+    <script src="{{asset('cms/js/scripts.js')}}"></script>
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 </body>
 

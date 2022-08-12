@@ -29,9 +29,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:admin,web')->get('/', function () {
-    return view('cms.master');
-});
+// Route::middleware('auth:admin,web')->get('/', function () {
+//     return view('cms.master');
+// });
 // Route::get('/register', function () {
 //     return view('cms.auth.register');
 // });
@@ -92,7 +92,7 @@ route::prefix('cms/admin/')->middleware('auth:admin,web')->group(function(){
     Route::post('update_image_cars/{id}' , [ImageCarController::class , 'update'])->name('update_image_cars');
     Route::get('/create/image-cars/{id}', [ImageCarController::class, 'createImage'])->name('create.image-cars');
     Route::get('/index/image-cars/{id}', [ImageCarController::class, 'indexImage'])->name('index.image-cars');
-    
+
     Route::resource('rooms', RoomController::class);
     Route::post('update_rooms/{id}' , [RoomController::class , 'update'])->name('update_rooms');
     Route::get('/create/hotel-rooms/{id}', [RoomController::class, 'createRoom'])->name('createRoom');
@@ -111,4 +111,13 @@ route::prefix('cms/admin/')->middleware('auth:admin,web')->group(function(){
     Route::post('update_permissions/{id}' , [PermissionController::class , 'update'])->name('update_permissions');
     Route::resource('role.permissions', RolePermissionController::class);
 
+});
+
+Route::prefix('/')->middleware('guest:admin,web')->group(function(){
+    Route::get('', function () {return view('front_end.index');})->name('home');
+    Route::get('index_arabic', function () {return view('front_end.index_arabic');})->name('index.arabic');
+    Route::get('b2c', function () {return view('front_end.b2c');})->name('b2c');
+    Route::get('b2c_arabic', function () {return view('front_end.b2c_arabic');})->name('b2c_arabic');
+    Route::get('local', function () {return view('front_end.local');})->name('local');
+    Route::get('local_arabic', function () {return view('front_end.local_arabic');})->name('local_arabic');
 });
