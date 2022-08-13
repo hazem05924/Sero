@@ -16,6 +16,10 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{{ asset('cms/css/styles.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('cms/css/style2.css') }}">
+    <link rel="stylesheet" href="{{ asset('cms/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('cms/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
+
 </head>
 
 <body id="page-top">
@@ -24,9 +28,10 @@
         <div class="container px-4 px-lg-5">
             <a class="navbar-brand" href="{{ route("home") }}"><img src="{{asset('cms/assets/img/551).svg')}}" alt="" style="width: 65px; height: 65px;"></a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    
+
                     <i class="fas fa-bars"></i>
                 </button>
+
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto d-flex justify-content-center align-content-center align-items-center">
                     <li class="nav-item"><a class="nav-link" href="{{ route("local") }}">Tourism inside Saudi Arabia</a></li>
@@ -34,19 +39,30 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('index.arabic')}}"><img src="{{asset('cms/assets/img/ar-AE.png')}}" alt="" style="width: 25px; height: 25px; border-radius: 50%;"> Ar - العربية</a>
                     </li>
-                    <!-- <div class="dropdown">
-                        <button type="button" class="form-select" value="#EN" data-bs-toggle="dropdown">
-                            <a class="dropdown-item" href="#"><img src="assets/img/en-US.png" alt="" style="width: 25px; height: 25px;"> EN - English</a>
+
+                    @if (Auth::guard('web')->id())
+                     <div class="dropdown">
+                        <button type="button" class="form-select " value="#EN" data-bs-toggle="dropdown">
+
+                            <a class="dropdown-item" href="#"><img src="{{ asset('storage/images/register/'.auth('web')->user()->image) }}" alt="Logo" style="width: 25px; height: 25px;">{{ auth('web')->user()->full_name }}</a>
                         </button>
                         <ul class="dropdown-menu">
-                            <li>
-                                <a class="dropdown-item" href="#"><img src="assets/img/en-US.png" alt="" style="width: 25px; height: 25px;"> EN - English</a>
+                            <li class="nav-item ">
+                                <a href="{{ route('logout') }}" class="nav-link text-black">
+                                    <i class="fas fa-sign-out-alt ml-2"></i>
+                                         تسجيل الخروج
+                                </a>
                             </li>
-                            <li>
-                                <a class="dropdown-item" href="#"><img src="assets/img/ar-AE.png" alt="" style="width: 25px; height: 25px;"> AR - Arabic</a>
+                            <li class="nav-item ">
+                                <a href="{{ route('profile_edit_user') }}" class="nav-link text-black">
+                                    <i class="fas fa-user ml-2"></i>
+                                         الملف الشخصي 
+                                </a>
                             </li>
+
                         </ul>
-                    </div> -->
+                    </div>
+                    @endif
             </div>
             </ul>
         </div>

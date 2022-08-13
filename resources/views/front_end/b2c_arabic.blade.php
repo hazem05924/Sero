@@ -30,9 +30,9 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto d-flex justify-content-center align-content-center align-items-center">
                     <li class="nav-item"><a class="nav-link" href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
-                    <li class="nav-item"><a class="nav-link" href=""><i class="fas fa-sign-in-alt"></i> تسجيل الدخول / سجّل الآن </a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url('/cms/web/login') }}"><i class="fas fa-sign-in-alt"></i> تسجيل الدخول / سجّل الآن </a></li>
                     <li class="nav-item">
-                        <a class="nav-link" href="b2c.html"><img src="assets/img/en-US.png" alt="" style="width: 25px; height: 25px; border-radius: 50%;"> Ar - العربية</a>
+                        <a class="nav-link" href="{{ route('b2c') }}"><img src="assets/img/en-US.png" alt="" style="width: 25px; height: 25px; border-radius: 50%;"> Ar - العربية</a>
                     </li>
                     <!-- <div class="dropdown">
                         <button type="button" class="form-select" value="#EN" data-bs-toggle="dropdown">

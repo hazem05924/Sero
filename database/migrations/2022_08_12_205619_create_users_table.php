@@ -19,12 +19,13 @@ class CreateUsersTable extends Migration
             $table->string('last_name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('mobile');
+            $table->float('mobile')->nullable();
+            $table->float('visa_number');
+            $table->float('second_visa_number')->nullable();
             $table->string('image')->nullable();
             $table->foreignId('city_id')->nullable();
             $table->foreign('city_id')->on('cities')->references('id');
             $table->enum('gender',['male','famela'])->nullable();
-
             $table->timestamps();
         });
     }

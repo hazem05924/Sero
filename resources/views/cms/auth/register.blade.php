@@ -62,7 +62,7 @@
         </div>
         <div class="row">
             <div class="input-group mb-3 col-6">
-              <input type="text" class="form-control" name="mobile" id="mobile" placeholder="رقم الهاتف">
+              <input type="number" class="form-control" name="mobile" id="mobile" placeholder="رقم الهاتف">
               <div class="input-group-append">
                 <div class="input-group-text">
                   <span class="fas fa-mobile"></span>
@@ -70,6 +70,14 @@
               </div>
             </div>
             <div class="input-group mb-3 col-6">
+              <input type="text" class="form-control" name="visa_number" id="visa_number" placeholder="رقم الفيزا ">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                    <i class="fas fa-id-card-alt"></i>  
+                </div>
+              </div>
+            </div>
+            {{-- <div class="input-group mb-3 col-6">
                 <select class="form-control" name="city_id" id="city_id" >
                     @foreach ($cities as$city )
                     <option value="{{ $city->id }}">{{ $city->name }}</option>
@@ -90,10 +98,10 @@
                 <label class="custom-file-label">اختر الصورة الشخصية </label>
               </div>
             
-        </div>
+        </div> --}}
 
         <div class="row">
-          <div class="col-8">
+          <div class="col-10">
             <div class="icheck-primary">
               <input type="checkbox" id="agreeTerms" name="terms" value="agree">
               <label for="agreeTerms">
@@ -102,8 +110,8 @@
             </div>
           </div>
           <!-- /.col -->
-          <div class="col-4">
-            <button type="button" onclick="performStore()" class="btn btn-primary btn-block">Register</button>
+          <div class="col-2">
+            <button type="button" onclick="performStore()" class="btn btn-primary  ">Register</button>
           </div>
           <!-- /.col -->
         </div>
@@ -137,10 +145,9 @@ let formData = new FormData();
     formData.append('first_name',document.getElementById('first_name').value);
     formData.append('last_name',document.getElementById('last_name').value);
     formData.append('email',document.getElementById('email').value);
-    formData.append('mobile',document.getElementById('mobile').value);
     formData.append('password',document.getElementById('password').value);
-    formData.append('city_id',document.getElementById('city_id').value);
-    formData.append('image',document.getElementById('image').files[0]);
+    formData.append('mobile',document.getElementById('mobile').value);
+    formData.append('visa_number',document.getElementById('visa_number').value);
 
 store('/register',formData);
 

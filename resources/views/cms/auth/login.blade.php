@@ -105,7 +105,13 @@
       guard: guard
     })
         .then(function (response) {
-        window.location.href = '/cms/admin'
+            if(guard=== 'web'){
+
+                window.location.href = '/'
+            }else{
+
+                window.location.href = '/cms/admin'
+            }
     })
         .catch(function (error) {
             if (error.response.data.errors !== undefined) {

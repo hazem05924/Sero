@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Admin;
 use App\Models\City;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -43,7 +44,7 @@ class UserAuthController extends Controller
 
         Auth::guard()->logout();
         $request->session()->invalidate();
-        return redirect()->route('view.login',['web']);
+        return redirect()->back();
     }
 
     public function editPassword(){
@@ -83,7 +84,7 @@ class UserAuthController extends Controller
 
 
 
-# edit profile admins 
+# edit profile admins
     public function editProfile(Request $request){
 
         $admins = Admin::findOrFail(Auth::guard('admin')->id());
@@ -133,6 +134,7 @@ class UserAuthController extends Controller
 
         }
     }
+
 
 
 }
