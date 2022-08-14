@@ -17,6 +17,7 @@ use App\Http\Controllers\UserAuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WayController;
 use Illuminate\Support\Facades\Route;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,6 +58,9 @@ route::prefix('cms/admin/')->middleware('auth:admin,web')->group(function(){
     Route::post('update/password', [UserAuthController::class, 'updatePassword']);
 
 });
+// Route::middleware()->group(['prefix' => LaravelLocalization::setLocale()], function(){
+
+// });
 route::prefix('cms/admin/')->middleware('auth:admin,web')->group(function(){
     Route::view('/','cms.home')->name('home');
 
@@ -113,7 +117,7 @@ route::prefix('cms/admin/')->middleware('auth:admin,web')->group(function(){
 
 });
 
-Route::prefix('/')->group(function(){
+Route::prefix( LaravelLocalization::setLocale())->group(function(){
     Route::get('', function () {return view('front_end.index');})->name('home');
     Route::get('index_arabic', function () {return view('front_end.index_arabic');})->name('index.arabic');
     Route::get('b2c', function () {return view('front_end.b2c');})->name('b2c');
