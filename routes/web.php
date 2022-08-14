@@ -119,11 +119,8 @@ route::prefix('cms/admin/')->middleware('auth:admin,web')->group(function(){
 
 Route::prefix( LaravelLocalization::setLocale())->group(function(){
     Route::get('', function () {return view('front_end.index');})->name('home');
-    Route::get('index_arabic', function () {return view('front_end.index_arabic');})->name('index.arabic');
     Route::get('b2c', function () {return view('front_end.b2c');})->name('b2c');
-    Route::get('b2c_arabic', function () {return view('front_end.b2c_arabic');})->name('b2c_arabic');
     Route::get('local', function () {return view('front_end.local');})->name('local');
-    Route::get('local_arabic', function () {return view('front_end.local_arabic');})->name('local_arabic');
 });
 Route::prefix('/')->middleware('auth:web')->group(function(){
     Route::get('edit/profile' , [RegisterController::class , 'edit'])->name('profile_edit_user');
