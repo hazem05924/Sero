@@ -24,7 +24,7 @@
         <div class="container px-4 px-lg-5">
             <a class="navbar-brand" href="index.html"><img src="{{ asset('cms/assets/img/551).svg') }}" alt="" style="width: 65px; height: 65px;"></a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    
+
                     <i class="fas fa-bars"></i>
                 </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -192,11 +192,11 @@
     </nav>
     <!-- Masthead-->
     <header class="masthead">
-        <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-between">
+        <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
             <div class="d-flex justify-content-center">
                 <div class="text-center">
-                    <h1 class="mx-auto my-0 text-uppercase">Welcome To Sero</h1>
-                    <h2 class="text-white-50 mx-auto mt-2 mb-5">Get Your Umrah Visa In Three Steps</h2>
+                    <h1 class="mx-auto my-0 text-uppercase">Welcome To <span>Sero</span></h1>
+                    <h2 class="text-white-50 mx-auto mt-2 mb-5">The journey of travel through three easy, easy and fast steps</h2>
                 </div>
             </div>
         </div>
@@ -779,7 +779,7 @@
         <div class="container px-4">
             <!-- Featured Project Row-->
             <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-                <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/WhatsApp Image 2022-06-19 at 4.08.40 PM.svg" alt="..." /></div>
+                <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="{{ asset('cms/assets/img/img/WhatsApp Image 2022-06-19 at 4.08.40 PM.svg') }}" alt="..." /></div>
                 <div class="col-xl-4 col-lg-5">
                     <div class="featured-text text-center text-lg-left">
                         <h4>About Us</h4>

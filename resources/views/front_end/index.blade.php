@@ -37,7 +37,22 @@
                     <li class="nav-item"><a class="nav-link" href="{{ route("local") }}">Tourism inside Saudi Arabia</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route("b2c") }}">Visit Saudi</a></li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('index.arabic')}}"><img src="{{asset('cms/assets/img/ar-AE.png')}}" alt="" style="width: 25px; height: 25px; border-radius: 50%;"> Ar - العربية</a>
+                          <div class="dropdown">
+                            <a class="dropdown-toggle text-decoration-none text-white" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"><img src="{{asset('cms/assets/img/en-US.png')}}" alt="" style="width: 25px; height: 25px; border-radius: 50%;"> En - English</a>
+
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                              <li>
+                                <a class="dropdown-item" href="#">
+                                    <img src="{{asset('cms/assets/img/ar-AE.png')}}" alt="" style="width: 25px; height: 25px; border-radius: 50%;"> Ar - Arabic
+                                </a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="#">
+                                    <img src="{{asset('cms/assets/img/en-US.png')}}" alt="" style="width: 25px; height: 25px; border-radius: 50%;"> En - English
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
                     </li>
 
                     @if (Auth::guard('web')->id())
@@ -56,7 +71,7 @@
                             <li class="nav-item ">
                                 <a href="{{ route('profile_edit_user') }}" class="nav-link text-black">
                                     <i class="fas fa-user ml-2"></i>
-                                         الملف الشخصي 
+                                         الملف الشخصي
                                 </a>
                             </li>
 
@@ -73,8 +88,8 @@
         <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
             <div class="d-flex justify-content-center">
                 <div class="text-center">
-                    <h1 class="mx-auto my-0 text-uppercase">Welcome To Sero</h1>
-                    <h2 class="text-white-50 mx-auto mt-2 mb-5">Get Your Umrah Visa In Three Steps</h2>
+                    <h1 class="mx-auto my-0 text-uppercase">Welcome To <span>Sero</span></h1>
+                    <h2 class="text-white-50 mx-auto mt-2 mb-5">The journey of travel through three easy, easy and fast steps</h2>
                 </div>
             </div>
         </div>
@@ -88,7 +103,7 @@
         <div class="container px-4 px-lg-5">
             <!-- Featured Project Row-->
             <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-                <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/WhatsApp Image 2022-06-19 at 4.08.40 PM.svg" alt="..." /></div>
+                <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="{{ asset('cms/assets/img/WhatsApp Image 2022-06-19 at 4.08.40 PM.svg') }}" alt="..." /></div>
                 <div class="col-xl-4 col-lg-5">
                     <div class="featured-text text-center text-lg-left">
                         <h4>About Us</h4>

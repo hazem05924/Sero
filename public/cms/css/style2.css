@@ -13,7 +13,7 @@
         .navbar-scroll .navbar-brand,
         .navbar-scroll .nav-link,
         .navbar-scroll .fa-bars {
-            color: #4f4f4f !important;
+            color: black !important;
         }
     }
     
@@ -220,19 +220,19 @@
         color: #fff;
         font-size: 20px;
         font-weight: bold;
-        background-color: rgba(0, 0, 0, 0.3);
+        background-color: rgba(0, 0, 0, 0.8);
         border-radius: 10px;
     }
     
     .panels {
-        background: rgba(0, 0, 0, 0.7);
-        box-shadow: 0 1rem 1rem rgb(0, 0, 0, 0.6);
+        background: rgb(0, 0, 0, 0.5);
+        box-shadow: 0 1rem 1rem rgb(0, 0, 0, 0.2);
         color: white;
         min-height: 200px;
         max-width: 80%;
         border-radius: 15px;
         overflow: hidden;
-        padding: 20px;
+        padding: 30px;
     }
     
     #one-panel,
@@ -283,7 +283,6 @@
     #one:checked~.tabs #one-tab,
     #two:checked~.tabs #two-tab,
     #three:checked~.tabs #three-tab {
-        background: linear-gradient( rgba(0, 0, 0) 50%, rgba(255, 255, 255, 0.2));
         color: #fff;
         font-size: 20px;
         font-weight: bold;
@@ -472,8 +471,8 @@
     
     @media only screen and (min-width: 1200px) {
         main {
-            height: auto;
-            min-height: 100vh;
+            height: fit-content;
+            min-height: 150vh;
             padding: 50px;
             background-size: 100% 100%;
             background-position: 100% 100%;
@@ -578,21 +577,29 @@
     }
     
     .panel input {
-        border: 1px solid white;
-        background: none;
-        color: white;
+        border: 1px solid black;
+        background: rgba(255, 255, 255, 0.6);
+        color: black;
     }
     
     .panel select {
-        border: 1px solid white;
-        background: none;
-        color: white;
+        border: 1px solid black;
+        background: rgba(255, 255, 255, 0.6);
+        color: black;
     }
     
     .panel .input-group input {
-        border: 1px solid white !important;
-        color: white;
+        border: 1px solid black !important;
+        color: black;
         border-radius: 5px;
+    }
+    
+    .panel .input-group input::placeholder {
+        color: black;
+    }
+    
+    .panel input #date-out ::placeholder {
+        color: transparent;
     }
     
     .widget-contact-list ul li {
@@ -607,4 +614,9 @@
     
     .widget-contact-list a:hover {
         color: rgba(255, 255, 255);
+    }
+    
+    .tabs {
+        position: absolute;
+        transform: translate(0, -50%);
     }
