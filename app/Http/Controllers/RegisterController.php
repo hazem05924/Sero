@@ -89,6 +89,7 @@ class RegisterController extends Controller
             $users->second_visa_number=$request->get('second_visa_number');
             $users->gender=$request->get('gender');
             $isSaved=$users->save();
+            return ['redirect'=>route('home')];
             if ($isSaved) {
                 return response()->json(['icon'=>'success','title'=>'تم تعديل المستخدم بنجاح '],200);
             }else{

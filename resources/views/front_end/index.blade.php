@@ -34,49 +34,59 @@
 
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto d-flex justify-content-center align-content-center align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="{{-- route("local") --}}">Tourism inside Saudi Arabia</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{-- route("b2c") --}}">Visit Saudi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route("local") }}">{{ __('Tourism inside Saudi Arabia') }}
+                    <li class="nav-item"><a class="nav-link" href="{{ route("b2c") }}">{{ __('Visit Saudi') }}</a></li>
                     <li class="nav-item">
                           <div class="dropdown">
-                            <a class="dropdown-toggle text-decoration-none text-white" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"><img src="{{asset('cms/assets/img/en-US.png')}}" alt="" style="width: 25px; height: 25px; border-radius: 50%;"> En - English</a>
+                            {{-- <a class="dropdown-toggle text-decoration-none text-white" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"><img src="{{asset('cms/assets/img/en-US.png')}}" alt="" style="width: 25px; height: 25px; border-radius: 50%;"> En - English</a> --}}
+                            <a class="dropdown-toggle text-decoration-none text-white" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">  {{ __('language') }}</a>
 
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                              <li>
-                                <a class="dropdown-item" href="#">
-                                    <img src="{{asset('cms/assets/img/ar-AE.png')}}" alt="" style="width: 25px; height: 25px; border-radius: 50%;"> Ar - Arabic
-                                </a>
-                              </li>
-                              <li>
-                                <a class="dropdown-item" href="#">
-                                    <img src="{{asset('cms/assets/img/en-US.png')}}" alt="" style="width: 25px; height: 25px; border-radius: 50%;"> En - English
-                                </a>
-                              </li>
+
+                                    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                                        <li>
+                                            <a class="dropdown-item" rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                                {{ $properties['native'] }}
+                                            </a>
+                                        </li>
+                                    @endforeach
+
+                              
                             </ul>
                           </div>
                     </li>
 
                     @if (Auth::guard('web')->id())
-                     <div class="dropdown">
-                        <button type="button" class="form-select " value="#EN" data-bs-toggle="dropdown">
+                    <div class="dropdown m-3">
+                        {{-- <a class="dropdown-toggle text-decoration-none text-white" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"><img src="{{asset('cms/assets/img/en-US.png')}}" alt="" style="width: 25px; height: 25px; border-radius: 50%;"> En - English</a> --}}
+                        <a class="dropdown-toggle text-decoration-none text-white" href="#" role="button"
+                            id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                            @if (auth('web')->user()->image == '')
+                            <img src="{{ asset('storage/images/user.jpg') }}" alt="Logo" style="width: 25px; height: 25px; border-radius: 50%">
+                            
+                            @else
+                            <img src="{{ asset('storage/images/register/'.auth('web')->user()->image) }}" alt="Logo" style="width: 25px; height: 25px;">
 
-                            <a class="dropdown-item" href="#"><img src="{{ asset('storage/images/register/'.auth('web')->user()->image) }}" alt="Logo" style="width: 25px; height: 25px;">{{ auth('web')->user()->full_name }}</a>
-                        </button>
-                        <ul class="dropdown-menu">
+                            @endif
+                            {{ auth('web')->user()->full_name }}
+                        </a>
+
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                             <li class="nav-item ">
                                 <a href="{{ route('logout') }}" class="nav-link text-black">
                                     <i class="fas fa-sign-out-alt ml-2"></i>
-                                         تسجيل الخروج
+                                         {{ __("Log Out") }}
                                 </a>
                             </li>
                             <li class="nav-item ">
                                 <a href="{{ route('profile_edit_user') }}" class="nav-link text-black">
                                     <i class="fas fa-user ml-2"></i>
-                                         الملف الشخصي
+                                        {{ __("Profile") }}
                                 </a>
                             </li>
-
                         </ul>
-                    </div>
+                    </div> 
+
                     @endif
             </div>
             </ul>
@@ -88,8 +98,8 @@
         <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
             <div class="d-flex justify-content-center">
                 <div class="text-center">
-                    <h1 class="mx-auto my-0 text-uppercase">Welcome To <span>Sero</span></h1>
-                    <h2 class="text-white-50 mx-auto mt-2 mb-5">The journey of travel through three easy, easy and fast steps</h2>
+                    <h1 class="mx-auto my-0 text-uppercase">{{__('Welcome To')}} <span>{{ __('Sero') }}</span></h1>
+                    <h2 class="text-white-50 mx-auto mt-2 mb-5">{{__("The journey of travel through three easy, easy and fast steps")}}</h2>
                 </div>
             </div>
         </div>
@@ -106,8 +116,8 @@
                 <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="{{ asset('cms/assets/img/WhatsApp Image 2022-06-19 at 4.08.40 PM.svg') }}" alt="..." /></div>
                 <div class="col-xl-4 col-lg-5">
                     <div class="featured-text text-center text-lg-left">
-                        <h4>About Us</h4>
-                        <p>"Sero" is a step that started its journey from the era of the founder, may God rest his soul, whose first goal is to facilitate the matters of tourism and travel for travelers by providing multiple services at flexible prices.</p>
+                        <h4>{{ __('About Us') }}</h4>
+                        <p>{{ __("'Sero' is a step that started its journey from the era of the founder, may God rest his soul, whose first goal is to facilitate the matters of tourism and travel for travelers by providing multiple services at flexible prices.") }}</p>
                     </div>
                 </div>
             </div>
@@ -133,17 +143,17 @@
             <div class="row">
                 <div class="col-12 col-sm-12 col-md-6 col-lg-4">
                     <div class="card1 card-1">
-                        <h5>Flights</h5>
+                        <h5>{{ __("Flights") }}</h5>
                     </div>
                 </div>
                 <div class="col-12 col-sm-12 col-md-6 col-lg-4">
                     <div class="card1 card-2">
-                        <h5>HOTELS</h5>
+                        <h5>{{ __("HOTELS") }}</h5>
                     </div>
                 </div>
                 <div class="col-12 col-sm-12 col-md-6 col-lg-4">
                     <div class="card1 card-3">
-                        <h5>TRANSPORT</h5>
+                        <h5>{{ __("TRANSPORT") }}</h5>
                     </div>
                 </div>
             </div>
@@ -157,7 +167,7 @@
                     <div class="card py-4 h-100">
                         <div class="card-body text-center">
                             <i class="fas fa-envelope text-primary mb-2"></i>
-                            <h4 class="text-uppercase m-0">Email</h4>
+                            <h4 class="text-uppercase m-0">{{ __("Email") }}</h4>
                             <hr class="my-4 mx-auto" />
                             <div class="small text-black-50"><a href="#!">info@sero.com.sa</a></div>
                         </div>
@@ -167,7 +177,7 @@
                     <div class="card py-4 h-100">
                         <div class="card-body text-center">
                             <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-                            <h4 class="text-uppercase m-0">Address</h4>
+                            <h4 class="text-uppercase m-0">{{ __("Address") }}</h4>
                             <hr class="my-4 mx-auto" />
                             <div class="small text-black-50">طريق الملك عبدالله الفرعي،المدينة المنورة </div>
                         </div>
@@ -177,7 +187,7 @@
                     <div class="card py-4 h-100">
                         <div class="card-body text-center">
                             <i class="fas fa-mobile-alt text-primary mb-2"></i>
-                            <h4 class="text-uppercase m-0">Phone</h4>
+                            <h4 class="text-uppercase m-0">{{__("Phone")}}</h4>
                             <hr class="my-4 mx-auto" />
                             <div class="small text-black-50">+966920007075</div>
                         </div>
@@ -187,11 +197,11 @@
 
             <div class="d-flex justify-content-between flex-wrap mt-3">
                 <div class="widget widget-links col-12 col-sm-12 col-md-6 col-lg-4 text-decoration-none" style="border: 1px solid transparent; border-radius: 5px;">
-                    <h4 class="widget_title text-start" style="border-bottom: 2px solid white;">Our services</h4>
+                    <h4 class="widget_title text-start" style="border-bottom: 2px solid white;">{{ __("Our services") }}</h4>
                     <ul dir="ltr" style="height: 150px; overflow: hidden;">
-                        <li> Get a visa from anywhere in the world within 24 hours</li>
-                        <li> Connecting travelers and hotels</li>
-                        <li> Providing ground services of all kinds (providing buses, metro tickets, transportation services)</li>
+                        <li> {{ __("Get a visa from anywhere in the world within 24 hours") }}</li>
+                        <li> {{__("Connecting travelers and hotels")}}</li>
+                        <li> {{__("Providing ground services of all kinds (providing buses, metro tickets, transportation services)")}}</li>
                         <li> Book flights at the lowest prices with a group of airlines</li>
                         <li> Designing flexible and special packages to suit Umrah performers and pilgrims of all levels.</li>
                         <li> Providing reservations for all hotels around the world</li>
@@ -199,19 +209,19 @@
                 </div>
 
                 <div dir="ltr" class="widget widget-links col-12 col-sm-12 col-md-6 col-lg-4" style="border: 1px solid transparent; border-radius: 5px;">
-                    <h4 class="widget_title text-start" style="border-bottom: 2px solid white;">Quick links</h4>
+                    <h4 class="widget_title text-start" style="border-bottom: 2px solid white;">{{ __("Quick links") }}</h4>
 
                     <div class="widget-contact-list">
                         <ul dir="ltr">
                             <li>
-                                <a href="index.html"> Home</a>
+                                <a href="index.html"> {{ __("Home") }}</a>
                             </li>
                             <li>
-                                <a href="#about1"> About</a>
+                                <a href="#about1"> {{__("About")}}</a>
                             </li>
                             <li>
                                 <!-- link trigger modal -->
-                                <a href="" data-bs-toggle="modal" data-bs-target="#Modal">privacy policy</a>
+                                <a href="" data-bs-toggle="modal" data-bs-target="#Modal">{{__("privacy policy")}}</a>
 
                                 <!-- Modal -->
                                 <div class="modal modal-fullscreen-lg-down fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
@@ -401,7 +411,7 @@
 
 
                 <div class="widget widget-links col-12 col-sm-12 col-md-6 col-lg-4" style="border: 1px solid transparent; border-radius: 5px;">
-                    <h4 class="widget_title text-start" style="border-bottom: 2px solid white;">Social Media</h4>
+                    <h4 class="widget_title text-start" style="border-bottom: 2px solid white;">{{ __("Social Media") }}</h4>
                     <div class="social d-flex justify-content-center" style="margin-left: auto; margin-right: auto;">
                         <a class="mx-2 " href="https://twitter.com/serovision1?s=21&t=ObGKxjr4RhzOnCC9EgP2mg"><i class="fab fa-twitter "></i></a>
                         <a class="mx-2 " href="https://www.facebook.com/profile.php?id=100082581573020"><i class="fab fa-facebook-f "></i></a>
@@ -415,7 +425,7 @@
     </section>
     <!-- Footer-->
     <footer class="footer bg-black small text-center text-white-50">
-        <div class="container px-4 px-lg-5">All rights reserved Privacy Policy &copy; Sero 2022 - 2023</div>
+        <div class="container px-4 px-lg-5">{{ __("All rights reserved Privacy Policy") }} &copy; {{__("Sero 2022 - 2023")}}</div>
     </footer>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

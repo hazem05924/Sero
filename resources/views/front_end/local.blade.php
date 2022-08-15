@@ -29,162 +29,62 @@
                 </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto d-flex justify-content-center align-content-center align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="{{ route('home') }}"><i class="fas fa-home"></i> Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i class="fas fa-sign-in-alt"></i> sign in / sign up</a></li>
-
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-body">
-                                    <!-- Pills navs -->
-                                    <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
-                                        <li class="nav-item" role="presentation">
-                                            <a class="nav-link active" id="tab-login" data-mdb-toggle="pill" href="#pills-login" role="tab" aria-controls="pills-login" aria-selected="true">Login</a>
-                                        </li>
-                                        <li class="nav-item" role="presentation">
-                                            <a class="nav-link" id="tab-register" data-mdb-toggle="pill" href="#pills-register" role="tab" aria-controls="pills-register" aria-selected="false">Register</a>
-                                        </li>
-                                    </ul>
-                                  <!-- Pills navs -->
-                                    <!-- Pills content -->
-                                    <div class="tab-content">
-                                        <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
-                                            <form>
-                                                <div class="text-center mb-3">
-                                                    <p>Sign in with:</p>
-                                                    <button type="button" class="btn btn-link btn-floating mx-1">
-            <i class="fab fa-facebook-f"></i>
-          </button>
-
-                                                    <button type="button" class="btn btn-link btn-floating mx-1">
-            <i class="fab fa-google"></i>
-          </button>
-
-                                                    <button type="button" class="btn btn-link btn-floating mx-1">
-            <i class="fab fa-twitter"></i>
-          </button>
-
-                                                    <button type="button" class="btn btn-link btn-floating mx-1">
-            <i class="fab fa-github"></i>
-          </button>
-                                                </div>
-
-                                                <p class="text-center">or:</p>
-
-                                                <!-- Email input -->
-                                                <div class="form-outline mb-4">
-                                                    <input type="email" id="loginName" class="form-control" />
-                                                    <label class="form-label" for="loginName">Email or username</label>
-                                                </div>
-
-                                                <!-- Password input -->
-                                                <div class="form-outline mb-4">
-                                                    <input type="password" id="loginPassword" class="form-control" />
-                                                    <label class="form-label" for="loginPassword">Password</label>
-                                                </div>
-
-                                                <!-- 2 column grid layout -->
-                                                <div class="row mb-4">
-                                                    <div class="col-md-6 d-flex justify-content-center">
-                                                        <!-- Checkbox -->
-                                                        <div class="form-check mb-3 mb-md-0">
-                                                            <input class="form-check-input" type="checkbox" value="" id="loginCheck" checked />
-                                                            <label class="form-check-label" for="loginCheck"> Remember me </label>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-6 d-flex justify-content-center">
-                                                        <!-- Simple link -->
-                                                        <a href="#!">Forgot password?</a>
-                                                    </div>
-                                                </div>
-
-                                                <!-- Submit button -->
-                                                <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
-
-                                                <!-- Register buttons -->
-                                                <div class="text-center">
-                                                    <p>Not a member? <a href="#!">Register</a></p>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
-                                            <form>
-                                                <div class="text-center mb-3">
-                                                    <p>Sign up with:</p>
-                                                    <button type="button" class="btn btn-link btn-floating mx-1"><i class="fab fa-facebook-f"></i></button>
-                                                    <button type="button" class="btn btn-link btn-floating mx-1"><i class="fab fa-google"></i></button>
-                                                    <button type="button" class="btn btn-link btn-floating mx-1"><i class="fab fa-twitter"></i></button>
-                                                    <button type="button" class="btn btn-link btn-floating mx-1"><i class="fab fa-github"></i></button>
-                                                </div>
-
-                                                <p class="text-center">or:</p>
-
-                                                <!-- Name input -->
-                                                <div class="form-outline mb-4">
-                                                    <input type="text" id="registerName" class="form-control" />
-                                                    <label class="form-label" for="registerName">Name</label>
-                                                </div>
-
-                                                <!-- Username input -->
-                                                <div class="form-outline mb-4">
-                                                    <input type="text" id="registerUsername" class="form-control" />
-                                                    <label class="form-label" for="registerUsername">Username</label>
-                                                </div>
-
-                                                <!-- Email input -->
-                                                <div class="form-outline mb-4">
-                                                    <input type="email" id="registerEmail" class="form-control" />
-                                                    <label class="form-label" for="registerEmail">Email</label>
-                                                </div>
-
-                                                <!-- Password input -->
-                                                <div class="form-outline mb-4">
-                                                    <input type="password" id="registerPassword" class="form-control" />
-                                                    <label class="form-label" for="registerPassword">Password</label>
-                                                </div>
-
-                                                <!-- Repeat Password input -->
-                                                <div class="form-outline mb-4">
-                                                    <input type="password" id="registerRepeatPassword" class="form-control" />
-                                                    <label class="form-label" for="registerRepeatPassword">Repeat password</label>
-                                                </div>
-
-                                                <!-- Checkbox -->
-                                                <div class="form-check d-flex justify-content-center mb-4">
-                                                    <input class="form-check-input me-2" type="checkbox" value="" id="registerCheck" checked aria-describedby="registerCheckHelpText" />
-                                                    <label class="form-check-label" for="registerCheck">I have read and agree to the terms</label>
-                                                </div>
-
-                                                <!-- Submit button -->
-                                                <button type="submit" class="btn btn-primary btn-block mb-3">Sign in</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <!-- Pills content -->
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('home') }}"><i class="fas fa-home"></i> {{ __("Home") }}</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url("cms/web/login") }}" ><i class="fas fa-sign-in-alt"></i> {{ __("sign in") }}</a></li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('local_arabic') }}"><img src="{{ asset('cms/assets/img/ar-AE.png') }}" alt="" style="width: 25px; height: 25px; border-radius: 50%;"> Ar - العربية</a>
-                    </li>
-                    <!-- <div class="dropdown">
-                        <button type="button" class="form-select" value="#EN" data-bs-toggle="dropdown">
-                            <a class="dropdown-item" href="#"><img src="assets/img/en-US.png" alt="" style="width: 25px; height: 25px;"> EN - English</a>
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a class="dropdown-item" href="#"><img src="assets/img/en-US.png" alt="" style="width: 25px; height: 25px;"> EN - English</a>
+                        <div class="dropdown">
+                          {{-- <a class="dropdown-toggle text-decoration-none text-white" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"><img src="{{asset('cms/assets/img/en-US.png')}}" alt="" style="width: 25px; height: 25px; border-radius: 50%;"> En - English</a> --}}
+                          <a class="dropdown-toggle text-decoration-none text-white" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">  {{ __('language') }}</a>
+
+                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+
+                                  @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                                      <li>
+                                          <a class="dropdown-item" rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                              {{ $properties['native'] }}
+                                          </a>
+                                      </li>
+                                  @endforeach
+
+                            
+                          </ul>
+                        </div>
+                  </li>
+                    @if (Auth::guard('web')->id())
+                    <div class="dropdown m-3">
+                        {{-- <a class="dropdown-toggle text-decoration-none text-white" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"><img src="{{asset('cms/assets/img/en-US.png')}}" alt="" style="width: 25px; height: 25px; border-radius: 50%;"> En - English</a> --}}
+                        <a class="dropdown-toggle text-decoration-none text-white" href="#" role="button"
+                            id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                            @if (auth('web')->user()->image == '')
+                            <img src="{{ asset('storage/images/user.jpg') }}" alt="Logo" style="width: 25px; height: 25px; border-radius: 50%">
+                            
+                            @else
+                            <img src="{{ asset('storage/images/register/'.auth('web')->user()->image) }}" alt="Logo" style="width: 25px; height: 25px;">
+
+                            @endif
+                            {{ auth('web')->user()->full_name }}
+                        </a>
+
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li class="nav-item ">
+                                <a href="{{ route('logout') }}" class="nav-link text-black">
+                                    <i class="fas fa-sign-out-alt ml-2"></i>
+                                         {{__("Log Out")}}
+                                </a>
                             </li>
-                            <li>
-                                <a class="dropdown-item" href="#"><img src="assets/img/ar-AE.png" alt="" style="width: 25px; height: 25px;"> AR - Arabic</a>
+                            <li class="nav-item ">
+                                <a href="{{ route('profile_edit_user') }}" class="nav-link text-black">
+                                    <i class="fas fa-user ml-2"></i>
+                                         {{ __("Profile") }}
+                                </a>
                             </li>
                         </ul>
-                    </div> -->
+                    </div> 
+                    @endif
+
+                    
+                    
+                    
             </div>
             </ul>
         </div>
@@ -195,8 +95,8 @@
         <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
             <div class="d-flex justify-content-center">
                 <div class="text-center">
-                    <h1 class="mx-auto my-0 text-uppercase">Welcome To <span>Sero</span></h1>
-                    <h2 class="text-white-50 mx-auto mt-2 mb-5">The journey of travel through three easy, easy and fast steps</h2>
+                    <h1 class="mx-auto my-0 text-uppercase">{{__("Welcome To")}} <span>{{ __("Sero") }}</span></h1>
+                    <h2 class="text-white-50 mx-auto mt-2 mb-5">{{ __("The journey of travel through three easy, easy and fast steps") }}</h2>
                 </div>
             </div>
         </div>
@@ -204,29 +104,29 @@
             <input class="radio" id="one" name="group" type="radio" checked>
             <input class="radio" id="two" name="group" type="radio">
             <div class="tabs">
-                <label class="tab" id="one-tab" for="one"><i class="fas fa-hotel"></i> Hotels</label>
-                <label class="tab" id="two-tab" for="two"><i class="fas fa-car"></i> Transportation</label>
+                <label class="tab" id="one-tab" for="one"><i class="fas fa-hotel"></i> {{ __("Hotels") }}</label>
+                <label class="tab" id="two-tab" for="two"><i class="fas fa-car"></i> {{ __("Transportation") }}</label>
             </div>
             <div class="panels col-10">
 
                 <div class="panel" id="one-panel">
                     <div class="add1 d-flex flex-wrap justify-content-start align-content-center align-items-center">
                         <div class="col-12 col-sm-12 col-md-6 col-lg-3">
-                            <label for="Location" class="form-label">Destination <span>*</span></label>
+                            <label for="Location" class="form-label">{{ __("Destination") }} <span>*</span></label>
                             <select id="Location" class="form-control col-3" name="Location">
-                            <option value="Makkah">Makkah</option>
-                            <option value="Madinah">Madinah</option>
+                            <option value="Makkah">{{ __("Makkah") }}</option>
+                            <option value="Madinah">{{ __("Madinah") }}</option>
                           </select>
                         </div>
                         <div class="col-12 col-sm-12 col-md-6 col-lg-3">
-                            <label for="date-in" class="form-label">Checkin <span>*</span></label>
+                            <label for="date-in" class="form-label">{{__("Checkin")}} <span>*</span></label>
                             <input type="date" name="date-in" id="date-in" class="form-control col-3">
                         </div>
                         <div class="col-12 col-sm-12 col-md-6 col-lg-3">
-                            <label for="date-out" class="form-label">Checkout <span>*</span></label>
+                            <label for="date-out" class="form-label">{{__("Checkout")}} <span>*</span></label>
                             <input type="date" name="date-out" id="date-out" class="form-control col-3">
                         </div>
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+                        {{-- <div class="col-12 col-sm-12 col-md-6 col-lg-3">
                             <label for="Nationality" class="form-label">Nationality</label>
                             <select id="Nationality" class="form-control col-3" name="Nationality">
                             <option value="">Select Nationality</option>
@@ -466,19 +366,19 @@
                             <option value="ZW">Zimbabwe</option>
                           </select>
                             </select>
-                        </div>
+                        </div> --}}
 
                         <div class="col-12 col-sm-12 col-md-6 col-lg-4 p-1">
-                            <label for="input-group" class="form-label p-1">Details <span>*</span></label>
+                            <label for="input-group" class="form-label p-1">{{__("Details")}} <span>*</span></label>
                             <div class="input-group" id="input-group">
-                                <input type="text" class="form-control border-0" placeholder="2 Traveller(s)">
-                                <input type="text" class="form-control border-0" placeholder="0 Children(s)">
-                                <input type="text" class="form-control border-0" placeholder="1 Room(s)">
+                                <input type="text" class="form-control border-0" placeholder="2 {{ __("Traveller(s)") }}">
+                                <input type="text" class="form-control border-0" placeholder="0 {{ __("Children(s)") }}">
+                                <input type="text" class="form-control border-0" placeholder="1 {{ __("Room(s)") }}">
                             </div>
                         </div>
 
                         <div class="btn1 col-12 col-sm-12 col-md-6 col-lg-3">
-                            <button type="button" class="btn p-2 w-100">Search</button>
+                            <button type="button" class="btn p-2 w-100">{{__("Search")}}</button>
                         </div>
 
                     </div>
@@ -486,9 +386,9 @@
                 <div class="panel" id="two-panel">
                     <div class="add2 d-flex flex-wrap justify-content-start align-content-center align-items-center">
                         <div class="col-12 col-sm-12 col-md-6 col-lg-3">
-                            <label for="Route" class="form-label">Route <span>*</span></label>
+                            <label for="Route" class="form-label">{{__("Route")}} <span>*</span></label>
                             <select class="form-control" id="Route" name="Route">
-                            <option value="">Select Route</option>
+                            <option value="">{{ __("Select Route") }}</option>
                             <option value="58">Jeddah - Makkah - Madinah - Madinah Airport</option>
                             <option value="59">Parking - Haram's Station</option>
                             <option value="60">Jeddah - Makkah - Madinah - Madinah Airport with Institutional Isolation</option>
@@ -498,23 +398,23 @@
                         </div>
 
                         <div class="col-12 col-sm-12 col-md-6 col-lg-3">
-                            <label for="date-in" class="form-label">Date <span>*</span></label>
+                            <label for="date-in" class="form-label">{{__("Date")}} <span>*</span></label>
                             <input type="date" name="date-in" id="date-in" class="form-control col-3">
                         </div>
 
                         <div class="col-12 col-sm-12 col-md-6 col-lg-3">
-                            <label for="Vehicle" class="form-label">No of Vehicle <span>*</span></label>
+                            <label for="Vehicle" class="form-label">{{ __("No of Vehicle") }} <span>*</span></label>
                             <input type="text" name="Vehicle" id="Vehicle" placeholder="No of Vehicle" class="form-control col-3">
                         </div>
 
                         <div class="col-12 col-sm-12 col-md-6 col-lg-3">
-                            <label for="Guests" class="form-label">No of Guests <span>*</span></label>
+                            <label for="Guests" class="form-label">{{ __("No of Guests") }} <span>*</span></label>
                             <input type="text" name="Guests" id="Guests" placeholder="No of Guests" class="form-control col-3">
                         </div>
                         <div class="col-12 col-sm-12 col-md-6 col-lg-3">
-                            <label for="Type" class="form-label">Vehicle Type</label>
+                            <label for="Type" class="form-label">{{ __("Vehicle Type") }}</label>
                             <select class="form-control" id="Type" name="Type">
-                            <option value="">Select Vehicle Type</option>
+                            <option value="">{{ __("Select Vehicle Type") }}</option>
                             <option value="">Sedan Car</option>
                             <option value="">SUV Car</option>
                             <option value="">Bus</option>
@@ -523,19 +423,19 @@
                         </div>
 
                         <div class="col-12 col-sm-12 col-md-6 col-lg-3">
-                            <label for="Category" class="form-label">Vehicle Category</label>
+                            <label for="Category" class="form-label">{{ __("Vehicle Category") }}</label>
                             <select class="form-control" id="Category" name="Category">
-                            <option value="">Select Category</option>
-                            <option value="">VIP</option>
-                            <option value="">Premium</option>
-                            <option value="">Normal</option>
+                            <option value="">{{ __("Select Category") }}</option>
+                            <option value="">{{ __("VIP") }}</option>
+                            <option value="">{{ __("Premium") }}</option>
+                            <option value="">{{ __("Normal") }}</option>
                         </select>
                         </div>
 
                         <div class="col-12 col-sm-12 col-md-6 col-lg-3">
-                            <label for="From" class="form-label">From</label>
+                            <label for="From" class="form-label">{{ __("From") }}</label>
                             <select class="form-control" id="From" name="From">
-                            <option value="">Select Model From</option>
+                            <option value="">{{ __("Select Model From") }}</option>
                             <option value="">2010</option>
                             <option value="">2011</option>
                             <option value="">2012</option>
@@ -553,9 +453,9 @@
                         </div>
 
                         <div class="col-12 col-sm-12 col-md-6 col-lg-3">
-                            <label for="to" class="form-label">To</label>
+                            <label for="to" class="form-label">{{ __("To") }}</label>
                             <select class="form-control" id="to" name="to">
-                            <option value="">Select Model From</option>
+                            <option value="">{{ __("Select Model To") }}</option>
                             <option value="">2010</option>
                             <option value="">2011</option>
                             <option value="">2012</option>
@@ -571,7 +471,7 @@
                             <option value="">2022</option>
                         </select>
                         </div>
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                        {{-- <div class="col-12 col-sm-12 col-md-6 col-lg-6">
                             <label for="Company" class="form-label">Company</label>
                             <select class="form-control" id="Company" name="Company">
                                 <option value="">Select Company</option>
@@ -697,9 +597,9 @@
                                 <option value="223242">muasasat nawaqil aldhahabiat lilnaql albariyi</option>
                                 <option value="223245">olayaan Transport Est</option>
                               </select>
-                        </div>
+                        </div> --}}
                         <div class=" btn1 col-12 col-sm-12 col-md-6 col-lg-3">
-                            <button type="button" class="btn p-2 w-100">Search</button>
+                            <button type="button" class="btn p-2 w-100">{{ __("Search") }}</button>
                         </div>
                     </div>
                 </div>
@@ -718,8 +618,8 @@
                 <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="{{ asset('cms/assets/img/WhatsApp Image 2022-06-19 at 4.08.40 PM.svg') }}" alt="..." /></div>
                 <div class="col-xl-4 col-lg-5">
                     <div class="featured-text text-center text-lg-left">
-                        <h4>About Us</h4>
-                        <p>"Sero" is a step that started its journey from the era of the founder, may God rest his soul, whose first goal is to facilitate the matters of tourism and travel for travelers by providing multiple services at flexible prices.</p>
+                        <h4>{{ __("About Us") }}</h4>
+                        <p>{{ __("'Sero' is a step that started its journey from the era of the founder, may God rest his soul, whose first goal is to facilitate the matters of tourism and travel for travelers by providing multiple services at flexible prices.") }}</p>
                     </div>
                 </div>
             </div>
@@ -732,22 +632,22 @@
             <div class="row">
                 <div class="col-12 col-sm-12 col-md-6 col-lg-3">
                     <div class="card1 card-1">
-                        <h5>UMRAH PACKAGES</h5>
+                        <h5>{{ __("UMRAH PACKAGES") }}</h5>
                     </div>
                 </div>
                 <div class="col-12 col-sm-12 col-md-6 col-lg-3">
                     <div class="card1 card-2">
-                        <h5>HOTELS</h5>
+                        <h5>{{ __("HOTELS") }}</h5>
                     </div>
                 </div>
                 <div class="col-12 col-sm-12 col-md-6 col-lg-3">
                     <div class="card1 card-3">
-                        <h5>TRANSPORT</h5>
+                        <h5>{{ __("TRANSPORT") }}</h5>
                     </div>
                 </div>
                 <div class="col-12 col-sm-12 col-md-6 col-lg-3">
                     <div class="card1 card-4">
-                        <h5>DOMESTIC UMRAH</h5>
+                        <h5>{{ __("DOMESTIC UMRAH") }}</h5>
                     </div>
                 </div>
             </div>
@@ -761,7 +661,7 @@
                     <div class="card py-4 h-100">
                         <div class="card-body text-center">
                             <i class="fas fa-envelope text-primary mb-2"></i>
-                            <h4 class="text-uppercase m-0">Email</h4>
+                            <h4 class="text-uppercase m-0">{{ __("Email") }}</h4>
                             <hr class="my-4 mx-auto" />
                             <div class="small text-black-50"><a href="#!">info@sero.com.sa</a></div>
                         </div>
@@ -771,7 +671,7 @@
                     <div class="card py-4 h-100">
                         <div class="card-body text-center">
                             <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-                            <h4 class="text-uppercase m-0">Address</h4>
+                            <h4 class="text-uppercase m-0">{{ __("Address") }}</h4>
                             <hr class="my-4 mx-auto" />
                             <div class="small text-black-50">طريق الملك عبدالله الفرعي،المدينة المنورة </div>
                         </div>
@@ -781,7 +681,7 @@
                     <div class="card py-4 h-100">
                         <div class="card-body text-center">
                             <i class="fas fa-mobile-alt text-primary mb-2"></i>
-                            <h4 class="text-uppercase m-0">Phone</h4>
+                            <h4 class="text-uppercase m-0">{{ __("Phone") }}</h4>
                             <hr class="my-4 mx-auto" />
                             <div class="small text-black-50">+966920007075</div>
                         </div>
@@ -791,11 +691,11 @@
 
             <div class="d-flex justify-content-between flex-wrap mt-3">
                 <div class="widget widget-links col-12 col-sm-12 col-md-6 col-lg-4 text-decoration-none" style="border: 1px solid transparent; border-radius: 5px;">
-                    <h4 class="widget_title text-start" style="border-bottom: 2px solid white;">Our services</h4>
+                    <h4 class="widget_title text-start" style="border-bottom: 2px solid white;">{{ __("Our services") }}</h4>
                     <ul dir="ltr" style="height: 150px; overflow: hidden;">
-                        <li> Get a visa from anywhere in the world within 24 hours</li>
-                        <li> Connecting travelers and hotels</li>
-                        <li> Providing ground services of all kinds (providing buses, metro tickets, transportation services)</li>
+                        <li> {{ __("Get a visa from anywhere in the world within 24 hours") }}</li>
+                        <li> {{ __("Connecting travelers and hotels") }}</li>
+                        <li> {{ __("Providing ground services of all kinds (providing buses, metro tickets, transportation services)") }}</li>
                         <li> Book flights at the lowest prices with a group of airlines</li>
                         <li> Designing flexible and special packages to suit Umrah performers and pilgrims of all levels.</li>
                         <li> Providing reservations for all hotels around the world</li>
@@ -803,19 +703,19 @@
                 </div>
 
                 <div dir="ltr" class="widget widget-links col-12 col-sm-12 col-md-6 col-lg-4" style="border: 1px solid transparent; border-radius: 5px;">
-                    <h4 class="widget_title text-start" style="border-bottom: 2px solid white;">Quick links</h4>
+                    <h4 class="widget_title text-start" style="border-bottom: 2px solid white;">{{ __("Quick links") }}</h4>
 
                     <div class="widget-contact-list">
                         <ul dir="ltr">
                             <li>
-                                <a href="index.html"> Home</a>
+                                <a href="{{ route("home") }}"> {{ __("Home") }}</a>
                             </li>
                             <li>
-                                <a href="#about1"> About</a>
+                                <a href="#about1"> {{ __("About") }}</a>
                             </li>
                             <li>
                                 <!-- link trigger modal -->
-                                <a href="" data-bs-toggle="modal" data-bs-target="#Modal">privacy policy</a>
+                                <a href="" data-bs-toggle="modal" data-bs-target="#Modal">{{ __("privacy policy") }}</a>
 
                                 <!-- Modal -->
                                 <div class="modal modal-fullscreen-lg-down fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
@@ -1005,7 +905,7 @@
 
 
                 <div class="widget widget-links col-12 col-sm-12 col-md-6 col-lg-4" style="border: 1px solid transparent; border-radius: 5px;">
-                    <h4 class="widget_title text-start" style="border-bottom: 2px solid white;">Social Media</h4>
+                    <h4 class="widget_title text-start" style="border-bottom: 2px solid white;">{{ __("Social Media") }}</h4>
                     <div class="social d-flex justify-content-center" style="margin-left: auto; margin-right: auto;">
                         <a class="mx-2 " href="https://twitter.com/serovision1?s=21&t=ObGKxjr4RhzOnCC9EgP2mg"><i class="fab fa-twitter "></i></a>
                         <a class="mx-2 " href="https://www.facebook.com/profile.php?id=100082581573020"><i class="fab fa-facebook-f "></i></a>
@@ -1019,7 +919,7 @@
     </section>
     <!-- Footer-->
     <footer class="footer bg-black small text-center text-white-50">
-        <div class="container px-4 px-lg-5">All rights reserved Privacy Policy &copy; Sero 2022 - 23</div>
+        <div class="container px-4 px-lg-5">{{ __("All rights reserved Privacy Policy") }} &copy; Sero 2022 - 23</div>
     </footer>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
