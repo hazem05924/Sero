@@ -16,6 +16,27 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{{ asset('cms/css/styles.css') }}" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('cms/css/style2.css') }}">
+    <style>
+        ::-webkit-scrollbar{
+             width: 10px;
+
+        }
+        ::-webkit-scrollbar-track {
+            background:white;
+
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 50px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        ::-webkit-scrollbar-thumb:active {
+            background: #212375;
+        }
+
+    </style>
 </head>
 
 <body id="page-top">
