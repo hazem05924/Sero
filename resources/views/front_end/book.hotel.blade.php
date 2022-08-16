@@ -16,6 +16,27 @@
     <!-- Modernizr -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Hotel</title>
+    <style>
+        ::-webkit-scrollbar{
+             width: 10px;
+
+        }
+        ::-webkit-scrollbar-track {
+            background:white;
+
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 50px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        ::-webkit-scrollbar-thumb:active {
+            background: #212375;
+        }
+
+    </style>
 </head>
 
 <body>

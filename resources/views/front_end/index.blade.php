@@ -19,6 +19,28 @@
     <link rel="stylesheet" href="{{ asset('cms/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
 
     <link rel="stylesheet" href="{{ asset('cms/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
+    <style>
+        ::-webkit-scrollbar{
+             width: 10px;
+
+        }
+        ::-webkit-scrollbar-track {
+            background:white;
+
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 50px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        ::-webkit-scrollbar-thumb:active {
+            background: #212375;
+        }
+
+    </style>
+
 
 </head>
 
