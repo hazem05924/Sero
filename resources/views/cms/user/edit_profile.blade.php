@@ -22,7 +22,14 @@
     <div class="container rounded bg-white mt-5 mb-5"> 
         <div class="row"> <div class="col-md-3 border-right"> 
             <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-                <img class="rounded-circle  " width="100" height="100" src="{{ asset('storage/images/register/'.$users->image) }}">
+                @if ($users->image !== '')
+                    
+                <img class="rounded-circle" width="100" height="100" src="{{ asset('storage/images/register/'.$users->image) }}">
+                @else
+                <img class="rounded-circle" width="100" height="100" src="{{ asset('storage/images/userSolid.png') }}">
+                
+                @endif
+                
                 <label for="image" class="btn btn-outline-success btn-sm mt-3">  اضافة صورة <i class="fas fa-plus"></i></label>
                 <input type="file" id="image" name="image" hidden/>
                 <span class="font-weight-bold">{{ $users->first_name }}</span>

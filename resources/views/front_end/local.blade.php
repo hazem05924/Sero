@@ -77,7 +77,7 @@
                         <a class="dropdown-toggle text-decoration-none text-white" href="#" role="button"
                             id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                             @if (auth('web')->user()->image == '')
-                            <img src="{{ asset('storage/images/user.jpg') }}" alt="Logo" style="width: 25px; height: 25px; border-radius: 50%">
+                            <img src="{{ asset('storage/images/userSolid.png') }}" alt="Logo" style="width: 25px; height: 25px; border-radius: 50%">
                             
                             @else
                             <img src="{{ asset('storage/images/register/'.auth('web')->user()->image) }}" alt="Logo" style="width: 25px; height: 25px;">
@@ -132,11 +132,12 @@
 
                 <div class="panel" id="one-panel">
                     <div class="add1 d-flex flex-wrap justify-content-start align-content-center align-items-center">
+                        <form action="{{ route("search-hotels") }}" class="d-flex flex-wrap justify-content-start align-content-center align-items-center">
                         <div class="col-12 col-sm-12 col-md-6 col-lg-3">
                             <label for="Location" class="form-label">{{ __("Destination") }} <span>*</span></label>
-                            <select id="Location" class="form-control col-3" name="Location">
-                            <option value="Makkah">{{ __("Makkah") }}</option>
-                            <option value="Madinah">{{ __("Madinah") }}</option>
+                            <select id="Location" class="form-control col-3" name="city_id" @if( request()->city_id) value={{request()->city->name}} @endif>
+                            <option  value="7"  >{{ __("Makkah") }}</option>
+                            <option value="8">{{ __("Madinah") }}</option>
                           </select>
                         </div>
                         <div class="col-12 col-sm-12 col-md-6 col-lg-3">
@@ -145,7 +146,7 @@
                         </div>
                         <div class="col-12 col-sm-12 col-md-6 col-lg-3">
                             <label for="date-out" class="form-label">{{__("Checkout")}} <span>*</span></label>
-                            <input type="date" name="date-out" id="date-out" class="form-control col-3">
+                            <input type="text" name="name" @if( request()->name) value={{request()->name}} @endif id="date-out" class="form-control col-3">
                         </div>
                         {{-- <div class="col-12 col-sm-12 col-md-6 col-lg-3">
                             <label for="Nationality" class="form-label">Nationality</label>
@@ -399,8 +400,9 @@
                         </div>
 
                         <div class="btn1 col-12 col-sm-12 col-md-6 col-lg-3">
-                            <button type="button" class="btn p-2 w-100">{{__("Search")}}</button>
+                            <button type="submit" class="btn p-2 w-100">{{__("Search")}}</button>
                         </div>
+                    </form>
 
                     </div>
                 </div>

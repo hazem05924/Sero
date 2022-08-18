@@ -88,7 +88,7 @@
                         <a class="dropdown-toggle text-decoration-none text-white" href="#" role="button"
                             id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                             @if (auth('web')->user()->image == '')
-                            <img src="{{ asset('storage/images/user.jpg') }}" alt="Logo" style="width: 25px; height: 25px; border-radius: 50%">
+                            <img src="{{ asset('storage/images/userSolid.png') }}" alt="Logo" style="width: 25px; height: 25px; border-radius: 50%">
                             
                             @else
                             <img src="{{ asset('storage/images/register/'.auth('web')->user()->image) }}" alt="Logo" style="width: 25px; height: 25px;">
@@ -143,6 +143,7 @@
             </ul>
         </div>
         </div>
+    
     </nav>
     <!-- Masthead-->
     <header class="masthead">
