@@ -11683,7 +11683,7 @@ input {
     border-radius: 0;
     text-align: center;
     background-color: transparent;
-    color: white;
+    color: black !important;
 }
 
 .spinner {
@@ -11721,4 +11721,48 @@ input {
 .masthead h1 span {
     font-size: 6.5rem !important;
     display: block;
+}
+
+.btn1 {
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media (max-width: 767px) {
+    .btn1 {
+        position: absolute;
+        top: 108%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media (min-width: 768px) {
+    .btn1 {
+        position: absolute;
+        top: 115%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        overflow: hidden;
+    }
+}
+
+@media (min-width: 992px) {
+    .btn1 {
+        position: absolute;
+        top: 130%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media (min-width: 1200px) {
+    .btn1 {
+        position: absolute;
+        top: 110%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 }

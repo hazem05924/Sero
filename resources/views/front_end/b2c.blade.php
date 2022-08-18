@@ -57,11 +57,11 @@
                 <ul class="navbar-nav ms-auto d-flex justify-content-center align-content-center align-items-center">
                     <li class="nav-item"><a class="nav-link" href="{{ route('home') }}"><i class="fas fa-home"></i>
                             {{ __('Home') }}</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url("cms/web/login") }}" 
+                    <li class="nav-item"><a class="nav-link" href="{{ url("cms/web/login") }}"
                             ><i class="fas fa-sign-in-alt"></i>
                             {{ __('sign in') }}</a></li>
 
-                    
+
                     <div class="dropdown">
                         {{-- <a class="dropdown-toggle text-decoration-none text-white" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"><img src="{{asset('cms/assets/img/en-US.png')}}" alt="" style="width: 25px; height: 25px; border-radius: 50%;"> En - English</a> --}}
                         <a class="dropdown-toggle text-decoration-none text-white" href="#" role="button"
@@ -88,8 +88,13 @@
                         <a class="dropdown-toggle text-decoration-none text-white" href="#" role="button"
                             id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                             @if (auth('web')->user()->image == '')
+<<<<<<< HEAD
                             <img src="{{ asset('storage/images/userSolid.png') }}" alt="Logo" style="width: 25px; height: 25px; border-radius: 50%">
                             
+=======
+                            <img src="{{ asset('storage/images/user.jpg') }}" alt="Logo" style="width: 25px; height: 25px; border-radius: 50%">
+
+>>>>>>> dc098fdea87efa7a724a3879560b4881b37a3f8d
                             @else
                             <img src="{{ asset('storage/images/register/'.auth('web')->user()->image) }}" alt="Logo" style="width: 25px; height: 25px;">
 
@@ -111,7 +116,7 @@
                                 </a>
                             </li>
                         </ul>
-                    </div> 
+                    </div>
 
 
 
@@ -138,7 +143,7 @@
                         </ul>
                     </div> --}}
                     @endif
-                    
+
             </div>
             </ul>
         </div>
@@ -160,9 +165,8 @@
             <input class="radio" id="two" name="group" type="radio">
             <input class="radio" id="three" name="group" type="radio">
             <div class="tabs col-8 d-flex justify-content-center ">
-                <label class="tab" id="one-tab" for="one"><i class="fab fa-cc-visa"></i> {{ __("Umrah Package +Visa") }}</label>
+                <label class="tab" id="one-tab" for="one"><i class="fab fa-cc-visa"></i> {{ __("Visa") }}</label>
                 <label class="tab" id="two-tab" for="two"><i class="fas fa-plane-departure"></i>{{ __("Flights") }}</label>
-                <a href="local.html" class="tab text-decoration-none" id="three-tab" for="three">{{ __("Domestic Umrah") }}</a>
             </div>
             <div class="panels col-10">
 
@@ -170,22 +174,22 @@
                     <div class="add1 d-flex flex-wrap justify-content-start align-content-center align-items-center">
                         <div class="col-12 col-sm-12 col-md-6 col-lg-4">
                             <label for="Location" class="form-label">{{ __("Destination") }} <span>*</span></label>
-                            <select id="Location" class="form-control col-3" name="Location">
+                            <select id="Location" class="form-control col-4" name="Location">
                                 <option value="Makkah">{{ __("Makkah") }}</option>
                                 <option value="Madinah">{{ __("Madinah") }}</option>
                             </select>
                         </div>
                         <div class="col-12 col-sm-12 col-md-6 col-lg-4">
                             <label for="date-in" class="form-label">{{ __("From") }} <span>*</span></label>
-                            <input type="date" name="date-in" id="date-in" class="form-control col-3">
+                            <input type="date" name="date-in" id="date-in" class="form-control col-4">
                         </div>
                         <div class="col-12 col-sm-12 col-md-6 col-lg-4">
                             <label for="date-out" class="form-label">{{ __("To") }} <span>*</span></label>
-                            <input type="date" name="date-out" id="date-out" class="form-control col-3">
+                            <input type="date" name="date-out" id="date-out" class="form-control col-4">
                         </div>
 
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-4 p-1">
-                            <label for="input-group" class="form-label p-1">{{ __("Details") }} <span>*</span></label>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+                            <label for="input-group" class="form-label">{{ __("Details") }} <span>*</span></label>
                             <div class="input-group" id="input-group">
                                 <input type="text" class="form-control border-0" placeholder="2 {{ __("Traveller(s)") }}">
                                 <input type="text" class="form-control border-0" placeholder="0 {{ __("Children(s)") }}">
@@ -844,427 +848,109 @@
                                 <a href="" data-bs-toggle="modal" data-bs-target="#Modal">{{ __("privacy policy") }}</a>
 
                                 <!-- Modal -->
-                                <div class="modal modal-fullscreen-lg-down fade" id="Modal" tabindex="-1"
-                                    aria-labelledby="ModalLabel" aria-hidden="true">
+                                <div class="modal modal-fullscreen-lg-down fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h5 class="modal-title" id="ModalLabel">Modal title</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body text-black">
                                                 <div class=" p-5">
-                                                    <h1 class="text-center p-3">Privacy Policy</h1>
-                                                    <h3 class="text-danger">Sero com platform rules and policies</h3>
-                                                    <p>Our company and all our systems are subject to the general system
-                                                        and policies of the country of origin, which is the Kingdom of
-                                                        Saudi Arabia. Currently, we accept online payments by using
-                                                        credit cards,
-                                                        which include “Visa and MasterCard” cards, and they can be
-                                                        debited through the available currency In the services via the
-                                                        platform, which can be in Saudi riyals or US dollars, and in the
-                                                        event that
-                                                        you wish to use the online electronic payment method, there must
-                                                        be a complete agreement and authorization and a match in the
-                                                        details in the customer ID and ID The ID of the card holder,
-                                                        which must
-                                                        be exactly the same to make purchases</p>
+                                                    <h1 class="text-center p-3">{{ __("privacy policy") }}</h1>
+                                                    <h3 class="text-danger">{{ __("Sero com platform rules and policies") }}</h3>
+                                                    <p>Our company and all our systems are subject to the general system and policies of the country of origin, which is the Kingdom of Saudi Arabia. Currently, we accept online payments by using credit cards, which include “Visa and MasterCard” cards and can be debited through the currency available in the services via the platform, which can be in Saudi riyals or US dollars, In the event that you wish to usee the electronic payment method via the Internet, there must be a match and complete authorization and a match in the details in the customer ID and the ID of the card holder, which must be completely identical to make purchases</p>
 
-                                                    <p>In cases of refund, only refundable amounts of transactions made
-                                                        on this electronic platform will be refunded to the original
-                                                        payment method through which the payment for the transactions
-                                                        was completed.</p>
+                                                    <p>In cases of refund, only refundable amounts of transactions made on this electronic platform will be refunded to the original payment method through which the payment for the transactions was completed.</p>
 
-                                                    <p>Some basic data related to delivery information, such as customer
-                                                        name, location, postal address and contact numbers, will be
-                                                        stored for the purposes of ensuring delivery. Other personally
-                                                        identifiable
-                                                        information will not be stored.
-                                                    </p>
+                                                    <p>Some basic data related to delivery information, such as customer name, location, postal address and contact numbers, will be stored for the purposes of ensuring delivery. Other personally identifiable information will not be stored.</p>
 
-                                                    <h3 class="text-danger">Cancellation fees</h3>
+                                                    <h3 class="text-danger">Cancellation fees
+                                                    </h3>
                                                     <ul>
-                                                        <li>If cancellation is made between 0 days – 24 days prior to
-                                                            the departure date, 100% of the reservations value will be
-                                                            deducted and will not be refunded in any way.</li>
-                                                        <li>If the cancellation is made within a period of time between
-                                                            25 to 60 days before the scheduled departure date, 50% of
-                                                            the reservation value will be deducted.</li>
-                                                        <li>If the cancellation is made within a period of time equal to
-                                                            or greater than 61 days from the scheduled departure date,
-                                                            only 10% of the total value of the reservations will be
-                                                            charged.</li>
-                                                        <li>In the event that the name of the data provided in the
-                                                            reservations does not match the data details in the
-                                                            passport, a fine of only 150 Saudi riyals will be required
-                                                            to change the name of the traveler
-                                                            if the change is possible</li>
-                                                        <li>For hotels, the siro.com platform does not charge any
-                                                            special additional fees to provide cancellation services as
-                                                            an additional fee in addition to the cancellation fees
-                                                            charged by the hotel in its
-                                                            cancellation policy</li>
+                                                        <li>If cancellation is made between 0 days – 24 days prior to the departure date, 100% of the reservations value will be deducted and will not be refunded in any way.</li>
+
+                                                        <li>If the cancellation is made within a period of time between 25 to 60 days before the scheduled departure date, 50% of the reservation value will be deducted.</li>
+
+                                                        <li>If the cancellation is made within a period of time equal to or greater than 61 days from the scheduled departure date, only 10% of the total value of the reservations will be charged.</li>
+                                                        <li>In the event that the name of the data provided in the reservations does not match the data details in the passport, a fine of only 150 Saudi riyals will be required to change the name of the traveler if the change is possible</li>
+
+                                                        <li>For hotels, the siro.com platform does not charge any special additional fees to provide cancellation services as an additional fee in addition to the cancellation fees charged by the hotel in its cancellation policy</li>
                                                     </ul>
 
                                                     <h3 class="text-danger">General Provisions</h3>
 
-                                                    <p>Through our platform, you can book and travel to any specific
-                                                        destinations you wish, and these destinations may involve
-                                                        greater risks than others, whatever kind of risk, and you will
-                                                        have to bear all
-                                                        responsibility in terms of costs, consequences and full personal
-                                                        responsibility</p>
+                                                    <p>Through our platform, you can book and travel to any specific destinations you wish, and these destinations may involve greater risks than others, whatever kind of risk, and you will have to bear all responsibility in terms of costs, consequences and full personal responsibility</p>
 
-                                                    <p>Sero.com requests its travelers and all guests to consult the
-                                                        local authorities in their country or country of travel, and to
-                                                        evaluate travel ban decisions, warnings, advertisements or all
-                                                        instructions
-                                                        issued by local authorities before booking travel to
-                                                        international destinations or local in general, and certain
-                                                        regions and destinations in particular without any
-                                                        responsibility on the platform</p>
+                                                    <p>sero com platform requests its travelers and all guests to consult the local authorities in their country or the country of travel, and to evaluate travel ban decisions, warnings, advertisements or all instructions issued by local authorities before booking travel to international or domestic destinations in general, certain regions and destinations Especially without any responsibility on the platform</p>
 
-                                                    <p>By providing and selling travel and reservation services to
-                                                        certain countries or destinations, the siro com platform is not
-                                                        in any way responsible or liable for the warning or risks in
-                                                        those destinations,
-                                                        and the siro platform is not considered a guarantor or
-                                                        recommender of travel to these destinations, and the siro
-                                                        platform does not bear any responsibility For damages, losses or
-                                                        delays that may result
-                                                        from failure to provide correct documents relating to travel,
-                                                        entry, exit or length of stay at those destinations.</p>
+                                                    <p>By providing and selling travel and reservation services to certain countries or destinations, the siro com platform is not in any way responsible or liable for the warning or risks in those destinations, and the siro platform is not considered a guarantor or recommender of travel to these destinations, and the siro platform does not bear any responsibility for Damages, losses or delays that may result from failure to provide correct documents relating to travel, entry, exit or length of stay at those destinations</p>
 
-                                                    <p>SIRO and its affiliates, agencies, or suppliers are in no way
-                                                        liable for errors, acts, omissions, representations, warranties,
-                                                        breaches or negligence made by any airline, hotel or other
-                                                        service provider;
-                                                        The platform is not responsible for any personal injury, death,
-                                                        property damage, or any other damages, fees or expenses
-                                                        resulting from that, and neither the Sero platform nor any of
-                                                        the companies
-                                                        and agents dealing with it or any of the service providers of
-                                                        the platform bear any responsibility They will not issue a
-                                                        refund in the event of any delay, cancellation, tax increase,
-                                                        force majeure,
-                                                        strikes and riots, or any other act beyond their direct control,
-                                                        The platform shall not be liable for any additional expenses,
-                                                        litigation, delay, redirection or pleading to any parties or
-                                                        authorities.</p>
+                                                    <p>Sero Platform and its affiliates, agencies, or suppliers are not responsible in any way for errors, acts, omissions, representations, warranties, violations or negligence made by any airline, hotel or other service provider, and the platform is not responsible for Any personal injury, death, property damage, or any other damages, fees or expenses arising therefrom, Neither Sero nor any of the companies and agents it deals with or any of the service providers of the platform assume any responsibility and will not refund the money in the event of any delay, cancellation of reservation, increase in taxes, force majeure, strikes and riots, or any other actions Others are out of direct control, and the platform shall not be liable for any additional expenses, litigation, delay, redirection, or litigation to any parties or authorities</p>
 
-                                                    <p>Sero Platform reserves its exclusive and complete rights and in
-                                                        its sole discretion to delete, change, limit or discontinue the
-                                                        Site or any material posted on it, and is under no obligation to
-                                                        take into
-                                                        account the needs of any user in connection therewith.
-                                                    </p>
+                                                    <p>Sero Platform reserves its exclusive and complete rights and in its sole discretion to delete, change, limit or discontinue the Site or any material posted on it, and is under no obligation to take into account the needs of any user in connection therewith.</p>
 
-                                                    <p>Sero Platform reserves all its exclusive rights to prevent or
-                                                        deny access to any user of this website or any part of it
-                                                        without prior notice.</p>
+                                                    <p>Sero Platform reserves all its exclusive rights to prevent or deny access to any user of this website or any part of it without prior notice.</p>
 
-                                                    <p>By agreeing to the terms and conditions relating to any of the
-                                                        operations on this platform, you expressly and are bound to
-                                                        agree to be bound by the terms and conditions of purchase and
-                                                        services imposed
-                                                        by any service provider or supplier you choose to deal with,
-                                                        including but not limited to, Pay all amounts when due in
-                                                        accordance with the restrictions and rules imposed by the
-                                                        provider or supplier
-                                                        of services in relation to the availability of the services and
-                                                        the timely use of prices, products or services, and you
-                                                        acknowledge that there may be additional requirements from some
-                                                        suppliers and/or
-                                                        third party parties may include that you sign a waiver of
-                                                        liability prior to providing or participating in the service
-                                                        and/or activity they provide, and that you are fully aware that
-                                                        any violation
-                                                        of the terms, conditions, rules and restrictions imposed by the
-                                                        supplier or suppliers may result in Canceling your reservation
-                                                        or reservations, denying you access to the applicable product or
-                                                        travel
-                                                        and accommodation services, forfeiting any monies paid for your
-                                                        reservation or reservations, or debiting your account for any
-                                                        costs incurred by the Site as a result of such violations</p>
+                                                    <p>By agreeing to the terms and conditions relating to any of the operations on this platform, you expressly and are bound to agree to be bound by the terms and conditions of purchase and services imposed by any provider or supplier of the service you choose to deal with, including, but not limited to, the payment of all amounts when due in accordance with to the restrictions and rules imposed by the provider or supplier of the services in relation to the availability of the services and the timely use of prices, products or services, and you acknowledge that there may be additional requirements from some suppliers and/or a third party In relation to a third party, the provision of the Service or participation in the Participation, and that you are fully aware that the terms, conditions, rules, and restrictions imposed on the Offer may result in the cancellation of your reservations, or that the Sero Platform debits your account for costs incurred by the Platform as a result of your stay</p>
 
-                                                    <p>No waiver of the Sero platform will be deemed or enforceable in
-                                                        any of the terms and conditions and in any form whatsoever
-                                                        binding, what is stated in writing on the site, or approved and
-                                                        signed by its
-                                                        authorized representative in accordance with the regulations and
-                                                        laws</p>
+                                                    <p>No waiver by Sero platform shall be deemed or enforceable in any of the terms and conditions and in any form whatsoever, as is binding, what is stated in writing on the site, or approved and signed by its authorized representative in accordance with the regulations and laws</p>
 
-                                                    <p>All these terms and conditions shall be governed by and construed
-                                                        in accordance with the laws and regulations of the Kingdom of
-                                                        Saudi Arabia, and any dispute shall be subject to the exclusive
-                                                        jurisdiction
-                                                        of the appropriate and competent courts and judicial organs
-                                                        located in the Kingdom of Saudi Arabia.</p>
+                                                    <p>All these terms and conditions shall be governed by and construed in accordance with the laws and regulations in force in the Kingdom of Saudi Arabia, and any dispute shall be subject to the exclusive jurisdiction of the appropriate and competent courts and judicial organs located in the Kingdom of Saudi Arabia.</p>
 
                                                     <h3 class="text-danger">Payment terms and conditions</h3>
 
-                                                    <p>Neither Sero nor its developer will, and will not, request, store
-                                                        or share any data related to customers' credit cards, login data
-                                                        for their bank accounts, or prepaid cards over the phone or
-                                                        e-mail under
-                                                        any circumstances.</p>
+                                                    <p>Neither the Sero platform nor its developer will and will not request, store or share any data related to customers' credit cards, login data for their bank accounts, or prepaid cards over the phone or e-mail and under any circumstances</p>
 
-                                                    <p>In the event that there is a note on payments through our
-                                                        electronic payment gateway, our security team will contact you
-                                                        via e-mail from the following address ccc@zowar.com.sa, and a
-                                                        photocopy of the
-                                                        credit card will be requested from the front and from Back on
-                                                        the CVV code for verification by securely calling the email
-                                                        address: ccc@zowar.com.sa</p>
+                                                    <p>In the event of a note on payments through our electronic payment gateway, our security team will contact you via e-mail from the following address info@sero.com.sa, and a photo of the credit card will be requested from the front and back on the CVV code For verification, please contact the secure email address: info@sero.com.sa</p>
 
-                                                    <p>In the event that you receive any communication or email from
-                                                        another email address purporting to be sent to you by the Siro
-                                                        platform and requesting any personal or security data, please
-                                                        never reply
-                                                        to that email, and please forward such message to our mail The
-                                                        specialized e-mail is ccc@zowar.com.sa. You will also have to
-                                                        delete, directly and immediately, for this unknown message.</p>
+                                                    <p>In the event that you receive any communication or email from another email address purporting to be sent to you by the Siro platform and requesting any personal or security data, please never reply to that email, and please forward such message to our specialized email which is info@sero.com.sa You will also have to delete, directly and immediately, this anonymous message</p>
 
-                                                    <h3 class="text-danger">Payment for the services provided by the
-                                                        Sero platform can be paid through the following channels:
-                                                    </h3>
+                                                    <h3 class="text-danger">Payment for the services provided by the Sero platform can be paid through the following channels:</h3>
 
                                                     <ul>
-                                                        <li>The electronic payment gateway page on our website </li>
-                                                        <li>Electronic payment via the secure link on the domain of the
-                                                            Siro platform </li>
-                                                        <li>Deposit cash into the Siro platform account at the Saudi
-                                                            British Bank according to the following IBAN data (SABB IBAN
-                                                            SA604500000026374033001) </li>
+                                                        <li>The electronic payment gateway page on our website</li>
+                                                        <li>Electronic payment via the secure link on the domain of the Siro platform</li>
+                                                        <li>Deposit cash into the Siro platform account at Alinma Bank according to the following IBAN data (IBAN SA1205000068203403610000)</li>
                                                     </ul>
 
-                                                    <p>The user will be warned, and confirmed to agree that he will
-                                                        create electronic payments and that he will issue or create
-                                                        electronic payment instructions and that he will provide his
-                                                        card or credit card
-                                                        data or his or her bank data</p>
+                                                    <p>The user will be warned, and confirmed to agree that he will create electronic payments and that he will issue or create electronic payment instructions and that he will provide his card or credit card data or his or her bank data</p>
 
-                                                    <p>The user is considered the legal user and authorized to use his
-                                                        credit card or bank account, and he is considered legally
-                                                        authorized to carry out payments, withdrawals and bank debits
-                                                        from his accounts
-                                                        in favor of these operations</p>
+                                                    <p>The user is considered the legal user and authorized to use his credit card or bank account, and he is considered legally authorized to carry out payments, withdrawals and bank debits from his accounts in favor of these operations</p>
 
-                                                    <p>The user fully bears all responsibility related to the need to
-                                                        ensure that he has provided the card or bank account details
-                                                        accurately and correctly</p>
+                                                    <p>The user fully bears all responsibility related to the need to ensure that he has provided the card or bank account details accurately and correctly</p>
 
-                                                    <p>The user will authorize the debiting of the credit card or/and
-                                                        the bank account specified by him for payment in favor of the
-                                                        Sero platform</p>
+                                                    <p>The user will authorize the debiting of the credit card or/and the bank account specified by him for payment in favor of the Sero platform</p>
 
-                                                    <p>The user / customer bears all responsibility for providing
-                                                        sufficient cash balance in the credit card / or bank account
-                                                        that he will use during the payment process for the financial
-                                                        dues and invoices
-                                                        resulting from the services and reservations chosen by him,
-                                                        Please note that all payments are inclusive of all related fees
-                                                    </p>
+                                                    <p>The user / customer bears all responsibility for providing sufficient cash balance in the credit card / or bank account that he will use during the payment process for the financial dues and invoices resulting from the services and reservations chosen by him, bearing in mind that all payments are inclusive of all fees related to</p>
 
-                                                    <p>The user/client agrees in full capacity, that the Sero platform
-                                                        and/or the electronic payment service providers have the right,
-                                                        within the framework of the applicable laws and regulations and
-                                                        within
-                                                        the scope of the law, to use, collect, or disclose the personal
-                                                        information of the customer, to the responsible and judicial
-                                                        authorities Legal, law enforcement, and in full cooperation with
-                                                        the authorities,
-                                                        or in response to any legal requirements
-                                                    </p>
 
-                                                    <h3 class="text-danger">Terms and Conditions Related to Umrah Visa
-                                                    </h3>
+                                                    <h3 class="text-danger">Visa Terms and Conditions</h3>
 
-                                                    <p>Nationals of the Arabian Gulf [Gulf Cooperation Council
-                                                        Countries] do not need to obtain an Umrah visa, and these terms
-                                                        and conditions relate to pilgrims of all other nationalities
-                                                        outside the GCC countries.</p>
+                                                    <p>Nationals of the Arabian Gulf [GCC countries] do not need to obtain a visa, and these terms and conditions relate to all other nationalities outside of the Gulf Cooperation Council countries</p>
 
                                                     <ul>
-                                                        <li>Umrah visa is not valid for work or residence </li>
-                                                        <li>The standard legal period for an Umrah visa is 15 days
-                                                            (unless the visa states otherwise in the sticker or printed
-                                                            visa document). </li>
-                                                        <li>The pilgrim/pilgrims must not “backward” or exceed the legal
-                                                            period of the visa, and a violation of this is considered a
-                                                            violation of the laws of the Kingdom of Saudi Arabia, and
-                                                            the violator will
-                                                            be subject to legal procedures and legal penalties, which
-                                                            may include but are not limited to financial fines Or even
-                                                            reach a ban on entering Saudi Arabia in the future</li>
-                                                        <li>Every pilgrim with a valid Umrah visa must comply fully with
-                                                            the terms, conditions and procedures for flights </li>
-                                                        <li>Umrah visa holders must enter and leave Saudi Arabia “by
-                                                            air” through: King Khalid International Airport in the
-                                                            capital Riyadh, King Abdulaziz International Airport in
-                                                            Jeddah, Prince Muhammad bin
-                                                            Abdulaziz Airport in Madinah, and Prince Abdul Mohsen
-                                                            Airport Bin Abdulaziz in Yanbu, without passing through any
-                                                            of the other airports in the Kingdom of Saudi Arabia </li>
-                                                        <li>Umrah visa holders who entered the Kingdom of Saudi Arabia
-                                                            through the two airports: King Abdulaziz International in
-                                                            Jeddah, and Prince Muhammad bin Abdulaziz International in
-                                                            Madinah, must leave
-                                                            only through the two airports: King Abdulaziz International
-                                                            in Jeddah, or Prince Muhammad Bin Abdulaziz International
-                                                            Airport in Madinah, without passing through any of the other
-                                                            Saudi airports
-                                                        </li>
-                                                        <li>Umrah visa holders who entered through King Khalid
-                                                            International Airport in the capital, Riyadh, or King Fahd
-                                                            International Airport in Dammam, you can only depart from
-                                                            King Khalid International Airport
-                                                            in the capital, Riyadh, or King Fahd International Airport
-                                                            in Dammam, or King Abdulaziz International in Jeddah or
-                                                            Prince Muhammad bin Abdulaziz International Airport in
-                                                            Madinah without crossing
-                                                            or passing through any other Saudi airports</li>
-                                                        <li>Umrah visa holders who entered through King Khalid
-                                                            International Airport in the capital, Riyadh, must have
-                                                            confirmed travel tickets for the entire itinerary (including
-                                                            international flights and domestic
-                                                            flights) through Jeddah or Medina, and the limit must be The
-                                                            minimum waiting time on domestic flights does not exceed
-                                                            four hours. In addition, pilgrims must come to the airport
-                                                            no less than four
-                                                            hours before the departure time of their international
-                                                            flights, which are related to their domestic flights. </li>
-                                                        <li>Umrah pilgrims must understand, confirm and abide by the
-                                                            following requirements in order to obtain the Umrah visa
-                                                        </li>
-                                                        <li>The passport must be valid and valid for a period of no less
-                                                            than six months, and it must be able to enter the Kingdom of
-                                                            Saudi Arabia and then the next destination, and it must have
-                                                            at least two
-                                                            blank pages in the passport corresponding to one another.
-                                                        </li>
-                                                        <li>The pilgrim must cooperate fully with the work team of the
-                                                            Sero platform to fill in and verify the data as follows</li>
-                                                        <li>The pilgrim is responsible and accountable for the
-                                                            correctness and safety of all data he submits to the
-                                                            platform, as well as the safety and validity of all
-                                                            documents that he will submit to the Siro
-                                                            platform team, including all documents and data that the
-                                                            pilgrim himself uploads on the website for siro . platform
-                                                        </li>
-                                                        <li>All women and females traveling for the purpose of Umrah
-                                                            must have a Mahram, and documents proving the relationship
-                                                            must be uploaded through the Sero platform or submitted to
-                                                            the platform’s team
-                                                            during the process of applying for the Umrah visa, and women
-                                                            over the age of forty-five can The year of travel without a
-                                                            mahram but with organized groups, however, they will have to
-                                                            submit a
-                                                            no-objection letter from one of their first-degree relatives
-                                                            such as a husband, son or brother, authorizing them to
-                                                            travel for the purpose of Umrah, mentioning the name of the
-                                                            group with which
-                                                            they will travel, and this letter must be notarized </li>
-                                                        <li>According to the statutory procedures, male pilgrims who
-                                                            hold one of the following nationalities: (India, Pakistan,
-                                                            Sudan, Bangladesh, Yemen, Nigeria, and Chad), and those
-                                                            under the age of 40, must
-                                                            have a female companion of the same degree with them. First,
-                                                            they must present a notarized relative </li>
+                                                        <li>Tourist visa is not valid for work or residence</li>
 
-                                                        <li>The pilgrim will have to have a confirmed, non-refundable
-                                                            return ticket as part of his Umrah program reservations
-                                                            package, and also includes the main services within the
-                                                            Umrah program that the pilgrim
-                                                            has purchased</li>
+                                                        <li>The standard duration of a tourist visa is 90 days (unless the visa states otherwise on the sticker or printed visa document).</li>
 
-                                                        <li>After completing the visa application submission,
-                                                            confirmation and acceptance processes, the pilgrim will have
-                                                            to contact the nearest local foreign travel agent approved
-                                                            in his country of residence,
-                                                            who will complete the travel visa procedures from the Saudi
-                                                            Consulate in that country, and here the pilgrim acknowledges
-                                                            the cooperation Completely with the local foreign travel
-                                                            agent approved
-                                                            in his country, by submitting all required legal and
-                                                            necessary documents, which include letters,Medical
-                                                            vaccinations (if needed), passport and other documents
-                                                            required for travel, for your information
-                                                            Failure in these procedures will in turn lead to the failure
-                                                            of the visa issuance procedures, and any delay caused by the
-                                                            pilgrim will result in postponing the Umrah trip, or even
-                                                            canceling it
-                                                            completely without any responsibility on the platform, and
-                                                            the Siro platform does not bear the slightest
-                                                            responsibility, and the pilgrim must In this case, you will
-                                                            bear all expenses and fees
-                                                            related to changing the dates of the reservations, or any
-                                                            penalties related to their cancellation</li>
+                                                        <li>The tourist must not “default” or exceed the legal period of the visa, and violating this is considered a violation of the laws of the Kingdom of Saudi Arabia, and the violator will be subject to legal procedures and legal penalties, which may include, but are not limited to financial fines or even access to a ban on entering the Kingdom of Saudi Arabia in the future</li>
 
-                                                        <li>Umrah visa fees are not refundable or refundable in any way,
-                                                            if the pilgrim decides to cancel the Umrah trip after the
-                                                            issuance of the visa reference number (MOVA), [issued after
-                                                            the success of the
-                                                            Umrah visa application], before the visa is issued, there is
-                                                            a possibility to cancel the Umrah package The Umrah program,
-                                                            taking into account the cancellation conditions related to
-                                                            each provider
-                                                            (hotels, transportation services, flights....etc), and the
-                                                            pilgrim will bear all the fines resulting from that </li>
+                                                        <li>A passport must be valid and valid for a period of no less than six months, and it must be capable of entering the Kingdom of Saudi Arabia and then the next destination. At least two blank pages must be available in the passport, corresponding to one another.</li>
+                                                        <li>Al-Sayeh had to cooperate fully with the work team of the Sero platform to fill in and verify the data as follows</li>
 
-                                                        <li>Sero platform or its team does not bear any legal
-                                                            responsibility or any complaints related to the customer’s
-                                                            violation of the terms, conditions and codes referred to
-                                                            above, and the policies and procedures
-                                                            related to them, and does not accept any kind of liability
-                                                            of any kind in this regard. </li>
+                                                        <li>Al-Sayeh is responsible and accountable for the correctness and safety of all the data he submits to the platform, as well as the safety and authenticity of all documents that he will submit to the Siro platform team, including all documents and data that Al-Sayeh himself uploads on the Siro website</li>
 
-                                                        <li>Visitors to the territory of the Kingdom of Saudi Arabia,
-                                                            with the teachings of the true Islamic religion, must
-                                                            observe Islamic and Arab customs and traditions and the
-                                                            traditions and customs of the
-                                                            Saudi Society, for information, the Kingdom of Saudi Arabia
-                                                            applies strict laws regarding drug smuggling. and
-                                                            prohibitions, and violators and service smugglers will be
-                                                            subjected to severe penalties
-                                                            that may amount to the death penalty, and the laws of the
-                                                            Kingdom of Saudi Arabia prevent the establishment of any
-                                                            sectarian or racist gatherings or religious groups and sects
-                                                            in all cases. </li>
+                                                        <li>Tourist visa fees are not refundable or refundable in any way, in the event that the tourist decides to cancel a trip after the issuance of the visa reference number (MOVA), [issued after the success of the tourist visa application]</li>
 
-                                                        <li>Visitors to the Kingdom of Saudi Arabia must obey the
-                                                            Islamic laws and regulations of the Kingdom and the
-                                                            controls, customs and traditions related to its civilization
-                                                            and society, and visitors must
-                                                            wear modest clothes and appropriate to the status of the Two
-                                                            Holy Mosques. and the Holy Land, which are compatible with
-                                                            Islamic values ​​and culture, and visitors for the purpose
-                                                            of Umrah must
-                                                            focus on performing their religious rites, and they can
-                                                            participate in tourism activities, and they must refrain
-                                                            from all kinds of other activities that are in violation or
-                                                            outside the scope
-                                                            of The purpose of visiting the Kingdom in order to perform
-                                                            the rituals of Umrah, or any activities that violate the
-                                                            laws and regulations or disturb security in the Kingdom of
-                                                            Saudi Arabia</li>
+                                                        <li>Sero platform or its team does not bear any legal responsibility or any complaints related to the customer’s violation of the terms, conditions and codes referred to above, and the policies and procedures related to them, and does not accept any kind of liability of any kind in this regard.</li>
+
+                                                        <li>Visitors to the Kingdom of Saudi Arabia must obey the Islamic laws and regulations of the Kingdom and the controls, customs and traditions related to its civilization and society.</li>
                                                     </ul>
-
-                                                    <p>Or for any additional inquiries, you can contact the Ministry of
-                                                        Hajj and Umrah in the Kingdom of Saudi Arabia, whose contact
-                                                        information can be accessed through the Ministry's website.</p>
-
-                                                    <p>All travelers to Saudi Arabia for Umrah are required to hold a
-                                                        passport. Travel documents issued by any government and not
-                                                        considered a passport will not be accepted by the embassies and
-                                                        consulates of
-                                                        the Kingdom of Saudi Arabia</p>
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-bs-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                             </div>
                                         </div>
                                     </div>
@@ -1302,7 +988,7 @@
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-   
+
 
 </body>
 
