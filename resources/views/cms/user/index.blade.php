@@ -43,8 +43,9 @@
            
                   {{-- <td>{{$user->who}}</td> --}}
                   
-                  <td>{{$user->first_name .' '. $user->last_name  }}</td>
-                  <td>{{$user->city->name }}</td>
+                  <td>{{ $user->first_name  .' '. $user->last_name  }}</td>
+                  {{-- <td>{{$user->city ? $user->city->name:' ' }}</td> --}}
+                  <td>{{$user->city_id}}</td>
                   <td>{{$user->email}}</td>
                   <td>{{$user->mobile}}</td>
                   @if ($user->image != '')

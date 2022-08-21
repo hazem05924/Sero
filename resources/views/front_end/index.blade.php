@@ -85,9 +85,9 @@
                         {{-- <a class="dropdown-toggle text-decoration-none text-white" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"><img src="{{asset('cms/assets/img/en-US.png')}}" alt="" style="width: 25px; height: 25px; border-radius: 50%;"> En - English</a> --}}
                         <a class="dropdown-toggle text-decoration-none text-white" href="#" role="button"
                             id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                            @if (auth('web')->user()->image !== '')
+                            @if (auth('web')->user()->image !='')
                             
-                            <img src="{{ asset('storage/images/register/'.auth('web')->user()->image) }}" alt="Logo" style="width: 25px; height: 25px;">
+                            <img src="{{ asset('storage/images/register/'.auth('web')->user()->image) }}" style="width: 25px; height: 25px;">
                             
                             @else
                             

@@ -43,7 +43,7 @@
                                 <div class="form-control mt-3"> Value :<span id="value" class="text-danger text-bold"></span></div>
                                </label>
                             </div>
-                            <input type="file" hidden id="image" name="image"   oninput="input()">
+                            <input type="file" hidden id="image" name="image"  multiple  oninput="input()">
                             <input type="text" hidden id="hotel_id" name="hotel_id" value="{{ $id }}" />
                               
                             </div>

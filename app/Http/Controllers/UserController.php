@@ -20,6 +20,36 @@ class UserController extends Controller
         $users=User::with('city')->orderBy('id','desc')->paginate(5);
         return response()->view('cms.user.index',compact('users'));
     }
+    
+
+    
+    
+    public function updatePassword(Request $request){
+        $guard = auth('admin')->check() ? 'admin' : 'web';
+        $validator = Validator($request->all(),[
+
+            'current_password' => 'required|string',
+            'new_password' => 'required|string|confirmed',
+            'new_password_confirmation' => 'required|string'
+        ]);
+        if(!$validator->fails()){
+            $users = auth($guard)->user();
+            $users->password = Hash::make($request->get('new_password'));
+            $isSaved = $users->save();
+            // return ['redirect' =>route('admins.index')];
+
+            if($isSaved){
+            return response()->json(['icon' => 'success' , 'title'=> 'تم تغيير كلمة المرور بنجاح'], 200 );
+
+
+         } else {
+            return response()->json(['icon' => 'error' , 'title' => 'فشلت عملية تغيير كلمة المرور'] , 400);
+        }
+    }
+        else {
+            return response()->json(['icon' => 'error' , 'title' => $validator->getMessageBag()->first()], 400);
+        }
+    }
 
     /**
      * Show the form for creating a new resource.
