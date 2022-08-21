@@ -22,7 +22,14 @@
     <div class="container rounded bg-white mt-5 mb-5"> 
         <div class="row"> <div class="col-md-3 border-right"> 
             <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-                <img class="rounded-circle  " width="100" height="100" src="{{ asset('storage/images/register/'.$users->image) }}">
+                @if ($users->image !== '')
+                    
+                <img class="rounded-circle" width="100" height="100" src="{{ asset('storage/images/register/'.$users->image) }}">
+                @else
+                <img class="rounded-circle" width="100" height="100" src="{{ asset('storage/images/userSolid.png') }}">
+                
+                @endif
+                
                 <label for="image" class="btn btn-outline-success btn-sm mt-3">  اضافة صورة <i class="fas fa-plus"></i></label>
                 <input type="file" id="image" name="image" hidden/>
                 <span class="font-weight-bold">{{ $users->first_name }}</span>
@@ -71,16 +78,7 @@
                         </select>                        
                 </div> 
                 </div> 
-                <div class="row mt-3"> 
-                    <div class="col-md-6">
-                        <label class="visa_number">Visa Number</label>
-                        <input type="text" class="form-control" placeholder="Visa Number"  value="{{$users->visa_number}}" name="visa_number" id="visa_number">
-                    </div> 
-                    <div class="col-md-6">
-                        <label class="second_visa_number">Second Visa Number</label>
-                        <input type="text" class="form-control" placeholder="Second Visa Number" value="{{$users->second_visa_number}}" name="second_visa_number" id="second_visa_number">
-                    </div> 
-                </div> 
+                
                 <div class="mt-5 text-center">
                     <button class="btn btn-primary profile-button" onclick="update()" type="button">Save Profile</button>
                 </div> 
@@ -108,9 +106,6 @@ let formData = new FormData();
     formData.append('mobile',document.getElementById('mobile').value);
     formData.append('email',document.getElementById('email').value);
     formData.append('gender',document.getElementById('gender').value);
-    formData.append('visa_number',document.getElementById('visa_number').value);
-    formData.append('second_visa_number',document.getElementById('second_visa_number').value);
-
     formData.append('city_id',document.getElementById('city_id').value);
     formData.append('image',document.getElementById('image').files[0]);
     storeRoute('/update/profile' , formData );

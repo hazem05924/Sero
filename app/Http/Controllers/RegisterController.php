@@ -33,7 +33,6 @@ class RegisterController extends Controller
             $users->email=$request->get('email');
             $users->password=Hash::make($request->get('password'));
             $users->mobile=$request->get('mobile');
-            $users->visa_number=$request->get('visa_number');
             $isSaved=$users->save();
             if ($isSaved) {
                 return response()->json(['icon'=>'success','title'=>'تم اضافة المستخدم بنجاح '],200);
@@ -85,8 +84,6 @@ class RegisterController extends Controller
             $users->last_name=$request->get('last_name');
             $users->email=$request->get('email');
             $users->mobile=$request->get('mobile');
-            $users->visa_number=$request->get('visa_number');
-            $users->second_visa_number=$request->get('second_visa_number');
             $users->gender=$request->get('gender');
             $isSaved=$users->save();
             return ['redirect'=>route('home')];

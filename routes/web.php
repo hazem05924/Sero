@@ -13,6 +13,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\RolePermissionController;
 use App\Http\Controllers\RoomController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\UserAuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WayController;
@@ -126,4 +127,15 @@ Route::prefix('/')->middleware('auth:web')->group(function(){
     Route::get('edit/profile' , [RegisterController::class , 'edit'])->name('profile_edit_user');
     Route::post('update/profile' , [RegisterController::class , 'update'])->name('update.profile');
 
+});
+
+Route::prefix('/')->group(function(){
+    Route::get('search-hotels' , [SearchController::class , 'search_hotel'])->name('search-hotels');
+
+    // Route::get('get',function()
+    // {
+
+    //     $hotels=App\Models\Hotel::withCount("rooms")->count();
+    //      return dd($hotels);
+    // });
 });
