@@ -41,26 +41,35 @@
 
 <body>
     <header class="cd-header">
-        <!-- link trigger modal -->
-        <a class="text-black" data-bs-toggle="modal" data-bs-target="#Modal">Launch demo modal</a>
-
-        <!-- Modal -->
-        <div class="modal .modal-lg	 fade" id="Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        ...
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
+        <div class="panel search-card">
+            <div class="panel-body">
+              <div class="row flex" style="align-items: center;">
+                <div class="col-xs-4 col-sm-2 col-md-2 col-lg-2">
+                  <p class="search-title-key">وجهة السفر</p>
+                   <h3 class="search-title-value"><strong>مكة المكرمة</strong></h3>
                 </div>
+                <div class="col-xs-4 col-sm-2 col-md-2 col-lg-2 border-right">
+                  <p class="search-title-key">الوصول&nbsp;<i aria-hidden="true" class="fa fa-angle-down"></i></p>
+                   <h3 class="search-title-value"><strong>24 أغسطس 2022</strong></h3>
+                </div>
+                <div class="col-xs-4 col-sm-2 col-md-2 col-lg-2 border-right">
+                  <p class="search-title-key">المغادرة&nbsp;<i aria-hidden="true" class="fa fa-angle-down"></i></p>
+                   <h3 class="search-title-value"><strong>31 أغسطس 2022</strong></h3>
+                </div>
+                <div class="col-xs-4 col-sm-2 col-md-2 col-lg-2 border-right">
+                  <p class="search-title-key">مسافرين&nbsp;<i aria-hidden="true" class="fa fa-angle-down"></i></p>
+                  <h3 class="search-title-value"><strong>2 الكبار</strong></h3>
+                </div>
+                <div class="col-xs-4 col-sm-2 col-md-2 col-lg-2 border-right">
+                  <p class="search-title-key">الغرف&nbsp;<i aria-hidden="true" class="fa fa-angle-down"></i></p>
+                  <h3 class="search-title-value"><strong>1 الغرف</strong></h3>
+                </div>
+                <div class="col-xs-4 col-sm-2 col-md-2 col-lg-2 border-right">
+                 <a class="btn btn-md btn-modify"> تعديل </a>
+                </div>
+              </div>
             </div>
-        </div>
+           </div>
     </header>
 
     <main class="cd-main-content">

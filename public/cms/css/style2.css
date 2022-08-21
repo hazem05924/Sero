@@ -220,7 +220,7 @@
         color: #fff;
         font-size: 20px;
         font-weight: bold;
-        background-color: rgba(0, 0, 0, 0.8);
+        background-color: rgba(0, 0, 0, 0.3);
         border-radius: 10px;
     }
     
@@ -228,10 +228,11 @@
         background: rgb(0, 0, 0, 0.5);
         box-shadow: 0 1rem 1rem rgb(0, 0, 0, 0.2);
         color: white;
-        min-height: fit-content;
+        min-height: 200px;
         max-width: 80%;
         border-radius: 15px;
-        padding: 30px;
+        overflow: hidden;
+        padding: 20px;
     }
     
     #one-panel,
@@ -282,6 +283,7 @@
     #one:checked~.tabs #one-tab,
     #two:checked~.tabs #two-tab,
     #three:checked~.tabs #three-tab {
+        background: linear-gradient( rgba(0, 0, 0) 50%, rgba(255, 255, 255, 0.2));
         color: #fff;
         font-size: 20px;
         font-weight: bold;
@@ -527,17 +529,15 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        align-content: center;
-        font-size: 1.5rem !important;
     }
     
     .card1:hover {
-        transform: scale(1.1);
+        transform: scale(1.05);
         box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
     }
     
     .card1 h3 {
-        font-weight: 900;
+        font-weight: 600;
     }
     
     .card1 img {
@@ -578,25 +578,25 @@
     }
     
     .panel input {
-        border: 1px solid black;
-        background: rgba(255, 255, 255, 0.6);
-        color: black;
+        border: 1px solid rgb(255, 255, 255);
+        background-color: transparent;
+        color: rgb(255, 255, 255);
     }
     
     .panel select {
-        border: 1px solid black;
-        background: rgba(255, 255, 255, 0.6);
-        color: black;
+        border: 1px solid rgb(255, 255, 255);
+        background-color: transparent;
+        color: rgb(255, 255, 255);
     }
     
     .panel .input-group input {
-        border: 1px solid black !important;
-        color: black;
+        border: 1px solid white !important;
+        color: white !important;
         border-radius: 5px;
     }
     
     .panel .input-group input::placeholder {
-        color: black;
+        color: white;
     }
     
     .panel input #date-out ::placeholder {
@@ -615,9 +615,4 @@
     
     .widget-contact-list a:hover {
         color: rgba(255, 255, 255);
-    }
-    
-    .tabs {
-        position: absolute;
-        transform: translate(0, -50%);
     }

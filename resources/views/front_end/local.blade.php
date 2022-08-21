@@ -651,24 +651,19 @@
     <section class="services" id="services" style="margin-bottom: 30px;">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4">
                     <div class="card1 card-1">
                         <h5 >{{ __("Flights") }}</h5>
                     </div>
                 </div>
-                <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4">
                     <div class="card1 card-2">
                         <h5>{{ __("HOTELS") }}</h5>
                     </div>
                 </div>
-                <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4">
                     <div class="card1 card-3">
                         <h5>{{ __("TRANSPORT") }}</h5>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-12 col-md-6 col-lg-3">
-                    <div class="card1 card-4">
-                        <h5>{{ __("DOMESTIC UMRAH") }}</h5>
                     </div>
                 </div>
             </div>
