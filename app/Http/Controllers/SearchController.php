@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Hotel;
+use App\Models\Room;
 use Illuminate\Http\Request;
 
 class SearchController extends Controller
@@ -20,9 +21,7 @@ class SearchController extends Controller
         if ($request->get('city_id')) {
             $hotels = Hotel::where('city_id', 'like', '%' . $request->city_id . '%');
         }
-        // if ($request->get('created_at')) {
-        //     $hotels = Hotel::where('created_at', 'like', '%' . $request->created_at . '%');
-        // }
+        
         if ($request->status != null) {
             $hotels = Hotel::where('status', $request->status);
         }

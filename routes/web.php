@@ -132,5 +132,10 @@ Route::prefix('/')->middleware('auth:web')->group(function(){
 Route::prefix('/')->group(function(){
     Route::get('search-hotels' , [SearchController::class , 'search_hotel'])->name('search-hotels');
 
+    // Route::get('get',function()
+    // {
 
+    //     $hotels=App\Models\Hotel::withCount("rooms")->count();
+    //      return dd($hotels);
+    // });
 });

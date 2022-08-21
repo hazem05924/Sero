@@ -78,16 +78,7 @@
                         </select>                        
                 </div> 
                 </div> 
-                <div class="row mt-3"> 
-                    <div class="col-md-6">
-                        <label class="visa_number">Visa Number</label>
-                        <input type="text" class="form-control" placeholder="Visa Number"  value="{{$users->visa_number}}" name="visa_number" id="visa_number">
-                    </div> 
-                    <div class="col-md-6">
-                        <label class="second_visa_number">Second Visa Number</label>
-                        <input type="text" class="form-control" placeholder="Second Visa Number" value="{{$users->second_visa_number}}" name="second_visa_number" id="second_visa_number">
-                    </div> 
-                </div> 
+                
                 <div class="mt-5 text-center">
                     <button class="btn btn-primary profile-button" onclick="update()" type="button">Save Profile</button>
                 </div> 
@@ -115,9 +106,6 @@ let formData = new FormData();
     formData.append('mobile',document.getElementById('mobile').value);
     formData.append('email',document.getElementById('email').value);
     formData.append('gender',document.getElementById('gender').value);
-    formData.append('visa_number',document.getElementById('visa_number').value);
-    formData.append('second_visa_number',document.getElementById('second_visa_number').value);
-
     formData.append('city_id',document.getElementById('city_id').value);
     formData.append('image',document.getElementById('image').files[0]);
     storeRoute('/update/profile' , formData );

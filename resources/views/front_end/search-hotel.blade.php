@@ -83,8 +83,8 @@
         </div>
         <!-- cd-tab-filter-wrapper -->
 
-        <section class="cd-gallery">
-            <ul >
+        <section class="cd-gallery ">
+            <ul class="flex-warp row">
                   @foreach ($hotels as $hotel )
                   {{-- <a href="" class="nav-link "> --}}
                       <li class="mix color-1 check1 radio2 option3">

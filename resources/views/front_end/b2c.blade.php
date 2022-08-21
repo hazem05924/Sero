@@ -87,19 +87,16 @@
                         {{-- <a class="dropdown-toggle text-decoration-none text-white" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"><img src="{{asset('cms/assets/img/en-US.png')}}" alt="" style="width: 25px; height: 25px; border-radius: 50%;"> En - English</a> --}}
                         <a class="dropdown-toggle text-decoration-none text-white" href="#" role="button"
                             id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                            @if (auth('web')->user()->image == '')
-<<<<<<< HEAD
-                            <img src="{{ asset('storage/images/userSolid.png') }}" alt="Logo" style="width: 25px; height: 25px; border-radius: 50%">
+                            @if (auth('web')->user()->image !== '')
                             
-=======
-                            <img src="{{ asset('storage/images/user.jpg') }}" alt="Logo" style="width: 25px; height: 25px; border-radius: 50%">
-
->>>>>>> dc098fdea87efa7a724a3879560b4881b37a3f8d
-                            @else
                             <img src="{{ asset('storage/images/register/'.auth('web')->user()->image) }}" alt="Logo" style="width: 25px; height: 25px;">
+                            
+                            @else
+                            
+                            <img src="{{ asset('storage/images/userSolid.png') }}" alt="Logo" style="width: 25px; height: 25px; border-radius: 50%">
 
-                            @endif
-                            {{ auth('web')->user()->full_name }}
+                            @endif  
+                             {{ auth('web')->user()->full_name }} 
                         </a>
 
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -112,11 +109,13 @@
                             <li class="nav-item ">
                                 <a href="{{ route('profile_edit_user') }}" class="nav-link text-black">
                                     <i class="fas fa-user ml-2"></i>
-                                         {{ __("Profile") }}
+                                        {{ __("Profile") }}
                                 </a>
                             </li>
                         </ul>
                     </div>
+
+                    @endif
 
 
 

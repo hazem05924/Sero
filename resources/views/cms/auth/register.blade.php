@@ -60,8 +60,7 @@
             </div>
           </div>
         </div>
-        <div class="row">
-            <div class="input-group mb-3 col-6">
+            <div class="input-group mb-3 ">
               <input type="number" class="form-control" name="mobile" id="mobile" placeholder="رقم الهاتف">
               <div class="input-group-append">
                 <div class="input-group-text">
@@ -69,14 +68,14 @@
                 </div>
               </div>
             </div>
-            <div class="input-group mb-3 col-6">
+            {{-- <div class="input-group mb-3 col-6">
               <input type="text" class="form-control" name="visa_number" id="visa_number" placeholder="رقم الفيزا ">
               <div class="input-group-append">
                 <div class="input-group-text">
                     <i class="fas fa-id-card-alt"></i>  
                 </div>
               </div>
-            </div>
+            </div> --}}
             {{-- <div class="input-group mb-3 col-6">
                 <select class="form-control" name="city_id" id="city_id" >
                     @foreach ($cities as$city )
@@ -98,10 +97,10 @@
                 <label class="custom-file-label">اختر الصورة الشخصية </label>
               </div>
             
-        </div> --}}
+         --}}
 
         <div class="row">
-          <div class="col-10">
+          <div class="col-8">
             <div class="icheck-primary">
               <input type="checkbox" id="agreeTerms" name="terms" value="agree">
               <label for="agreeTerms">
@@ -147,7 +146,6 @@ let formData = new FormData();
     formData.append('email',document.getElementById('email').value);
     formData.append('password',document.getElementById('password').value);
     formData.append('mobile',document.getElementById('mobile').value);
-    formData.append('visa_number',document.getElementById('visa_number').value);
 
 store('/register',formData);
 
