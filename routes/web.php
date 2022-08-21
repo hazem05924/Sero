@@ -51,8 +51,8 @@ Route::prefix('cms/')->middleware('guest:admin,web')->group(function(){
 
 
 
-route::prefix('cms/admin/')->middleware('auth:admin,web')->group(function(){
-    Route::get('/logout',[UserAuthController::class,'logOut'])->name('logout');
+route::prefix('cms/admin/')->middleware('auth:admin')->group(function(){
+    Route::get('/logout-admin',[UserAuthController::class,'logOut'])->name('logout-admin');
     Route::get('profile/edit' , [UserAuthController::class , 'editProfile'])->name('cms.auth.profile-edit');
     Route::post('profile/update' , [UserAuthController::class , 'updateProfile'])->name('cms.auth.update-profile');
     Route::get('password/edit' , [UserAuthController::class , 'editPassword'])->name('cms.admin.edit-password');
@@ -62,7 +62,7 @@ route::prefix('cms/admin/')->middleware('auth:admin,web')->group(function(){
 // Route::middleware()->group(['prefix' => LaravelLocalization::setLocale()], function(){
 
 // });
-route::prefix('cms/admin/')->middleware('auth:admin,web')->group(function(){
+route::prefix('cms/admin/')->middleware('auth:admin')->group(function(){
     Route::view('/','cms.home')->name('home');
 
     Route::resource('cities', CityController::class);
@@ -126,6 +126,10 @@ Route::prefix( LaravelLocalization::setLocale())->group(function(){
 Route::prefix('/')->middleware('auth:web')->group(function(){
     Route::get('edit/profile' , [RegisterController::class , 'edit'])->name('profile_edit_user');
     Route::post('update/profile' , [RegisterController::class , 'update'])->name('update.profile');
+    Route::get('/logout',[UserAuthController::class,'logOut'])->name('logout');
+    Route::post('/password/update', [UserController::class, 'updatePassword']);
+
+
 
 });
 

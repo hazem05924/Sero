@@ -139,7 +139,7 @@
             </a>
 
           </li>
-          <li class="nav-header">الادوار والصلاحيات </li>
+          {{-- <li class="nav-header">الادوار والصلاحيات </li>
 
           <li class="nav-item">
             <a href="#" class="nav-link">
@@ -186,7 +186,7 @@
                 </a>
               </li>
             </ul>
-          </li>
+          </li> --}}
 
           <li class="nav-header">المستخدمين</li>
 
@@ -391,7 +391,7 @@
                </a>
              </li>
              <li class="nav-item">
-               <a href="{{ route('logout') }}" class="nav-link">
+               <a href="{{ route('logout-admin') }}" class="nav-link">
                    <i class="fas fa-sign-out-alt ml-2"></i>
                      <p>   تسجيل الخروج  </p>
                </a>
