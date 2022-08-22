@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BookHotelController;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\CompaneController;
 use App\Http\Controllers\FacilitieController;
@@ -122,19 +123,24 @@ Route::prefix( LaravelLocalization::setLocale())->group(function(){
     Route::get('', function () {return view('front_end.index');})->name('home');
     Route::get('b2c', function () {return view('front_end.b2c');})->name('b2c');
     Route::get('local', function () {return view('front_end.local');})->name('local');
+    Route::get('page2', function () {return view('front_end.page2');})->name('page2');
 });
 Route::prefix('/')->middleware('auth:web')->group(function(){
     Route::get('edit/profile' , [RegisterController::class , 'edit'])->name('profile_edit_user');
     Route::post('update/profile' , [RegisterController::class , 'update'])->name('update.profile');
     Route::get('/logout',[UserAuthController::class,'logOut'])->name('logout');
     Route::post('/password/update', [UserController::class, 'updatePassword']);
-
-
-
+    Route::resource('ways', BookHotelController::class);
+    Route::post('update_ways/{id}' , [BookHotelController::class , 'update'])->name('update_ways');
+    
+    
+    
 });
 
 Route::prefix('/')->group(function(){
     Route::get('search-hotels' , [SearchController::class , 'search_hotel'])->name('search-hotels');
+    Route::get('/create/book-hotel/{id}', [BookHotelController::class, 'createBook'])->name('create-book-hotel');
+    Route::get('/index/book-hotel/{id}', [BookHotelController::class, 'indexBook'])->name('index-book-hotel');
 
     // Route::get('get',function()
     // {

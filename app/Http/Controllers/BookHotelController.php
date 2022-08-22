@@ -2,6 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BookHotel;
+use App\Models\Facilitie;
+use App\Models\Hotel;
+use App\Models\ImageHotel;
+use App\Models\Room;
 use Illuminate\Http\Request;
 
 class BookHotelController extends Controller
@@ -11,6 +16,26 @@ class BookHotelController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function indexBook($id)
+    {
+        $book_hotels=BookHotel::where('hotel_id', $id)->orderBy('created_at', 'desc')->paginate(4);
+        return response()->view('front_end.book-hotel', compact('book_hotels','id'));
+    }
+
+    public function createBook($id)
+    {
+        $book_hotels=BookHotel::where('hotel_id', $id)->orderBy('created_at', 'desc')->paginate(4);
+        
+        $hotels= Hotel::where('id',$id)->get();
+        $images=ImageHotel::where('hotel_id', $id)->orderBy('created_at', 'desc')->get();
+        $rooms=Room::where('hotel_id', $id)->orderBy('created_at', 'desc')->paginate(5);
+        $facilities=Facilitie::where('hotel_id', $id)->orderBy('created_at', 'desc')->paginate(1);
+
+
+          return response()->view('front_end.book-hotel', compact('id','hotels','images','rooms','facilities'));
+    }
+
+
     public function index()
     {
         //

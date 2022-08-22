@@ -60,6 +60,7 @@
                         <option value="3">Three</option>
                     </select>
                 </div>
+                <input type="hidden" name="hotel_id" id="hotel_id" value="{{$id}}">
                 <div class="mb-2">
                     <label for="exampleFormControlInput1" class="form-label">فرز حسب السعر</label>
                     <select class="form-select" aria-label="Default select example">
@@ -91,7 +92,10 @@
             </div>
             <div class="div3">
                 <div class="header">
-                    <div class="name_parent"><span class="name">فندق برج السيف</span></div>
+                    @foreach ($hotels as $hotel)
+                        
+                    <div class="name_parent"><span class="name">{{ $hotel->name }}</span></div>
+                    @endforeach
                     <div class="phone"><span>(+966) 055 9148 410</span><i class="fas fa-phone"></i></div>
                     <div class="map"><i class="fas fa-map-marker-alt"></i><span>ذات النطاقين, مكة المكرمة, Saudi Arabia, Makkah</span></div>
                     <div class="rating"><span class="num">1</span><span> :التقييم</span><i class="fas fa-star"></i></div>
@@ -117,7 +121,20 @@
                     <div class="bottom-title"><span class="select_value">الغرف 1</span><span class="value_details">(الى عن على 2 البالغ/البالغون و 0 الطفل/الاطفال للغرفة)</span></div>
                     <div class="bottom-info">الرجاء تحديد اي من الخيار ادناه</div>
                     <div class="rooms">
+                        @foreach ($rooms as $room )
+                            
+                        
                         <div class="room">
+                            <div class="header"><span> {{$room->number_room}}</span><input class="form-check-input 1star" type="checkbox" value="" id="flexCheckDefault"></div>
+                            <div class="info"> {{$room->name_room}}</div>
+                            {{-- <div class="info">( عدد الغرف : <span>1</span> )</div> --}}
+                            <div class="info">{{$room->Advantages}}  : <span></span></div>
+                            <div class="info"> {{$room->accommodation_type}} : <span>غرفة بدون وجبات</span></div>
+                            <div class="info"><span class="coin">SAR</span><span class="price">{{$room->price}}</span><div class="info NB">* شامل لجميع الضرائب</div></div>
+                            <div class="info warn">غير قابل للاسترجاع <i class="fas fa-info-circle"></i></div>
+                        </div>
+                        @endforeach
+                        {{-- <div class="room">
                             <div class="header"><img src="images/living-room.png"><span>second room</span><input class="form-check-input 1star" type="checkbox" value="" id="flexCheckDefault"></div>
                             <div class="info">غرفة ثنائية</div>
                             <div class="info">( عدد الغرف : <span>1</span> )</div>
@@ -125,26 +142,28 @@
                             <div class="info">نوع الاقامة : <span>غرفة بدون وجبات</span></div>
                             <div class="info"><span class="coin">SAR</span><span class="price">511.24</span><div class="info NB">* شامل لجميع الضرائب</div></div>
                             <div class="info warn">غير قابل للاسترجاع <i class="fas fa-info-circle"></i></div>
-                        </div>
-                        <div class="room">
-                            <div class="header"><img src="images/living-room.png"><span>second room</span><input class="form-check-input 1star" type="checkbox" value="" id="flexCheckDefault"></div>
-                            <div class="info">غرفة ثنائية</div>
-                            <div class="info">( عدد الغرف : <span>1</span> )</div>
-                            <div class="info">المميزات والخدمات : <span></span></div>
-                            <div class="info">نوع الاقامة : <span>غرفة بدون وجبات</span></div>
-                            <div class="info"><span class="coin">SAR</span><span class="price">511.24</span><div class="info NB">* شامل لجميع الضرائب</div></div>
-                            <div class="info warn">غير قابل للاسترجاع <i class="fas fa-info-circle"></i></div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
+                @foreach ($facilities as $facilitie)
                 <div id="menu2" class="container tab-pane fade"><br>
-                  <h3>Menu 1</h3>
-                  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        
+                    <h3>{{ $facilitie->id }}</h3>
+                    <p>{{ $facilitie->discription }}</p>
                 </div>
+                @endforeach
+                @foreach ($facilities as $facilitie)
                 <div id="menu3" class="container tab-pane fade"><br>
-                  <h3>Menu 2</h3>
-                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                        
+                    <p>{{ $facilitie->discription }}</p>
                 </div>
+                @endforeach
+              </div>
+              <div class="row">
+                @foreach ($images as $image)
+                        
+                    <img src="{{asset('storage/image_hotel/'.$image->image)}}"  class="img-fluid img-circle col-3">
+                    @endforeach
               </div>
         </div>
 

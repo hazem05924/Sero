@@ -1,272 +1,309 @@
-<!doctype html>
-<html lang="en" class="no-js">
+<!DOCTYPE HTML>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
 
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+    <head>
 
-    <link rel="stylesheet" href="{{ asset('cms/css/reset.css') }}">
-    <!-- CSS reset -->
-    <link rel="stylesheet" href="{{ asset('cms/css/style.css') }}">
-    <!-- Resource style -->
-    <link href="{{ asset('cms/css/style.css') }}" rel="stylesheet" />
-    <script src="{{ asset('cms/js/modernizr.js') }}"></script>
-    <!-- Modernizr -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('cms/plugins/fontawesome-free/css/all.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('cms/plugins/fontawesome-free-6.1.1/css/all.min.css') }}">
-    <title>Hotel</title>
-    <style>
-        ::-webkit-scrollbar{
-             width: 10px;
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>First Page</title>
+        <link rel="stylesheet" href="{{ asset('cms/css/first_page.css') }}">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://kit.fontawesome.com/189263d7ef.js" crossorigin="anonymous"></script>
 
-        }
-        ::-webkit-scrollbar-track {
-            background:white;
+    </head>
 
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #888;
-            border-radius: 50px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #555;
-        }
-        ::-webkit-scrollbar-thumb:active {
-            background: #212375;
-        }
+    <body>
 
-    </style>
-</head>
+        <div class="background">
 
-<body>
-<<<<<<< HEAD:resources/views/front_end/book.hotel.blade.php
-    <header class="cd-header">
-        <div class="panel search-card">
-            <div class="panel-body">
-              <div class="row flex" style="align-items: center;">
-                <div class="col-xs-4 col-sm-2 col-md-2 col-lg-2">
-                  <p class="search-title-key">وجهة السفر</p>
-                   <h3 class="search-title-value"><strong>مكة المكرمة</strong></h3>
-=======
-    <header class="cd-header" >
-        <!-- link trigger modal -->
-        <a class="text-black" data-bs-toggle="modal" data-bs-target="#Modal">Launch demo modal</a>
-
-        <!-- Modal -->
-        <div class="modal .modal-lg	 fade" id="Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        ...
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
->>>>>>> 0c46795d91006c0a6853f8b2ca21f6411b1a16bc:resources/views/front_end/search-hotel.blade.php
+            <img src="images/background2.jpg">
+            <div class="gradiant"></div>
+            <div class="steps">
+                <div class="step search_step done"><i class="fas fa-search step_icon"></i></div>
+                <div class="step_line done"></div>
+                <div class="step results_step active"><i class="fa fa-hotel step_icon"></i></div>
+                <div class="step_line active">
+                    <div class="active_motion"></div>
                 </div>
-                <div class="col-xs-4 col-sm-2 col-md-2 col-lg-2 border-right">
-                  <p class="search-title-key">الوصول&nbsp;<i aria-hidden="true" class="fa fa-angle-down"></i></p>
-                   <h3 class="search-title-value"><strong>24 أغسطس 2022</strong></h3>
+                <div class="step info_step">
+                    <svg class="travelers" viewBox="0 0 512 512">
+                        <path class="step_icon" d="M352 48C352 21.49 373.5 0 400 0C426.5 0 448 21.49 448 48C448 74.51 426.5 96 400 96C373.5 96 352 74.51 352 48zM304.6 205.4C289.4 212.2 277.4 224.6 271.2 240.1L269.7 243.9C263.1 260.3 244.5 268.3 228.1 261.7C211.7 255.1 203.7 236.5 210.3 220.1L211.8 216.3C224.2 185.4 248.2 160.5 278.7 146.9L289.7 142C310.5 132.8 332.1 128 355.7 128C400.3 128 440.5 154.8 457.6 195.9L472.1 232.7L494.3 243.4C510.1 251.3 516.5 270.5 508.6 286.3C500.7 302.1 481.5 308.5 465.7 300.6L439 287.3C428.7 282.1 420.6 273.4 416.2 262.8L406.6 239.8L387.3 305.3L436.8 359.4C442.2 365.3 446.1 372.4 448 380.2L471 472.2C475.3 489.4 464.9 506.8 447.8 511C430.6 515.3 413.2 504.9 408.1 487.8L386.9 399.6L316.3 322.5C301.5 306.4 295.1 283.9 301.6 262.8L318.5 199.3C317.6 199.7 316.6 200.1 315.7 200.5L304.6 205.4zM292.7 344.2L333.4 388.6L318.9 424.8C316.5 430.9 312.9 436.4 308.3 440.9L246.6 502.6C234.1 515.1 213.9 515.1 201.4 502.6C188.9 490.1 188.9 469.9 201.4 457.4L260.7 398L285.7 335.6C287.8 338.6 290.2 341.4 292.7 344.2H292.7zM223.1 274.1C231.7 278.6 234.3 288.3 229.9 295.1L186.1 371.8C185.4 374.5 184.3 377.2 182.9 379.7L118.9 490.6C110 505.9 90.44 511.1 75.14 502.3L19.71 470.3C4.407 461.4-.8371 441.9 7.999 426.6L71.1 315.7C80.84 300.4 100.4 295.2 115.7 303.1L170.1 335.4L202.1 279.1C206.6 272.3 216.3 269.7 223.1 274.1H223.1z"/>
+                    </svg>
                 </div>
-                <div class="col-xs-4 col-sm-2 col-md-2 col-lg-2 border-right">
-                  <p class="search-title-key">المغادرة&nbsp;<i aria-hidden="true" class="fa fa-angle-down"></i></p>
-                   <h3 class="search-title-value"><strong>31 أغسطس 2022</strong></h3>
+                <div class="step_line"></div>
+                <div class="step pay_step">
+                    <svg class="pay" viewBox="0 0 576 512">
+                        <path class="step_icon" d="M251.1 207.1C251.1 196.1 260.1 187.1 271.1 187.1H287.1C299 187.1 308 196.1 308 207.1V275.1H312C323 275.1 332 284.1 332 295.1C332 307 323 315.1 312 315.1H263.1C252.1 315.1 243.1 307 243.1 295.1C243.1 284.1 252.1 275.1 263.1 275.1H267.1V227.6C258.9 225.7 251.1 217.7 251.1 207.1zM48.66 79.13C128.4 100.9 208.2 80.59 288 60.25C375 38.08 462 15.9 549 48.38C565.9 54.69 576 71.62 576 89.66V399.5C576 423.4 550.4 439.2 527.3 432.9C447.6 411.1 367.8 431.4 288 451.7C200.1 473.9 113.1 496.1 26.97 463.6C10.06 457.3 0 440.4 0 422.3V112.5C0 88.59 25.61 72.83 48.66 79.13L48.66 79.13zM127.1 416C127.1 380.7 99.35 352 63.1 352V416H127.1zM63.1 223.1C99.35 223.1 127.1 195.3 127.1 159.1H63.1V223.1zM512 352V287.1C476.7 287.1 448 316.7 448 352H512zM512 95.1H448C448 131.3 476.7 159.1 512 159.1V95.1zM287.1 143.1C234.1 143.1 191.1 194.1 191.1 255.1C191.1 317.9 234.1 368 287.1 368C341 368 384 317.9 384 255.1C384 194.1 341 143.1 287.1 143.1z"/>
+                    </svg>
                 </div>
-                <div class="col-xs-4 col-sm-2 col-md-2 col-lg-2 border-right">
-                  <p class="search-title-key">مسافرين&nbsp;<i aria-hidden="true" class="fa fa-angle-down"></i></p>
-                  <h3 class="search-title-value"><strong>2 الكبار</strong></h3>
-                </div>
-                <div class="col-xs-4 col-sm-2 col-md-2 col-lg-2 border-right">
-                  <p class="search-title-key">الغرف&nbsp;<i aria-hidden="true" class="fa fa-angle-down"></i></p>
-                  <h3 class="search-title-value"><strong>1 الغرف</strong></h3>
-                </div>
-                <div class="col-xs-4 col-sm-2 col-md-2 col-lg-2 border-right">
-                 <a class="btn btn-md btn-modify"> تعديل </a>
-                </div>
-              </div>
             </div>
-           </div>
-    </header>
 
-    <main class="cd-main-content">
-        <div class="cd-tab-filter-wrapper">
-            <div class="cd-tab-filter">
-                <ul class="cd-filters">
-                    <li class="placeholder">
-                        <a data-type="all" href="#0">All</a>
-                        <!-- selected option on mobile -->
+        </div>
+        <?php
+        use App\Models\City;
+        $cities=City::all();
+        ?>
+        <div class="page_navbar">
+
+            <div class="item item1">
+                <div class="parent">
+                    <div class="label-name">وجهة السفر</div>
+                    <div class="value">
+                        @foreach ($cities as $city )
+                        @if($city->id == request()->city_id)
+                         <span class="des">{{ __($city->name)}} </span> 
+                         @endif
+   
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+            <div class="item item2">
+                <div class="parent">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            الوصول
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarDarkDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">الخيار الاول</a></li>
+                            <li><a class="dropdown-item" href="#">الخيار التاني</a></li>
+                            <li><a class="dropdown-item" href="#">الخيار التالت</a></li>
+                        </ul>
                     </li>
-                    <li class="filter"><a class="selected" href="#0" data-type="all">All</a></li>
-                    <li class="filter" data-filter=".color-1"><a href="#0" data-type="color-1">Color 1</a></li>
-                    <li class="filter" data-filter=".color-2"><a href="#0" data-type="color-2">Color 2</a></li>
-                </ul>
-                <!-- cd-filters -->
+                    <div class="value"><span class="day">19</span> <span class="month">أغسطس</span> <span class="year">2022</span></div>
+                </div>
             </div>
-            <!-- cd-tab-filter -->
+            <div class="item item3">
+                <div class="parent">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            المغادرة
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarDarkDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">الخيار الاول</a></li>
+                            <li><a class="dropdown-item" href="#">الخيار التاني</a></li>
+                            <li><a class="dropdown-item" href="#">الخيار التالت</a></li>
+                        </ul>
+                    </li>
+                    <div class="value"><span class="day">31</span> <span class="month">أغسطس</span> <span class="year">2022</span></div>
+                </div>
+            </div>
+            <div class="item item4">
+                <div class="parent">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            المسافرين
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarDarkDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">الخيار الاول</a></li>
+                            <li><a class="dropdown-item" href="#">الخيار التاني</a></li>
+                            <li><a class="dropdown-item" href="#">الخيار التالت</a></li>
+                        </ul>
+                    </li>
+                    <div class="value"><span class="num">2</span> <span class="label">الكبار</span></div>
+                </div>
+            </div>
+            <div class="item item5">
+                <div class="parent">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            الغرف
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarDarkDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">الخيار الاول</a></li>
+                            <li><a class="dropdown-item" href="#">الخيار التاني</a></li>
+                            <li><a class="dropdown-item" href="#">الخيار التالت</a></li>
+                        </ul>
+                    </li>
+                    <div class="value"><span class="num">1</span> <span class="label">الغرف</span></div>
+                </div>
+            </div>
+            <div class="item item6">
+                <div class="parent">
+                    <a class="btn btn-sm" href="{{route("local")}}"><button  class="btn btn-secondary btn-sm">تعديل</button></a>
+                </div>
+            </div>
+
         </div>
-        <!-- cd-tab-filter-wrapper -->
 
-        <section class="cd-gallery ">
-            <ul class="flex-warp row">
-                  @foreach ($hotels as $hotel )
-                  {{-- <a href="" class="nav-link "> --}}
-                      <li class="mix color-1 check1 radio2 option3">
-                          <div class="col">
-                              <div class="card h-100">
-                                  <div class="card-header">
-                                      
-                                      <h3 class="card-title">{{ $hotel->name }}</h3>
-                                    </div>
-                                    <div class="card-body">
-                                          @if ($hotel->image != '')
-                                          <img class="card-img-top"  src="{{asset('storage/images/hotels/'.$hotel->image)}}" width="60" height="250" alt="User Image">
-                                          @else
-                                              
-                                              <li class="mix color-1 check1 radio2 option3"><img src="{{asset('storage/images/users.jpg')}}" alt="User Image"></li>
-                  
-                                          @endif
-                                        <span style="display: block" class="mt-4"> 
-                                            @if ( $hotel->rate  ==='5')
-                                                <span class="text-warning"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
-                                            @elseif ($hotel->rate  ==='4')
-                                                 <span class="text-warning"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></span>
-                                            @elseif ($hotel->rate  ==='3')
-                                                  <span class="text-warning"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
-                                            @elseif ($hotel->rate  ==='2')
-                                                   <span class="text-warning"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
-                                            @elseif ($hotel->rate  ==='1')
-                                                    <span class="text-warning"><i class="fa-solid fa-star"></i></span>
-                                            @else
-                                                     <span class="badge bg-danger">not found</span>
-                                             @endif
-                                        </span>
-                                        <span class="badge bg-success mt-3"> {{ $hotel->city->name }} - {{ $hotel->address }}</span>
-                                    </div>
-                                    <div class="card-footer">
-                                        <h5><p class="card-text ">{{ $hotel->discreption }}</p></h5>
-                                      </div>
-                                    </div>
-                                  </div>
-                                
-                            </li>
-                        {{-- </a> --}}
-                  @endforeach
-                {{-- <li class="mix color-2 check2 radio2 option2"><img src="assets/img/img-2.jpg" alt="Image 2"></li>
-                <li class="mix color-1 check3 radio3 option1"><img src="assets/img/img-3.jpg" alt="Image 3"></li>
-                <li class="mix color-1 check3 radio2 option4"><img src="assets/img/img-4.jpg" alt="Image 4"></li>
-                <li class="mix color-1 check1 radio3 option2"><img src="assets/img/img-5.jpg" alt="Image 5"></li>
-                <li class="mix color-2 check2 radio3 option3"><img src="assets/img/img-6.jpg" alt="Image 6"></li>
-                <li class="mix color-2 check2 radio2 option1"><img src="assets/img/img-7.jpg" alt="Image 7"></li>
-                <li class="mix color-1 check1 radio3 option4"><img src="assets/img/img-8.jpg" alt="Image 8"></li>
-                <li class="mix color-2 check1 radio2 option3"><img src="assets/img/img-9.jpg" alt="Image 9"></li>
-                <li class="mix color-1 check3 radio2 option4"><img src="assets/img/img-10.jpg" alt="Image 10"></li>
-                <li class="mix color-1 check3 radio3 option2"><img src="assets/img/img-11.jpg" alt="Image 11"></li>
-                <li class="mix color-2 check1 radio3 option1"><img src="assets/img/img-12.jpg" alt="Image 12"></li> --}}
-                <li class="gap"></li>
-                <li class="gap"></li>
-                <li class="gap"></li>
-            </ul>
-            <div class="cd-fail-message">No results found</div>
-        </section>
-        <!-- cd-gallery -->
-
-        <div class="cd-filter">
-            <form>
-                <div class="cd-filter-block">
-                    <h4>Search</h4>
-
-                    <div class="cd-filter-content">
-                        <input type="search" placeholder="Try color-1...">
+        <div class="page_contain">
+            <div class="filter">
+                <div class="filter_header">
+                    <div class="label"><span>مصنفة بواسطة</span></div>
+                    <div class="bar">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle btn btn-light btn-sm" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-bars"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarDarkDropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">الخيار الاول</a></li>
+                                <li><a class="dropdown-item" href="#">الخيار التاني</a></li>
+                                <li><a class="dropdown-item" href="#">الخيار التالت</a></li>
+                            </ul>
+                        </li>
                     </div>
-                    <!-- cd-filter-content -->
                 </div>
-                <!-- cd-filter-block -->
-
-                <div class="cd-filter-block">
-                    <h4>Check boxes</h4>
-
-                    <ul class="cd-filter-content cd-filters list">
-                        <li>
-                            <input class="filter" data-filter=".check1" type="checkbox" id="checkbox1">
-                            <label class="checkbox-label" for="checkbox1">Option 1</label>
-                        </li>
-
-                        <li>
-                            <input class="filter" data-filter=".check2" type="checkbox" id="checkbox2">
-                            <label class="checkbox-label" for="checkbox2">Option 2</label>
-                        </li>
-
-                        <li>
-                            <input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
-                            <label class="checkbox-label" for="checkbox3">Option 3</label>
-                        </li>
-                    </ul>
-                    <!-- cd-filter-content -->
+                <div class="mb-3 search_parent">
+                    <label for="exampleFormControlInput1" class="form-label">البحث عن اسم الفندق</label>
+                    <input type="email" class="form-control search" id="exampleFormControlInput1" placeholder="ابحث هنا ...">
                 </div>
-                <!-- cd-filter-block -->
-
-                <div class="cd-filter-block">
-                    <h4>Select</h4>
-
-                    <div class="cd-filter-content">
-                        <div class="cd-select cd-filters">
-                            <select class="filter" name="selectThis" id="selectThis">
-								<option value="">Choose an option</option>
-								<option value=".option1">Option 1</option>
-								<option value=".option2">Option 2</option>
-								<option value=".option3">Option 3</option>
-								<option value=".option4">Option 4</option>
-							</select>
+                <div class="block"></div>
+                <div class="mb-3 price_parent">
+                    <label for="exampleFormControlInput1" class="form-label">فرز حسب السعر</label>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>حدد طلب السعر</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+                <div class="block"></div>
+                <div class="mb-3 rating_parent">
+                    <label for="exampleFormControlInput1" class="form-label">تصنيف النجوم</label>
+                    <div class="form-check">
+                        <input class="form-check-input 1star" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            <i class="fas fa-star"></i>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input 2star" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input 3star" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input 4star" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input 5star" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="results_container">
+                <div class="results">
+                    @foreach ($hotels as $hotel )
+                    <div class="result">
+                        <div class="image">
+                            @if ($hotel->image !='')
+                            <img class="default_img" src="{{asset('storage/images/hotels/'.$hotel->image)}}">
+                            @else
+                            <img class="default_img" src="{{ asset('cms/assets/img/hotel_default_background.jpg') }}">
+                            @endif
+                            {{-- <img class="result_img" src="{{ asset('cms/assets/img/hotel1.jpg') }}"> --}}
                         </div>
-                        <!-- cd-select -->
+                        <div class="card_container">
+                            <div class="label"><i class="fas fa-tag"></i><span>{{ $hotel->name }} </span></div>
+                            <div class="address"><img src="{{ asset('cms/assets/img/map.svg') }}"><span>{{ $hotel->city->name }} - {{ $hotel->address }}</span></div>
+                            <div class="rating">
+                                @if ($hotel->rate  ==='5')
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span class="ratings_num">{{ $hotel->rate }}</span>
+                                @elseif ($hotel->rate  ==='4')
+                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><span class="ratings_num">{{ $hotel->rate }}</span>
+                                    @elseif ($hotel->rate  ==='3')
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><span class="ratings_num">{{ $hotel->rate }}</span>
+                                    @elseif ($hotel->rate  ==='2')
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><span class="ratings_num">{{ $hotel->rate }}</span>
+                                    @elseif ($hotel->rate  ==='1')
+                                    <i class="fas fa-star"></i><span class="ratings_num">{{ $hotel->rate }}</span>
+                                    @else
+                                    <span class="badge bg-danger">not found</span>
+                                    
+                                    @endif
+                                    
+                                        
+                                    <a href="{{route('create-book-hotel',['id'=>$hotel->id])}}" class="btn btn-danger btn-sm "> حجز الفندق</a>
+                            </div>
+                        </div>
                     </div>
-                    <!-- cd-filter-content -->
+                    @endforeach
+                    {{-- <div class="result">
+                        <div class="image">
+                            <img class="default_img" src="{{ asset('cms/assets/img/hotel_default_background.jpg') }}">
+                            <img class="result_img" src="{{ asset('cms/assets/img/hotel1.jpg') }}">
+                        </div>
+                        <div class="card_container">
+                            <div class="label"><i class="fas fa-tag"></i><span>فندق الماسه</span></div>
+                            <div class="address"><img src="{{ asset('cms/assets/img/map.svg') }}"><span>طريق الامارة - الخبيب - القصيم</span></div>
+                            <div class="rating"><i class="fas fa-star"></i> <span class="ratings_num">1</span></div>
+                        </div>
+                    </div>
+                    <div class="result">
+                        <div class="image">
+                            <img class="default_img" src="{{ asset('cms/assets/img/hotel_default_background.jpg') }}">
+                            <img class="result_img" src="{{ asset('cms/assets/img/hotel1.jpg') }}">
+                        </div>
+                        <div class="card_container">
+                            <div class="label"><i class="fas fa-tag"></i><span>فندق الماسه</span></div>
+                            <div class="address"><img src="{{ asset('cms/assets/img/map.svg') }}"><span>طريق الامارة - الخبيب - القصيم</span></div>
+                            <div class="rating"><i class="fas fa-star"></i> <span class="ratings_num">1</span></div>
+                        </div>
+                    </div>
+                    <div class="result">
+                        <div class="image">
+                            <img class="default_img" src="{{ asset('cms/assets/img/hotel_default_background.jpg') }}">
+                            <img class="result_img" src="{{ asset('cms/assets/img/hotel1.jpg') }}">
+                        </div>
+                        <div class="card_container">
+                            <div class="label"><i class="fas fa-tag"></i><span>فندق الماسه</span></div>
+                            <div class="address"><img src="{{ asset('cms/assets/img/map.svg') }}"><span>طريق الامارة - الخبيب - القصيم</span></div>
+                            <div class="rating"><i class="fas fa-star"></i> <span class="ratings_num">1</span></div>
+                        </div>
+                    </div>
+                    <div class="result">
+                        <div class="image">
+                            <img class="default_img" src="{{ asset('cms/assets/img/hotel_default_background.jpg') }}">
+                            <img class="result_img" src="{{ asset('cms/assets/img/hotel1.jpg') }}">
+                        </div>
+                        <div class="card_container">
+                            <div class="label"><i class="fas fa-tag"></i><span>فندق الماسه</span></div>
+                            <div class="address"><img src="{{ asset('cms/assets/img/map.svg') }}"><span>طريق الامارة - الخبيب - القصيم</span></div>
+                            <div class="rating"><i class="fas fa-star"></i> <span class="ratings_num">1</span></div>
+                        </div>
+                    </div>
+                    <div class="result">
+                        <div class="image">
+                            <img class="default_img" src="{{ asset('cms/assets/img/hotel_default_background.jpg') }}">
+                            <img class="result_img" src="{{ asset('cms/assets/img/hotel1.jpg') }}">
+                        </div>
+                        <div class="card_container">
+                            <div class="label"><i class="fas fa-tag"></i><span>فندق الماسه</span></div>
+                            <div class="address"><img src="{{ asset('cms/assets/img/map.svg') }}"><span>طريق الامارة - الخبيب - القصيم</span></div>
+                            <div class="rating"><i class="fas fa-star"></i> <span class="ratings_num">1</span></div>
+                        </div>
+                    </div> --}}
                 </div>
-                <!-- cd-filter-block -->
-
-                <div class="cd-filter-block">
-                    <h4>Radio buttons</h4>
-
-                    <ul class="cd-filter-content cd-filters list">
-                        <li>
-                            <input class="filter" data-filter="" type="radio" name="radioButton" id="radio1" checked>
-                            <label class="radio-label" for="radio1">All</label>
-                        </li>
-
-                        <li>
-                            <input class="filter" data-filter=".radio2" type="radio" name="radioButton" id="radio2">
-                            <label class="radio-label" for="radio2">Choice 2</label>
-                        </li>
-
-                        <li>
-                            <input class="filter" data-filter=".radio3" type="radio" name="radioButton" id="radio3">
-                            <label class="radio-label" for="radio3">Choice 3</label>
-                        </li>
-                    </ul>
-                    <!-- cd-filter-content -->
-                </div>
-                <!-- cd-filter-block -->
-            </form>
-
-            <a href="#0" class="cd-close">Close</a>
+            </div>
         </div>
-        <!-- cd-filter -->
 
-        <a href="#0" class="cd-filter-trigger">Filters</a>
-    </main>
-    <!-- cd-main-content -->
-    <script src="{{ asset('cms/js/jquery-2.1.1.js') }}"></script>
-    <script src="{{ asset('cms/js/jquery.mixitup.min.js') }}"></script>
-    <script src="{{ asset('cms/js/main.js') }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Resource jQuery -->
-</body>
+        <script src="{{ asset('cms/js/first_page.js') }}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    </body>
 
 </html>

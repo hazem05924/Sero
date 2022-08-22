@@ -19,14 +19,14 @@ class SearchController extends Controller
             $hotels = Hotel::where('name', 'like', '%' . $request->name . '%');
         }
         if ($request->get('city_id')) {
-            $hotels = Hotel::where('city_id', 'like', '%' . $request->city_id . '%');
+            $hotels = Hotel::with("city")->where('city_id', 'like', '%' . $request->city_id . '%');
         }
-        
+
         if ($request->status != null) {
             $hotels = Hotel::where('status', $request->status);
         }
         $hotels = $hotels->paginate(5);
-        return response()->view('front_end.search-hotel' , compact('hotels'));
+        return response()->view('front_end.search-hotel' , compact('hotels' ,'request'));
 
     }
 }
