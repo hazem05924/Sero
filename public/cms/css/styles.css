@@ -11461,7 +11461,7 @@ body {
     font-family: 'Cairo', sans-serif;
     font-size: 1.5rem;
     line-height: 2.5rem;
-    letter-spacing: 1rem;
+    /* letter-spacing: 1rem; */
     background: linear-gradient(rgb(255, 255, 255, 0.9), rgb(255, 255, 255, 0.6));
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
@@ -11473,6 +11473,14 @@ body {
 .masthead .h2 {
     max-width: 20rem;
     font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .masthead h1,
+    .masthead .h1 {
+        font-size: 3rem;
+        line-height: 6rem;
+    }
 }
 
 @media (min-width: 768px) {
@@ -11492,7 +11500,6 @@ body {
     .masthead .h1 {
         font-size: 4rem;
         line-height: 7rem;
-        letter-spacing: 0.2rem;
     }
     .masthead .h1 span {
         font-size: 6.5rem !important;
