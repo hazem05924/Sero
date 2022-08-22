@@ -16,6 +16,7 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{{ asset('cms/css/styles.css') }}" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('cms/css/style2.css') }}">
+
     <style>
         ::-webkit-scrollbar{
              width: 10px;
@@ -77,15 +78,15 @@
                       <a class="dropdown-toggle text-decoration-none text-white" href="#" role="button"
                           id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                           @if (auth('web')->user()->image != '')
-                          
+
                           <img src="{{ asset('storage/images/register/'.auth('web')->user()->image) }}" alt="Logo" style="width: 25px; height: 25px;">
-                          
+
                           @else
-                          
+
                           <img src="{{ asset('storage/images/userSolid.png') }}" alt="Logo" style="width: 25px; height: 25px; border-radius: 50%">
 
-                          @endif  
-                           {{ auth('web')->user()->full_name }} 
+                          @endif
+                           {{ auth('web')->user()->full_name }}
                       </a>
 
                       <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -143,14 +144,14 @@
                         <div class="col-12 col-sm-12 col-md-6 col-lg-3">
                             <label for="Location" class="form-label">{{ __("Destination") }} <span>*</span></label>
                             <select id="Location" class="form-control col-3" name="city_id" @if( request()->city_id) value={{request()->city->name}} @endif>
-                                <option  value="">{{ __("Select") }}</option>  
+                                <option  value="">{{ __("Select") }}</option>
                             @foreach ($cities as $city )
                             @if ($city->name === "Makkah")
-                            <option  value="{{ $city->id }}">{{ __("Makkah") }}</option>  
+                            <option  value="{{ $city->id }}">{{ __("Makkah") }}</option>
                             @endif
                             @if ($city->name === "Madinah")
-                            <option  value="{{ $city->id }}">{{ __("Madinah") }}</option>  
-                            @endif     
+                            <option  value="{{ $city->id }}">{{ __("Madinah") }}</option>
+                            @endif
                             @endforeach
                           </select>
                         </div>
@@ -162,7 +163,7 @@
                             <label for="date-out" class="form-label">{{__("Checkout")}} <span>*</span></label>
                             <input type="text" name="name" @if( request()->name) value={{request()->name}} @endif id="date-out" class="form-control col-3">
                         </div>
-                        
+
 
                         <div class="col-12 col-sm-12 col-md-6 col-lg-3">
                             <label for="input-group" class="form-label">{{__("Details")}} <span>*</span></label>
@@ -175,9 +176,6 @@
 
                         <div class="btn1 col-12 col-sm-12 col-md-6 col-lg-3">
                             <button type="submit" class="btn p-2 w-100">{{__("Search")}}</button>
-
-                        <div class="btn1 col-6 col-sm-6 col-md-6 col-lg-6">
-                            <button type="button" class="btn p-2 w-100">{{__("Search")}}</button>
                         </div>
                     </form>
 
