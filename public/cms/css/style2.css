@@ -178,10 +178,9 @@
         font-weight: bold;
     }
     
-    .btn :hover {
+    .btn1 :hover {
         color: rgba(39, 49, 138) !important;
         background-color: white !important;
-        padding: 5px 15px !important;
         transition: 1s;
     }
     
@@ -189,7 +188,7 @@
         font-weight: bold;
     }
     
-    .panels span {
+    .panels>span {
         color: red;
     }
     
@@ -231,8 +230,10 @@
         min-height: 200px;
         max-width: 80%;
         border-radius: 15px;
-        overflow: hidden;
         padding: 20px;
+        position: relative;
+        display: flex;
+        flex-wrap: nowrap;
     }
     
     #one-panel,
@@ -283,7 +284,7 @@
     #one:checked~.tabs #one-tab,
     #two:checked~.tabs #two-tab,
     #three:checked~.tabs #three-tab {
-        background: linear-gradient( rgba(0, 0, 0) 50%, rgba(255, 255, 255, 0.2));
+        background: rgba(0, 0, 0, 0.6);
         color: #fff;
         font-size: 20px;
         font-weight: bold;
@@ -583,10 +584,18 @@
         color: rgb(255, 255, 255);
     }
     
+    .panel input:hover {
+        border-color: rgba(39, 49, 139);
+    }
+    
     .panel select {
         border: 1px solid rgb(255, 255, 255);
         background-color: transparent;
         color: rgb(255, 255, 255);
+    }
+    
+    .panel select:hover {
+        border-color: rgba(39, 49, 139);
     }
     
     .panel .input-group input {
@@ -615,4 +624,151 @@
     
     .widget-contact-list a:hover {
         color: rgba(255, 255, 255);
+    }
+    
+    a.btn-secondary {
+        color: white;
+        background-color: transparent;
+        border: 1px solid white;
+        box-shadow: 1px 1px 7px rgb(144 144 144 / 50%);
+        font-size: 12px;
+        font-weight: 500;
+        padding: 9px 12px;
+    }
+    
+    .dropdown ul.dropdown-menu-sp {
+        position: relative;
+        inset: 0px auto auto 0px;
+        margin: 0px;
+        transform: translate(0px, 40px);
+        width: 100%;
+        height: fit-content;
+        z-index: 1000;
+        display: none;
+        min-width: 10rem;
+        padding: 0.5rem 0;
+        font-size: 1rem;
+        color: #212529;
+        text-align: left;
+        list-style: none;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid rgba(0, 0, 0, .15);
+        border-radius: 0.25rem;
+    }
+    
+    .dropdown ul.dropdown-menu-sp.show {
+        display: block;
+        position: absolute;
+        z-index: 1;
+    }
+    
+    a.btn-secondary:hover {
+        color: white;
+        background-color: transparent;
+        border-color: rgba(39, 49, 139);
+    }
+    
+    a.btn-secondary:focus {
+        color: white;
+        background-color: transparent;
+        box-shadow: 1px 1px 7px rgb(144 144 144 / 50%);
+    }
+    
+    a.btn-secondary::after {
+        display: none;
+    }
+    
+    .li_parent {
+        position: relative !important;
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        flex-direction: row !important;
+        align-content: center !important;
+        justify-content: space-evenly !important;
+        align-items: center !important;
+        padding: 10px 0 !important;
+    }
+    
+    .li_parent .minus_btn {
+        position: relative;
+        justify-content: flex-start;
+        align-items: center;
+        align-content: center;
+        font-size: 30px;
+        font-weight: 600;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        line-height: 0.7;
+        border-radius: 50%;
+        background-color: transparent;
+        transform: translateY(1px);
+        cursor: pointer;
+        transition: .3s;
+        color: #3195e5;
+        user-select: none;
+    }
+    
+    .li_parent .positive_btn {
+        position: relative;
+        justify-content: flex-end;
+        align-items: center;
+        align-content: center;
+        font-size: 23px;
+        font-weight: 600;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        line-height: 1.1;
+        border-radius: 50%;
+        background-color: transparent;
+        transform: translateY(2px);
+        cursor: pointer;
+        transition: .3s;
+        color: #3195e5;
+        user-select: none;
+    }
+    
+    .li_parent .minus_btn:hover,
+    .li_parent .positive_btn:hover {
+        background-color: #e9e9e9;
+    }
+    
+    .li_parent .num_parent {
+        cursor: default;
+    }
+    
+    .li_parent .num_parent .num {
+        margin-right: 10px !important;
+        font-size: 18px !important;
+        font-family: sans-serif !important;
+        font-weight: 600 !important;
+        color: #3195e5 !important;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+    
+    .li_parent .num_parent .label {
+        color: #8e8e8e;
+        font-weight: 500;
+        font-size: 15px;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+    
+    .datepicker.datepicker-dropdown.dropdown-menu {
+        top: 341.594px;
+        left: 95.5px;
+        z-index: 10;
+        display: block;
+        box-shadow: rgb(124 124 124 / 43%) 1px 2px 7px;
+    }
+    
+    .datepicker-days {
+        padding: 20px;
     }

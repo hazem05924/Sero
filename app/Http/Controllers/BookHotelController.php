@@ -25,7 +25,7 @@ class BookHotelController extends Controller
     public function createBook($id)
     {
         $book_hotels=BookHotel::where('hotel_id', $id)->orderBy('created_at', 'desc')->paginate(4);
-        
+
         $hotels= Hotel::where('id',$id)->get();
         $images=ImageHotel::where('hotel_id', $id)->orderBy('created_at', 'desc')->get();
         $rooms=Room::where('hotel_id', $id)->orderBy('created_at', 'desc')->paginate(5);
