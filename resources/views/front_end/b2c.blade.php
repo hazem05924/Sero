@@ -18,6 +18,12 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{{ asset('cms/css/styles.css') }}" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('cms/css/style2.css') }}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
     <style>
         ::-webkit-scrollbar{
              width: 10px;
@@ -65,9 +71,9 @@
                             <div class="dropdown">
                                 {{-- <a class="dropdown-toggle text-decoration-none text-white" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"><img src="{{asset('cms/assets/img/en-US.png')}}" alt="" style="width: 25px; height: 25px; border-radius: 50%;"> En - English</a> --}}
                                 <a class="dropdown-toggle text-decoration-none text-white" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">  {{ __('language') }}</a>
-    
+
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    
+
                                         @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                                             <li>
                                                 <a class="dropdown-item" rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
@@ -75,8 +81,8 @@
                                                 </a>
                                             </li>
                                         @endforeach
-    
-    
+
+
                                 </ul>
                               </div>
                     @if (Auth::guard('web')->id())
@@ -167,7 +173,7 @@
             <div class="panels col-10">
 
                 <div class="panel" id="one-panel">
-                    <div class="add1 d-flex flex-wrap justify-content-start align-content-center align-items-center">
+                    <div class="add1 d-flex flex-wrap justify-content-center align-content-center align-items-center">
                         <div class="col-12 col-sm-12 col-md-6 col-lg-4">
                             <label for="Location" class="form-label">{{ __("Destination") }} <span>*</span></label>
                             <select id="Location" class="form-control col-4" name="Location">
@@ -184,13 +190,28 @@
                             <input type="date" name="date-out" id="date-out" class="form-control col-4">
                         </div>
 
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-4">
-                            <label for="input-group" class="form-label">{{ __("Details") }} <span>*</span></label>
-                            <div class="input-group" id="input-group">
-                                <input type="text" class="form-control border-0" placeholder="2 {{ __("Traveller(s)") }}">
-                                <input type="text" class="form-control border-0" placeholder="0 {{ __("Children(s)") }}">
-                                <input type="text" class="form-control border-0" placeholder="1 {{ __("Room(s)") }}">
-                            </div>
+                        <div class="dropdown col-12 col-sm-12 col-md-6 col-lg-4">
+                            <label for="btnMenu" class="form-label">{{__("Details")}} <span>*</span></label>
+                            <a class="btn btn-secondary dropdown-toggle-sp form-control w-100">
+                                <span class="adults_num">0</span> Adults <span class="children_num">0</span> Children <span class="rooms_num">0</span> Rooms
+                            </a>
+                            <ul class="dropdown-menu-sp" id="btnMenu">
+                                <div class="li_parent adults">
+                                    <div class="minus_btn"><span> - </span></div>
+                                    <div class="num_parent"><span class="num">0</span><span class="label"> adults </span></div>
+                                    <div class="positive_btn"><span>+</span></div>
+                                </div>
+                                <div class="li_parent children">
+                                    <div class="minus_btn"><span> - </span></div>
+                                    <div class="num_parent"><span class="num">0</span><span class="label"> Children </span></div>
+                                    <div class="positive_btn"><span>+</span></div>
+                                </div>
+                                <div class="li_parent rooms">
+                                    <div class="minus_btn"><span> - </span></div>
+                                    <div class="num_parent"><span class="num">0</span><span class="label"> Rooms </span></div>
+                                    <div class="positive_btn"><span>+</span></div>
+                                </div>
+                            </ul>
                         </div>
 
                         <div class="col-12 col-sm-12 col-md-6 col-lg-4">
@@ -696,7 +717,7 @@
                     </div>
                 </div>
                 <div class="panel" id="two-panel">
-                    <div class="add2 d-flex flex-wrap justify-content-start align-content-center align-items-center">
+                    <div class="add2 d-flex flex-wrap justify-content-center align-content-center align-items-center">
                         <div class="col-12 col-sm-12 col-md-6 col-lg-3">
                             <label for="date-in" class="form-label">{{ __("From") }} <span>*</span></label>
                             <input type="text" name="date-in" id="date-in" class="form-control col-3"
@@ -754,23 +775,64 @@
         </div>
     </section>
     <!-- Project One Row-->
-    <section class="services" id="services" style="margin-bottom: 30px;">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-sm-12 col-md-6 col-lg-4">
-                    <div class="card1 card-1">
-                        <h5>{{ __("Flights") }}</h5>
+    <section class="container d-flex justify-content-between align-items-center align-content-center flex-wrap" style="padding: 10rem 0;">
+        <div class="center">
+            <div class="property-card col-12 col-sm-12 col-md-6 col-lg-4">
+                <a href="#">
+                    <div class="property-image">
+                        <div class="property-image-title">
+                            <!-- Optional <h5>Card Title</h5> If you want it, turn on the CSS also. -->
+                        </div>
                     </div>
+                </a>
+                <div class="property-description">
+                    <h5> Card Title </h5>
+                    <p>Lorem Ipsum Dipsum hortata. Mixcall Horcho. Mixwell Chingo. More Bingo. Lorem Ipum doth be hard.</p>
                 </div>
-                <div class="col-12 col-sm-12 col-md-6 col-lg-4">
-                    <div class="card1 card-2">
-                        <h5>{{__("HOTELS")}}</h5>
+            </div>
+        </div>
+        <div class="center">
+            <div class="property-card col-12 col-sm-12 col-md-6 col-lg-4">
+                <a href="#">
+                    <div class="property-image">
+                        <div class="property-image-title">
+                            <!-- Optional <h5>Card Title</h5> If you want it, turn on the CSS also. -->
+                        </div>
                     </div>
+                </a>
+                <div class="property-description">
+                    <h5> Card Title </h5>
+                    <p>Lorem Ipsum Dipsum hortata. Mixcall Horcho. Mixwell Chingo. More Bingo. Lorem Ipum doth be hard.</p>
                 </div>
-                <div class="col-12 col-sm-12 col-md-6 col-lg-4">
-                    <div class="card1 card-3">
-                        <h5>{{ __("TRANSPORT") }}</h5>
+            </div>
+        </div>
+        <div class="center">
+            <div class="property-card col-12 col-sm-12 col-md-6 col-lg-4">
+                <a href="#">
+                    <div class="property-image">
+                        <div class="property-image-title">
+                            <!-- Optional <h5>Card Title</h5> If you want it, turn on the CSS also. -->
+                        </div>
                     </div>
+                </a>
+                <div class="property-description">
+                    <h5> Card Title </h5>
+                    <p>Lorem Ipsum Dipsum hortata. Mixcall Horcho. Mixwell Chingo. More Bingo. Lorem Ipum doth be hard.</p>
+                </div>
+            </div>
+        </div>
+        <div class="center">
+            <div class="property-card col-12 col-sm-12 col-md-6 col-lg-4">
+                <a href="#">
+                    <div class="property-image">
+                        <div class="property-image-title">
+                            <!-- Optional <h5>Card Title</h5> If you want it, turn on the CSS also. -->
+                        </div>
+                    </div>
+                </a>
+                <div class="property-description">
+                    <h5> Card Title </h5>
+                    <p>Lorem Ipsum Dipsum hortata. Mixcall Horcho. Mixwell Chingo. More Bingo. Lorem Ipum doth be hard.</p>
                 </div>
             </div>
         </div>
@@ -844,7 +906,7 @@
                                 <a href="" data-bs-toggle="modal" data-bs-target="#Modal">{{ __("privacy policy") }}</a>
 
                                 <!-- Modal -->
-                                <div class="modal modal-fullscreen-lg-down fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                                <div class="modal modal-fullscreen-lg-down text-center fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -855,93 +917,95 @@
                                                 <div class=" p-5">
                                                     <h1 class="text-center p-3">{{ __("privacy policy") }}</h1>
                                                     <h3 class="text-danger">{{ __("Sero com platform rules and policies") }}</h3>
-                                                    <p>Our company and all our systems are subject to the general system and policies of the country of origin, which is the Kingdom of Saudi Arabia. Currently, we accept online payments by using credit cards, which include “Visa and MasterCard” cards and can be debited through the currency available in the services via the platform, which can be in Saudi riyals or US dollars, In the event that you wish to usee the electronic payment method via the Internet, there must be a match and complete authorization and a match in the details in the customer ID and the ID of the card holder, which must be completely identical to make purchases</p>
+                                                    <p>{{ __("Our company and all our systems are subject to the general system and policies of the country of origin, which is the Kingdom of Saudi Arabia. Currently, we accept online payments by using credit cards, which include “Visa and MasterCard” cards and can be debited through the currency available in the services via the platform, which can be in Saudi riyals or US dollars, In the event that you wish to usee the electronic payment method via the Internet, there must be a match and complete authorization and a match in the details in the customer ID and the ID of the card holder, which must be completely identical to make purchases") }}</p>
 
-                                                    <p>In cases of refund, only refundable amounts of transactions made on this electronic platform will be refunded to the original payment method through which the payment for the transactions was completed.</p>
+                                                    <p>{{ __("In cases of refund, only refundable amounts of transactions made on this electronic platform will be refunded to the original payment method through which the payment for the transactions was completed.") }}
 
-                                                    <p>Some basic data related to delivery information, such as customer name, location, postal address and contact numbers, will be stored for the purposes of ensuring delivery. Other personally identifiable information will not be stored.</p>
+                                                    <p>{{ __("Some basic data related to delivery information, such as customer name, location, postal address and contact numbers, will be stored for the purposes of ensuring delivery. Other personally identifiable information will not be stored.") }}</p>
 
-                                                    <h3 class="text-danger">Cancellation fees
+                                                    <h3 class="text-danger">{{ __("Cancellation fees") }}
                                                     </h3>
                                                     <ul>
-                                                        <li>If cancellation is made between 0 days – 24 days prior to the departure date, 100% of the reservations value will be deducted and will not be refunded in any way.</li>
+                                                        <li>{{ __("If cancellation is made between 0 days – 24 days prior to the departure date, 100% of the reservations value will be deducted and will not be refunded in any way.") }}</li>
 
-                                                        <li>If the cancellation is made within a period of time between 25 to 60 days before the scheduled departure date, 50% of the reservation value will be deducted.</li>
+                                                        <li>{{ __("If the cancellation is made within a period of time between 25 to 60 days before the scheduled departure date, 50% of the reservation value will be deducted.") }}</li>
 
-                                                        <li>If the cancellation is made within a period of time equal to or greater than 61 days from the scheduled departure date, only 10% of the total value of the reservations will be charged.</li>
-                                                        <li>In the event that the name of the data provided in the reservations does not match the data details in the passport, a fine of only 150 Saudi riyals will be required to change the name of the traveler if the change is possible</li>
+                                                        <li>{{ __("If the cancellation is made within a period of time equal to or greater than 61 days from the scheduled departure date, only 10% of the total value of the reservations will be charged.") }}</li>
 
-                                                        <li>For hotels, the siro.com platform does not charge any special additional fees to provide cancellation services as an additional fee in addition to the cancellation fees charged by the hotel in its cancellation policy</li>
+                                                        <li>{{ __("In the event that the name of the data provided in the reservations does not match the data details in the passport, a fine of only 150 Saudi riyals will be required to change the name of the traveler if the change is possible") }}</li>
+
+                                                        <li>{{ __("For hotels, the siro.com platform does not charge any special additional fees to provide cancellation services as an additional fee in addition to the cancellation fees charged by the hotel in its cancellation policy") }}</li>
                                                     </ul>
 
-                                                    <h3 class="text-danger">General Provisions</h3>
+                                                    <h3 class="text-danger">{{ __("General Provisions") }}</h3>
 
-                                                    <p>Through our platform, you can book and travel to any specific destinations you wish, and these destinations may involve greater risks than others, whatever kind of risk, and you will have to bear all responsibility in terms of costs, consequences and full personal responsibility</p>
+                                                    <p>{{ __("Through our platform, you can book and travel to any specific destinations you wish, and these destinations may involve greater risks than others, whatever kind of risk, and you will have to bear all responsibility in terms of costs, consequences and full personal responsibility") }}</p>
 
-                                                    <p>sero com platform requests its travelers and all guests to consult the local authorities in their country or the country of travel, and to evaluate travel ban decisions, warnings, advertisements or all instructions issued by local authorities before booking travel to international or domestic destinations in general, certain regions and destinations Especially without any responsibility on the platform</p>
+                                                    <p>{{ __("sero com platform requests its travelers and all guests to consult the local authorities in their country or the country of travel, and to evaluate travel ban decisions, warnings, advertisements or all instructions issued by local authorities before booking travel to international or domestic destinations in general, certain regions and destinations Especially without any responsibility on the platform") }}</p>
 
-                                                    <p>By providing and selling travel and reservation services to certain countries or destinations, the siro com platform is not in any way responsible or liable for the warning or risks in those destinations, and the siro platform is not considered a guarantor or recommender of travel to these destinations, and the siro platform does not bear any responsibility for Damages, losses or delays that may result from failure to provide correct documents relating to travel, entry, exit or length of stay at those destinations</p>
+                                                    <p>{{ __("By providing and selling travel and reservation services to certain countries or destinations, the siro com platform is not in any way responsible or liable for the warning or risks in those destinations, and the siro platform is not considered a guarantor or recommender of travel to these destinations, and the siro platform does not bear any responsibility for Damages, losses or delays that may result from failure to provide correct documents relating to travel, entry, exit or length of stay at those destinations") }}</p>
 
-                                                    <p>Sero Platform and its affiliates, agencies, or suppliers are not responsible in any way for errors, acts, omissions, representations, warranties, violations or negligence made by any airline, hotel or other service provider, and the platform is not responsible for Any personal injury, death, property damage, or any other damages, fees or expenses arising therefrom, Neither Sero nor any of the companies and agents it deals with or any of the service providers of the platform assume any responsibility and will not refund the money in the event of any delay, cancellation of reservation, increase in taxes, force majeure, strikes and riots, or any other actions Others are out of direct control, and the platform shall not be liable for any additional expenses, litigation, delay, redirection, or litigation to any parties or authorities</p>
+                                                    <p>{{ __("Sero Platform and its affiliates, agencies, or suppliers are not responsible in any way for errors, acts, omissions, representations, warranties, violations or negligence made by any airline, hotel or other service provider, and the platform is not responsible for Any personal injury, death, property damage, or any other damages, fees or expenses arising therefrom, Neither Sero nor any of the companies and agents it deals with or any of the service providers of the platform assume any responsibility and will not refund the money in the event of any delay, cancellation of reservation, increase in taxes, force majeure, strikes and riots, or any other actions Others are out of direct control, and the platform shall not be liable for any additional expenses, litigation, delay, redirection, or litigation to any parties or authorities") }}</p>
 
-                                                    <p>Sero Platform reserves its exclusive and complete rights and in its sole discretion to delete, change, limit or discontinue the Site or any material posted on it, and is under no obligation to take into account the needs of any user in connection therewith.</p>
+                                                    <p>{{ __("Sero Platform reserves its exclusive and complete rights and in its sole discretion to delete, change, limit or discontinue the Site or any material posted on it, and is under no obligation to take into account the needs of any user in connection therewith.") }}</p>
 
-                                                    <p>Sero Platform reserves all its exclusive rights to prevent or deny access to any user of this website or any part of it without prior notice.</p>
+                                                    <p>{{ __("Sero Platform reserves all its exclusive rights to prevent or deny access to any user of this website or any part of it without prior notice.") }}</p>
 
-                                                    <p>By agreeing to the terms and conditions relating to any of the operations on this platform, you expressly and are bound to agree to be bound by the terms and conditions of purchase and services imposed by any provider or supplier of the service you choose to deal with, including, but not limited to, the payment of all amounts when due in accordance with to the restrictions and rules imposed by the provider or supplier of the services in relation to the availability of the services and the timely use of prices, products or services, and you acknowledge that there may be additional requirements from some suppliers and/or a third party In relation to a third party, the provision of the Service or participation in the Participation, and that you are fully aware that the terms, conditions, rules, and restrictions imposed on the Offer may result in the cancellation of your reservations, or that the Sero Platform debits your account for costs incurred by the Platform as a result of your stay</p>
+                                                    <p>{{ __("By agreeing to the terms and conditions relating to any of the operations on this platform, you expressly and are bound to agree to be bound by the terms and conditions of purchase and services imposed by any provider or supplier of the service you choose to deal with, including, but not limited to, the payment of all amounts when due in accordance with to the restrictions and rules imposed by the provider or supplier of the services in relation to the availability of the services and the timely use of prices, products or services, and you acknowledge that there may be additional requirements from some suppliers and/or a third party In relation to a third party, the provision of the Service or participation in the Participation, and that you are fully aware that the terms, conditions, rules, and restrictions imposed on the Offer may result in the cancellation of your reservations, or that the Sero Platform debits your account for costs incurred by the Platform as a result of your stay") }}</p>
 
-                                                    <p>No waiver by Sero platform shall be deemed or enforceable in any of the terms and conditions and in any form whatsoever, as is binding, what is stated in writing on the site, or approved and signed by its authorized representative in accordance with the regulations and laws</p>
+                                                    <p>{{ __("No waiver by Sero platform shall be deemed or enforceable in any of the terms and conditions and in any form whatsoever, as is binding, what is stated in writing on the site, or approved and signed by its authorized representative in accordance with the regulations and laws") }}</p>
 
-                                                    <p>All these terms and conditions shall be governed by and construed in accordance with the laws and regulations in force in the Kingdom of Saudi Arabia, and any dispute shall be subject to the exclusive jurisdiction of the appropriate and competent courts and judicial organs located in the Kingdom of Saudi Arabia.</p>
+                                                    <p>{{ __("All these terms and conditions shall be governed by and construed in accordance with the laws and regulations in force in the Kingdom of Saudi Arabia, and any dispute shall be subject to the exclusive jurisdiction of the appropriate and competent courts and judicial organs located in the Kingdom of Saudi Arabia.") }}</p>
 
-                                                    <h3 class="text-danger">Payment terms and conditions</h3>
+                                                    <h3 class="text-danger">{{ __("Payment terms and conditions") }}</h3>
 
-                                                    <p>Neither the Sero platform nor its developer will and will not request, store or share any data related to customers' credit cards, login data for their bank accounts, or prepaid cards over the phone or e-mail and under any circumstances</p>
+                                                    <p>{{ __("Neither the Sero platform nor its developer will and will not request, store or share any data related to customers credit cards, login data for their bank accounts, or prepaid cards over the phone or e-mail and under any circumstances") }}</p>
 
-                                                    <p>In the event of a note on payments through our electronic payment gateway, our security team will contact you via e-mail from the following address info@sero.com.sa, and a photo of the credit card will be requested from the front and back on the CVV code For verification, please contact the secure email address: info@sero.com.sa</p>
+                                                    <p>{{ __("In the event of a note on payments through our electronic payment gateway, our security team will contact you via e-mail from the following address info@sero.com.sa, and a photo of the credit card will be requested from the front and back on the CVV code For verification, please contact the secure email address: info@sero.com.sa") }}</p>
 
-                                                    <p>In the event that you receive any communication or email from another email address purporting to be sent to you by the Siro platform and requesting any personal or security data, please never reply to that email, and please forward such message to our specialized email which is info@sero.com.sa You will also have to delete, directly and immediately, this anonymous message</p>
+                                                    <p>{{ __("In the event that you receive any communication or email from another email address purporting to be sent to you by the Siro platform and requesting any personal or security data, please never reply to that email, and please forward such message to our specialized email which is info@sero.com.sa You will also have to delete, directly and immediately, this anonymous message") }}</p>
 
-                                                    <h3 class="text-danger">Payment for the services provided by the Sero platform can be paid through the following channels:</h3>
+                                                    <h3 class="text-danger">{{ __("Payment for the services provided by the Sero platform can be paid through the following channels:") }}</h3>
 
                                                     <ul>
-                                                        <li>The electronic payment gateway page on our website</li>
-                                                        <li>Electronic payment via the secure link on the domain of the Siro platform</li>
-                                                        <li>Deposit cash into the Siro platform account at Alinma Bank according to the following IBAN data (IBAN SA1205000068203403610000)</li>
+                                                        <li>{{ __("The electronic payment gateway page on our website") }}</li>
+                                                        <li>{{ __("Electronic payment via the secure link on the domain of the Siro platform") }}</li>
+                                                        <li>{{ __("Deposit cash into the Siro platform account at Alinma Bank according to the following IBAN data (IBAN SA1205000068203403610000)") }}</li>
                                                     </ul>
 
-                                                    <p>The user will be warned, and confirmed to agree that he will create electronic payments and that he will issue or create electronic payment instructions and that he will provide his card or credit card data or his or her bank data</p>
+                                                    <p>{{ __("The user will be warned, and confirmed to agree that he will create electronic payments and that he will issue or create electronic payment instructions and that he will provide his card or credit card data or his or her bank data") }}</p>
 
-                                                    <p>The user is considered the legal user and authorized to use his credit card or bank account, and he is considered legally authorized to carry out payments, withdrawals and bank debits from his accounts in favor of these operations</p>
+                                                    <p>{{ __("The user is considered the legal user and authorized to use his credit card or bank account, and he is considered legally authorized to carry out payments, withdrawals and bank debits from his accounts in favor of these operations") }}</p>
 
-                                                    <p>The user fully bears all responsibility related to the need to ensure that he has provided the card or bank account details accurately and correctly</p>
+                                                    <p>{{ __("The user fully bears all responsibility related to the need to ensure that he has provided the card or bank account details accurately and correctly") }}</p>
 
-                                                    <p>The user will authorize the debiting of the credit card or/and the bank account specified by him for payment in favor of the Sero platform</p>
+                                                    <p>{{ __("The user will authorize the debiting of the credit card or/and the bank account specified by him for payment in favor of the Sero platform") }}</p>
 
-                                                    <p>The user / customer bears all responsibility for providing sufficient cash balance in the credit card / or bank account that he will use during the payment process for the financial dues and invoices resulting from the services and reservations chosen by him, bearing in mind that all payments are inclusive of all fees related to</p>
+                                                    <p>{{ __("The user / customer bears all responsibility for providing sufficient cash balance in the credit card / or bank account that he will use during the payment process for the financial dues and invoices resulting from the services and reservations chosen by him, bearing in mind that all payments are inclusive of all fees related to") }}</p>
 
 
-                                                    <h3 class="text-danger">Visa Terms and Conditions</h3>
+                                                    <h3 class="text-danger">{{ __("Visa Terms and Conditions") }}</h3>
 
-                                                    <p>Nationals of the Arabian Gulf [GCC countries] do not need to obtain a visa, and these terms and conditions relate to all other nationalities outside of the Gulf Cooperation Council countries</p>
+                                                    <p>{{ __("Nationals of the Arabian Gulf [GCC countries] do not need to obtain a visa, and these terms and conditions relate to all other nationalities outside of the Gulf Cooperation Council countries") }}</p>
 
                                                     <ul>
-                                                        <li>Tourist visa is not valid for work or residence</li>
+                                                        <li>{{ __("Tourist visa is not valid for work or residence") }}</li>
 
-                                                        <li>The standard duration of a tourist visa is 90 days (unless the visa states otherwise on the sticker or printed visa document).</li>
+                                                        <li>{{ __("The standard duration of a tourist visa is 90 days (unless the visa states otherwise on the sticker or printed visa document).") }}</li>
 
-                                                        <li>The tourist must not “default” or exceed the legal period of the visa, and violating this is considered a violation of the laws of the Kingdom of Saudi Arabia, and the violator will be subject to legal procedures and legal penalties, which may include, but are not limited to financial fines or even access to a ban on entering the Kingdom of Saudi Arabia in the future</li>
+                                                        <li>{{ __("The tourist must not default or exceed the legal period of the visa, and violating this is considered a violation of the laws of the Kingdom of Saudi Arabia, and the violator will be subject to legal procedures and legal penalties, which may include, but are not limited to financial fines or even access to a ban on entering the Kingdom of Saudi Arabia in the future") }}</li>
 
-                                                        <li>A passport must be valid and valid for a period of no less than six months, and it must be capable of entering the Kingdom of Saudi Arabia and then the next destination. At least two blank pages must be available in the passport, corresponding to one another.</li>
-                                                        <li>Al-Sayeh had to cooperate fully with the work team of the Sero platform to fill in and verify the data as follows</li>
+                                                        <li>{{ __("A passport must be valid and valid for a period of no less than six months, and it must be capable of entering the Kingdom of Saudi Arabia and then the next destination. At least two blank pages must be available in the passport, corresponding to one another.") }}</li>
 
-                                                        <li>Al-Sayeh is responsible and accountable for the correctness and safety of all the data he submits to the platform, as well as the safety and authenticity of all documents that he will submit to the Siro platform team, including all documents and data that Al-Sayeh himself uploads on the Siro website</li>
+                                                        <li>{{ __("Al-Sayeh had to cooperate fully with the work team of the Sero platform to fill in and verify the data as follows") }}</li>
 
-                                                        <li>Tourist visa fees are not refundable or refundable in any way, in the event that the tourist decides to cancel a trip after the issuance of the visa reference number (MOVA), [issued after the success of the tourist visa application]</li>
+                                                        <li>{{ __("Al-Sayeh is responsible and accountable for the correctness and safety of all the data he submits to the platform, as well as the safety and authenticity of all documents that he will submit to the Siro platform team, including all documents and data that Al-Sayeh himself uploads on the Siro website") }}</li>
 
-                                                        <li>Sero platform or its team does not bear any legal responsibility or any complaints related to the customer’s violation of the terms, conditions and codes referred to above, and the policies and procedures related to them, and does not accept any kind of liability of any kind in this regard.</li>
+                                                        <li>{{ __("Tourist visa fees are not refundable or refundable in any way, in the event that the tourist decides to cancel a trip after the issuance of the visa reference number (MOVA), [issued after the success of the tourist visa application]") }}</li>
 
-                                                        <li>Visitors to the Kingdom of Saudi Arabia must obey the Islamic laws and regulations of the Kingdom and the controls, customs and traditions related to its civilization and society.</li>
+                                                        <li>{{ __("Sero platform or its team does not bear any legal responsibility or any complaints related to the customer’s violation of the terms, conditions and codes referred to above, and the policies and procedures related to them, and does not accept any kind of liability of any kind in this regard.") }}</li>
+
+                                                        <li>{{ __("Visitors to the Kingdom of Saudi Arabia must obey the Islamic laws and regulations of the Kingdom and the controls, customs and traditions related to its civilization and society.") }}</li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -985,7 +1049,8 @@
     <script src="js/scripts.js"></script>
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 
-
+    <script src="scripts/third_page.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 
 

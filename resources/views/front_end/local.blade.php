@@ -18,10 +18,10 @@
     <link rel="stylesheet" href="{{ asset('cms/css/style2.css') }}">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 
     <style>
         ::-webkit-scrollbar{
@@ -204,7 +204,7 @@
                     </div>
                 </div>
                 <div class="panel position-relative" id="two-panel">
-                    <div class="add2 d-flex flex-wrap justify-content-start align-content-center align-items-center">
+                    <div class="add2 d-flex flex-wrap justify-content-center align-content-center align-items-center">
                         <div class="col-12 col-sm-12 col-md-6 col-lg-3">
                             <label for="Route" class="form-label">{{__("Route")}} <span>*</span></label>
                             <select class="form-control" id="Route" name="Route">
@@ -447,23 +447,64 @@
         </div>
     </section>
     <!-- Project One Row-->
-    <section class="services" id="services" style="margin-bottom: 30px;">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-sm-12 col-md-6 col-lg-4">
-                    <div class="card1 card-1">
-                        <h5 >{{ __("Flights") }}</h5>
+    <section class="container d-flex justify-content-between align-items-center align-content-center flex-wrap" style="padding: 10rem 0;">
+        <div class="center">
+            <div class="property-card col-12 col-sm-12 col-md-6 col-lg-4">
+                <a href="#">
+                    <div class="property-image">
+                        <div class="property-image-title">
+                            <!-- Optional <h5>Card Title</h5> If you want it, turn on the CSS also. -->
+                        </div>
                     </div>
+                </a>
+                <div class="property-description">
+                    <h5> Card Title </h5>
+                    <p>Lorem Ipsum Dipsum hortata. Mixcall Horcho. Mixwell Chingo. More Bingo. Lorem Ipum doth be hard.</p>
                 </div>
-                <div class="col-12 col-sm-12 col-md-6 col-lg-4">
-                    <div class="card1 card-2">
-                        <h5>{{ __("HOTELS") }}</h5>
+            </div>
+        </div>
+        <div class="center">
+            <div class="property-card col-12 col-sm-12 col-md-6 col-lg-4">
+                <a href="#">
+                    <div class="property-image">
+                        <div class="property-image-title">
+                            <!-- Optional <h5>Card Title</h5> If you want it, turn on the CSS also. -->
+                        </div>
                     </div>
+                </a>
+                <div class="property-description">
+                    <h5> Card Title </h5>
+                    <p>Lorem Ipsum Dipsum hortata. Mixcall Horcho. Mixwell Chingo. More Bingo. Lorem Ipum doth be hard.</p>
                 </div>
-                <div class="col-12 col-sm-12 col-md-6 col-lg-4">
-                    <div class="card1 card-3">
-                        <h5>{{ __("TRANSPORT") }}</h5>
+            </div>
+        </div>
+        <div class="center">
+            <div class="property-card col-12 col-sm-12 col-md-6 col-lg-4">
+                <a href="#">
+                    <div class="property-image">
+                        <div class="property-image-title">
+                            <!-- Optional <h5>Card Title</h5> If you want it, turn on the CSS also. -->
+                        </div>
                     </div>
+                </a>
+                <div class="property-description">
+                    <h5> Card Title </h5>
+                    <p>Lorem Ipsum Dipsum hortata. Mixcall Horcho. Mixwell Chingo. More Bingo. Lorem Ipum doth be hard.</p>
+                </div>
+            </div>
+        </div>
+        <div class="center">
+            <div class="property-card col-12 col-sm-12 col-md-6 col-lg-4">
+                <a href="#">
+                    <div class="property-image">
+                        <div class="property-image-title">
+                            <!-- Optional <h5>Card Title</h5> If you want it, turn on the CSS also. -->
+                        </div>
+                    </div>
+                </a>
+                <div class="property-description">
+                    <h5> Card Title </h5>
+                    <p>Lorem Ipsum Dipsum hortata. Mixcall Horcho. Mixwell Chingo. More Bingo. Lorem Ipum doth be hard.</p>
                 </div>
             </div>
         </div>
@@ -672,7 +713,7 @@
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 
     <script src="scripts/third_page.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 
 </html>
