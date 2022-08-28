@@ -66,6 +66,11 @@ class HotelController extends Controller
             $hotels->name=$request->get('name');
             $hotels->address=$request->get('address');
             $hotels->rate=$request->get('rate');
+            $hotels->checkin=$request->get('checkin');
+            $hotels->checkout=$request->get('checkout');
+            $hotels->number_of_room=$request->get('number_of_room');
+            $hotels->number_of_people=$request->get('number_of_people');
+            $hotels->number_of_children=$request->get('number_of_children');
             $hotels->discreption=$request->get('discreption');
             $hotels->city_id=$request->get('city_id');
             $isSaved=$hotels->save();
@@ -89,7 +94,9 @@ class HotelController extends Controller
      */
     public function show($id)
     {
-        //
+        $hotels= Hotel::findOrFail($id);
+        $cities=City::all();
+        return response()->view("cms.hotel.show",compact("hotels",'cities'));
     }
 
     /**
@@ -142,6 +149,11 @@ class HotelController extends Controller
             $hotels->name=$request->get('name');
             $hotels->address=$request->get('address');
             $hotels->rate=$request->get('rate');
+            $hotels->checkin=$request->get('checkin');
+            $hotels->checkout=$request->get('checkout');
+            $hotels->number_of_room=$request->get('number_of_room');
+            $hotels->number_of_people=$request->get('number_of_people');
+            $hotels->number_of_children=$request->get('number_of_children');
             $hotels->discreption=$request->get('discreption');
             $hotels->city_id=$request->get('city_id');
             $isSaved=$hotels->save();

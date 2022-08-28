@@ -151,16 +151,34 @@
                             <label for="Location" class="form-label">{{ __("Destination") }} <span>*</span></label>
                             <select id="Location" class="form-control col-4" name="city_id" @if( request()->city_id) value={{request()->city->name}} @endif>
                                 <option  value="">{{ __("Select") }}</option>
-                            @foreach ($cities as $city )
-                            @if ($city->name === "Makkah")
+                                @foreach ($cities as $city )
+                                <option  value="{{ $city->id }}">{{ __("$city->name") }}</option>
+                            {{-- @if ($city->name === "Makkah")
                             <option  value="{{ $city->id }}">{{ __("Makkah") }}</option>
                             @endif
                             @if ($city->name === "Madinah")
                             <option  value="{{ $city->id }}">{{ __("Madinah") }}</option>
-                            @endif
+                            @endif --}}
                             @endforeach
                           </select>
                         </div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+                            <label for="checkout" class="form-label">{{__("Checkin")}} <span>*</span></label>
+                            <input type="date" name="checkout" @if( request()->checkin) value={{request()->checkin}} @endif id="date-in" class="form-control col-3">
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+                            <label for="checkout" class="form-label">{{__("Checkout")}} <span>*</span></label>
+                            <input type="date" name="checkout" @if( request()->checkout) value={{request()->checkout}} @endif id="date-out" class="form-control col-3">
+                        </div>
+
+
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+                            <label for="input-group" class="form-label">{{__("Details")}} <span>*</span></label>
+                            <div class="input-group" id="input-group">
+                                <input type="text" class="form-control border-0" @if( request()->number_of_people) value={{request()->number_of_people}} @endif  name='number_of_people' placeholder="2 {{ __("Traveller(s)") }}">
+                                <input type="text" class="form-control border-0" @if( request()->number_of_children) value={{request()->number_of_children}} @endif name="number_of_children" placeholder="0 {{ __("Children(s)") }}">
+                                <input type="text" class="form-control border-0" @if( request()->number_of_room) value={{request()->number_of_room}} @endif name="number_of_room" placeholder="1 {{ __("Room(s)") }}" >
+                            </div>
                         <div class="col-12 col-sm-12 col-md-6 col-lg-4">
                             <label for="date-in" class="form-label">{{__("Checkin")}} <span>*</span></label>
                             <input type="date" name="date-in" id="date-in" class="form-control col-3">

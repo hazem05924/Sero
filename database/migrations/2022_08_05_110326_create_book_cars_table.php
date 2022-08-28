@@ -22,6 +22,8 @@ class CreateBookCarsTable extends Migration
             $table->string('form')->nullable();
             $table->foreignId("car_id");
             $table->foreign("car_id")->on('cars')->references('id');
+            $table->foreignId("user_id");
+            $table->foreign("user_id")->on('users')->references('id');
             $table->foreignId("way_id");
             $table->foreign("way_id")->on('ways')->references('id');
 

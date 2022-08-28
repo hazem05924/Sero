@@ -21,6 +21,8 @@ class CreateBookHotelsTable extends Migration
             $table->float('number_of_room');
             $table->foreignId("hotel_id");
             $table->foreign("hotel_id")->on('hotels')->references('id');
+            $table->foreignId("user_id");
+            $table->foreign("user_id")->on('users')->references('id');
             $table->timestamps();
         });
     }
