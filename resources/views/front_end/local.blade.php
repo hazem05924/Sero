@@ -162,7 +162,6 @@
                             @endforeach
                           </select>
                         </div>
-<<<<<<< HEAD
                         <div class="col-12 col-sm-12 col-md-6 col-lg-3">
                             <label for="checkout" class="form-label">{{__("Checkin")}} <span>*</span></label>
                             <input type="date" name="checkout" @if( request()->checkin) value={{request()->checkin}} @endif id="date-in" class="form-control col-3">
@@ -180,7 +179,6 @@
                                 <input type="text" class="form-control border-0" @if( request()->number_of_children) value={{request()->number_of_children}} @endif name="number_of_children" placeholder="0 {{ __("Children(s)") }}">
                                 <input type="text" class="form-control border-0" @if( request()->number_of_room) value={{request()->number_of_room}} @endif name="number_of_room" placeholder="1 {{ __("Room(s)") }}" >
                             </div>
-=======
                         <div class="col-12 col-sm-12 col-md-6 col-lg-4">
                             <label for="date-in" class="form-label">{{__("Checkin")}} <span>*</span></label>
                             <input type="date" name="date-in" id="date-in" class="form-control col-3">
@@ -214,7 +212,6 @@
                                     <div class="positive_btn"><span>+</span></div>
                                 </div>
                             </ul>
->>>>>>> 3ca26f5525f74f08a6d2e0537ab6e0cce5da2b1d
                         </div>
 
                         <div class="btn1 col-12 col-sm-12 col-md-6 col-lg-3">
