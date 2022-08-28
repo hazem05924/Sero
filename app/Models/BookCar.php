@@ -14,5 +14,8 @@ class BookCar extends Model
     public function car(){
         return $this->belongsTo(Car::class);
     }
+    public function users(){
+        return $this->belongsTo(User::class);
+    }
     
 }

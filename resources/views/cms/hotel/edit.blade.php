@@ -48,8 +48,36 @@
 
                                 <div class="form-group col-md-4">
                                     <label for="rate"> التقيم </label>
-                                    <input type="number" name="rate" class="form-control" max="5" min="1" value="1"
+                                    <input type="number" name="rate" class="form-control" max="5" min="1" value="1" value="{{ $hotels->rate }}"
                                         id="rate" placeholder="ادخل التقيم">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="checkin"> وقت الدخول </label>
+                                    <input type="date" name="checkin" class="form-control" value="{{ $hotels->checkin }}"
+                                        id="checkin" placeholder="ادخل وقت الدخول ">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="checkout"> وقت المغادرة </label>
+                                    <input type="date" name="checkout" class="form-control" value="{{ $hotels->checkout }}"
+                                        id="checkout" placeholder="ادخل وقت المغادرة ">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="number_of_people"> عدد المسافرين  </label>
+                                    <input type="number" name="number_of_people" class="form-control"
+                                        id="number_of_people" placeholder="ادخل  عدد المسافرين  " value="{{ $hotels->number_of_people }}">
+
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="number_of_children"> عدد الاطفال  </label>
+                                    <input type="number" name="number_of_children" class="form-control" value="{{ $hotels->number_of_children }}"
+                                        id="number_of_children" placeholder="ادخل  عدد الاطفال  ">
+
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="number_of_room"> عدد الغرف  </label>
+                                    <input type="number" name="number_of_room" class="form-control" value="{{ $hotels->number_of_room }}"
+                                        id="number_of_room" placeholder="ادخل  عدد الغرف  ">
+
                                 </div>
 
                                  <div class="form-group col-md-4">
@@ -138,6 +166,11 @@ $('.city_id').select2({
             formData.append('image',document.getElementById('image').files[0]);
             formData.append('discreption',document.getElementById('discreption').value);
             formData.append('city_id',document.getElementById('city_id').value);
+            formData.append('checkin',document.getElementById('checkin').value);
+            formData.append('checkout',document.getElementById('checkout').value);
+            formData.append('number_of_room',document.getElementById('number_of_room').value);
+            formData.append('number_of_people',document.getElementById('number_of_people').value);
+            formData.append('number_of_children',document.getElementById('number_of_children').value);
 
             storeRoute('/cms/admin/update_hotels/'+id , formData );
 

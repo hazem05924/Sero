@@ -55,4 +55,10 @@ class User extends Authenticatable
     public function city(){
         return $this->belongsTo(City::class);
     }
+    public function bookHotel(){
+        return $this->hasMany(BookHotel::class);
+    }
+    public function bookCar(){
+        return $this->hasMany(BookCar::class);
+    }
 }

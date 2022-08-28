@@ -43,8 +43,8 @@
     "Room(s)": "الغرف",
     "Select Route": "اختر الطريق",
     "Search": " بحث",
-    "Checkin": " تحقق في",
-    "Checkout": " تحقق الي",
+    "Checkin": " وقت الدخول ",
+    "Checkout": " وقت المغادرة ",
     "Date": "التاريخ",
     "No of Vehicle": "رقم السيارة",
     "No of Guests": "عدد الضيوف",
@@ -60,6 +60,7 @@
     "UMRAH PACKAGES": "باقات العمرة",
     "DOMESTIC UMRAH": " العمرة المحلية",
     "Traveller(s)": "المسافر",
+    
     "In cases of refund, only refundable amounts of transactions made on this electronic platform will be refunded to the original payment method through which the payment for the transactions was completed.": "في حالات الاسترداد، سيتم فقط رد المبالغ القابلة للاسترداع للعمليات التي تمت على هذه المنصة الالكترونية إلى وسيلة الدفع الأصلية التي تم من خلالها إتمام السداد للعمليات",
     "Some basic data related to delivery information, such as customer name, location, postal address and contact numbers, will be stored for the purposes of ensuring delivery. Other personally identifiable information will not be stored.": "سيتم تخزين بعض البيانات الأساسية المتعلقة بمعلومات التسليم، مثل اسم العميل، والموقع، والعنوان البريدي، وأرقام الاتصال، وذلك لأغراض ضمان التسليم، علماً بأنه لن يتم تخزين معلومات التعريف الشخصية الأخرى",
     "Cancellation fees": "رسوم الإلغاء",

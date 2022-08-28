@@ -111,11 +111,11 @@ route::prefix('cms/admin/')->middleware('auth:admin')->group(function(){
 
 
 
-    Route::resource('roles', RoleController::class);
-    Route::post('update_roles/{id}' , [RoleController::class , 'update'])->name('update_roles');
-    Route::resource('permissions', PermissionController::class);
-    Route::post('update_permissions/{id}' , [PermissionController::class , 'update'])->name('update_permissions');
-    Route::resource('role.permissions', RolePermissionController::class);
+    // Route::resource('roles', RoleController::class);
+    // Route::post('update_roles/{id}' , [RoleController::class , 'update'])->name('update_roles');
+    // Route::resource('permissions', PermissionController::class);
+    // Route::post('update_permissions/{id}' , [PermissionController::class , 'update'])->name('update_permissions');
+    // Route::resource('role.permissions', RolePermissionController::class);
 
 });
 
@@ -123,7 +123,6 @@ Route::prefix( LaravelLocalization::setLocale())->group(function(){
     Route::get('', function () {return view('front_end.index');})->name('home');
     Route::get('b2c', function () {return view('front_end.b2c');})->name('b2c');
     Route::get('local', function () {return view('front_end.local');})->name('local');
-    Route::get('page2', function () {return view('front_end.page2');})->name('page2');
 });
 Route::prefix('/')->middleware('auth:web')->group(function(){
     Route::get('edit/profile' , [RegisterController::class , 'edit'])->name('profile_edit_user');
