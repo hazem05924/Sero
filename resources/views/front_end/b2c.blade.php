@@ -62,41 +62,38 @@
                             {{ __('sign in') }}</a></li>
 
 
-                    <div class="dropdown">
-                        {{-- <a class="dropdown-toggle text-decoration-none text-white" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"><img src="{{asset('cms/assets/img/en-US.png')}}" alt="" style="width: 25px; height: 25px; border-radius: 50%;"> En - English</a> --}}
-                        <a class="dropdown-toggle text-decoration-none text-white" href="#" role="button"
-                            id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                            {{ __('language') }}</a>
-
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-
-                            @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                                <li>
-                                    <a class="dropdown-item" rel="alternate" hreflang="{{ $localeCode }}"
-                                        href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                                        {{ $properties['native'] }}
-                                    </a>
-                                </li>
-                            @endforeach
-
-
-                        </ul>
-                    </div>
+                            <div class="dropdown">
+                                {{-- <a class="dropdown-toggle text-decoration-none text-white" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"><img src="{{asset('cms/assets/img/en-US.png')}}" alt="" style="width: 25px; height: 25px; border-radius: 50%;"> En - English</a> --}}
+                                <a class="dropdown-toggle text-decoration-none text-white" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">  {{ __('language') }}</a>
+    
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    
+                                        @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                                            <li>
+                                                <a class="dropdown-item" rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                                    {{ $properties['native'] }}
+                                                </a>
+                                            </li>
+                                        @endforeach
+    
+    
+                                </ul>
+                              </div>
                     @if (Auth::guard('web')->id())
                     <div class="dropdown m-3">
                         {{-- <a class="dropdown-toggle text-decoration-none text-white" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"><img src="{{asset('cms/assets/img/en-US.png')}}" alt="" style="width: 25px; height: 25px; border-radius: 50%;"> En - English</a> --}}
                         <a class="dropdown-toggle text-decoration-none text-white" href="#" role="button"
                             id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                             @if (auth('web')->user()->image != '')
-                            
+
                             <img src="{{ asset('storage/images/register/'.auth('web')->user()->image) }}" alt="Logo" style="width: 25px; height: 25px;">
-                            
+
                             @else
-                            
+
                             <img src="{{ asset('storage/images/userSolid.png') }}" alt="Logo" style="width: 25px; height: 25px; border-radius: 50%">
 
-                            @endif  
-                             {{ auth('web')->user()->full_name }} 
+                            @endif
+                             {{ auth('web')->user()->full_name }}
                         </a>
 
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -141,13 +138,13 @@
 
                         </ul>
                     </div> --}}
-                    
+
 
             </div>
             </ul>
         </div>
         </div>
-    
+
     </nav>
     <!-- Masthead-->
     <header class="masthead">
@@ -201,7 +198,7 @@
                             <select class="form-control" id="Route" name="Route">
                                 <option value="">{{__("Select Route")}}</option>
                                 <option value="58">Jeddah - Makkah - Madinah - Madinah Airport</option>
-                                <option value="59">Parking - Haram's Station</option>
+                                <option value="59">Parking - Harams Station</option>
                                 <option value="60">Jeddah - Makkah - Madinah - Madinah Airport with Institutional
                                     Isolation</option>
                                 <option value="67">Yanbu - makkah - madinah - Yanbu</option>
