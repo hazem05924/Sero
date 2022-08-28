@@ -142,23 +142,23 @@
             use App\Models\City;
             $cities=City::all();
             ?>
-            <div class="panels col-10">
+            <div class="panels col-10 d-flex flex-wrap justify-content-center">
 
-                <div class="panel position-relative" id="one-panel">
+                <div class="panel" id="one-panel">
                     <div class="add1 d-flex flex-wrap justify-content-center align-content-center align-items-center">
-                        <form action="{{ route("search-hotels") }}" class="d-flex flex-wrap justify-content-start align-content-center align-items-center">
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+                        <form action="{{ route("search-hotels") }}" class="d-flex flex-wrap justify-content-center align-content-center align-items-center">
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-3">
                             <label for="Location" class="form-label">{{ __("Destination") }} <span>*</span></label>
                             <select id="Location" class="form-control col-4" name="city_id" @if( request()->city_id) value={{request()->city->name}} @endif>
                                 <option  value="">{{ __("Select") }}</option>
                                 @foreach ($cities as $city )
                                 <option  value="{{ $city->id }}">{{ __("$city->name") }}</option>
-                            {{-- @if ($city->name === "Makkah")
-                            <option  value="{{ $city->id }}">{{ __("Makkah") }}</option>
-                            @endif
-                            @if ($city->name === "Madinah")
-                            <option  value="{{ $city->id }}">{{ __("Madinah") }}</option>
-                            @endif --}}
+                            //@if ($city->name === "Makkah")
+                            //<option  value="{{ $city->id }}">{{ __("Makkah") }}</option>
+                            //@endif
+                            //@if ($city->name === "Madinah")
+                            //<option  value="{{ $city->id }}">{{ __("Madinah") }}</option>
+                            //@endif
                             @endforeach
                           </select>
                         </div>
@@ -171,26 +171,7 @@
                             <input type="date" name="checkout" @if( request()->checkout) value={{request()->checkout}} @endif id="date-out" class="form-control col-3">
                         </div>
 
-
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-3">
-                            <label for="input-group" class="form-label">{{__("Details")}} <span>*</span></label>
-                            <div class="input-group" id="input-group">
-                                <input type="text" class="form-control border-0" @if( request()->number_of_people) value={{request()->number_of_people}} @endif  name='number_of_people' placeholder="2 {{ __("Traveller(s)") }}">
-                                <input type="text" class="form-control border-0" @if( request()->number_of_children) value={{request()->number_of_children}} @endif name="number_of_children" placeholder="0 {{ __("Children(s)") }}">
-                                <input type="text" class="form-control border-0" @if( request()->number_of_room) value={{request()->number_of_room}} @endif name="number_of_room" placeholder="1 {{ __("Room(s)") }}" >
-                            </div>
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-4">
-                            <label for="date-in" class="form-label">{{__("Checkin")}} <span>*</span></label>
-                            <input type="date" name="date-in" id="date-in" class="form-control col-3">
-                        </div>
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-4">
-                            <label for="date-out" class="form-label">{{__("Checkout")}} <span>*</span></label>
-                            <input type="date" name="name" @if( request()->name) value={{request()->name}} @endif id="date-out" class="form-control col-3">
-                        </div>
-
-
-
-                        <div class="dropdown col-12 col-sm-12 col-md-6 col-lg-4">
+                        <div class="dropdown col-12 col-sm-12 col-md-6 col-lg-3">
                             <label for="btnMenu" class="form-label">{{__("Details")}} <span>*</span></label>
                             <a class="btn btn-secondary dropdown-toggle-sp form-control w-100">
                                 <span class="adults_num">0</span> Adults <span class="children_num">0</span> Children <span class="rooms_num">0</span> Rooms

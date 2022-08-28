@@ -631,9 +631,12 @@
         background-color: transparent;
         border: 1px solid white;
         box-shadow: 1px 1px 7px rgb(144 144 144 / 50%);
-        font-size: 12px;
-        font-weight: 500;
+        font-size: 8px;
+        line-height: 1;
+        font-weight: 300;
         padding: 9px 12px;
+        overflow: hidden;
+        height: 40px;
     }
     
     .dropdown ul.dropdown-menu-sp {
