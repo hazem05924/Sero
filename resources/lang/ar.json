@@ -18,7 +18,7 @@
     "Transportation": " وسائل النقل",
     "Email": " الايميل",
     "Phone": " الهاتف",
-    "Address": " العنوان",
+    "Address & contact": " العنوان و التواصل",
     "Get a visa from anywhere in the world within 24 hours": " احصل على تأشيرة دخول من أي مكان في العالم خلال 24 ساعة",
     "Connecting travelers and hotels": " ربط المسافرين والفنادق",
     "Providing ground services of all kinds (providing buses, metro tickets, transportation services)": " تقديم الخدمات الأرضية بكافة أنواعها (توفير الأتوبيسات - تذاكر المترو - خدمات النقل)",
@@ -60,7 +60,7 @@
     "UMRAH PACKAGES": "باقات العمرة",
     "DOMESTIC UMRAH": " العمرة المحلية",
     "Traveller(s)": "المسافر",
-    
+
     "Sero com platform rules and policies": "قواعد وسياسات منصة سيرو كوم",
     "Our company and all our systems are subject to the general system and policies of the country of origin, which is the Kingdom of Saudi Arabia. Currently, we accept online payments by using credit cards, which include “Visa and MasterCard” cards and can be debited through the currency available in the services via the platform, which can be in Saudi riyals or US dollars, In the event that you wish to usee the electronic payment method via the Internet, there must be a match and complete authorization and a match in the details in the customer ID and the ID of the card holder, which must be completely identical to make purchases": "تخضع شركتنا وجميع أنظمتنا للنظام العام وسياسات بلد المنشأ وهي المملكة العربية السعودية. حاليًا ، نقبل المدفوعات عبر الإنترنت باستخدام بطاقات الائتمان ، والتي تشمل بطاقات فيزا و ماستر كارد ويمكن خصمها من خلال العملة المتوفرة في الخدمات عبر المنصة ، والتي يمكن أن تكون بالريال السعودي أو الدولار الأمريكي ، في حال رغبت في ذلك لاستخدام طريقة الدفع الإلكتروني عبر الإنترنت ، يجب أن يكون هناك تصريح مطابق وكامل ومطابقة في التفاصيل الموجودة في معرف العميل ومعرف حامل البطاقة ، والتي يجب أن تكون متطابقة تمامًا لإجراء عمليات الشراء",
 
@@ -108,7 +108,18 @@
     "Sero platform or its team does not bear any legal responsibility or any complaints related to the customer’s violation of the terms, conditions and codes referred to above, and the policies and procedures related to them, and does not accept any kind of liability of any kind in this regard.": "لا تتحمل منصة سيرو أو فريقها أي مسئولية قانونية أو أي شكاوي تتعلق بمخالفة العميل للشروط والأحكام والبود المشار إليها بأعلاه، وبالسياسات والإجراءات المتعلقة بها ولا تقبل أي نوع من أنواع المسئولية بشتى أنواعها بهذا الخصوص",
     "Visitors to the territory of the Kingdom of Saudi Arabia must follow the teachings of the true Islamic religion, and observe Islamic and Arab customs and traditions, and the traditions and customs of the Saudi Society, for information, the Kingdom of Saudi Arabia applies strict laws regarding drug smuggling and contraband. The laws of the Kingdom of Saudi Arabia forbid the establishment of any sectarian or racist gatherings or religious groups and sects under all circumstances.": "يتوجب على الزائرين إلى أراضي المملكة العربية السعودية، بتعاليم الدين الإسلامي الحنيف، ومراعاة الأعراف والتقاليد الإسلامية والعربية وتقاليد وأعراف المجمع السعودي، للمعلومية تطبق المملكة العربية السعودية قوانين صارمة فيما يتعلق بتهريب المخدرات والممنوعات، وسيتعرض المخالفون والمهربون للمخدمات لعقوبات قاسية قد تصل إلى حد الإعدام، كما تمنع قوانين المملكة العربية السعودية إقامة أي تجمعات طائفية أو عنصرية أوفرق وطوائف دينية في جميل الأحوال.",
     "Visitors to the Kingdom of Saudi Arabia must obey the Islamic laws and regulations of the Kingdom and the controls, customs and traditions related to its civilization and society.": "يتوجب على الزائرين إلى أرضاي المملكة العربية السعودية الإنصياع إلى الأنظمة والقوانين الإسلامية للملكة والضوابط والأعراف والتقاليد المتعلقة بحضارتها ومجتمعها، ويتوجب على الزائرين ارتداء الملابس المُحتشمة واللائقة بمكانة الحرمين الشريفين والأراضي المقدسة، والمتوافقة مع القيم والثقافة الإسلامية، ويتوجب على الزائري",
-    "Close": "الغاء"
+    "tariq almalik eabdallah alfarei , almadinat almunawara": "طريق الملك عبدالله الفرعي ، المدينة المنورة",
+    "About the company": "عن الشركة",
+    "Sero is a Saudi company operating on a global scale": "شركة سيرو شركة سعودية تعمل على نطاق عالمي",
+    "Close": "الغاء",
+    "Contact": "التواصل",
+    "About us": "معلومات عنا",
+    "Links": "الروابط",
+    "Travel packages": "حزم السفر",
+    "Adults": "الاشخاص",
+    "Children": "الاطفال",
+    "Rooms": "الغرف",
+    "Address": "العنوان"
 
 
 
