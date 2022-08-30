@@ -78,7 +78,7 @@
 
 .label {
     position: absolute;
-    right: 10px;
+    left: 10px;
     top: 14px;
     transition: all 0.5s;
     padding: 0 2px;
@@ -104,7 +104,7 @@
     height: 5px;
     /* background: #272530; */
     position: absolute;
-    right: 0px;
+    left: 0px;
     top: 10px;
     width: 100px;
     z-index: -1;
@@ -135,7 +135,7 @@ main {
     /* height: 100vh; */
     /* background-image: url(../img/0003.jpg); */
     background-repeat: no-repeat;
-    background-position: 0% 100%;
+    background-position: 100% 100%;
     background-size: cover;
     position: relative;
 }
@@ -178,10 +178,9 @@ main .para p {
     font-weight: bold;
 }
 
-.btn :hover {
+.btn1 :hover {
     color: rgba(39, 49, 138) !important;
     background-color: white !important;
-    padding: 5px 15px !important;
     transition: 1s;
 }
 
@@ -189,7 +188,7 @@ main .para p {
     font-weight: bold;
 }
 
-.panels span {
+.panels>span {
     color: red;
 }
 
@@ -210,6 +209,7 @@ h2 {
     align-items: center;
     position: relative;
     width: 100%;
+    direction: rtl;
 }
 
 .tab {
@@ -220,7 +220,7 @@ h2 {
     color: #fff;
     font-size: 20px;
     font-weight: bold;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.3);
     border-radius: 10px;
 }
 
@@ -228,10 +228,13 @@ h2 {
     background: rgb(0, 0, 0, 0.5);
     box-shadow: 0 1rem 1rem rgb(0, 0, 0, 0.2);
     color: white;
-    min-height: fit-content;
+    min-height: 200px;
     max-width: 80%;
     border-radius: 15px;
-    padding: 30px;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
 }
 
 #one-panel,
@@ -282,6 +285,7 @@ h2 {
 #one:checked~.tabs #one-tab,
 #two:checked~.tabs #two-tab,
 #three:checked~.tabs #three-tab {
+    background: rgba(0, 0, 0, 0.6);
     color: #fff;
     font-size: 20px;
     font-weight: bold;
@@ -297,8 +301,8 @@ h2 {
 }
 
 .video img {
-    margin-right: auto;
     margin-left: auto;
+    margin-right: auto;
 }
 
 .sero {
@@ -308,8 +312,8 @@ h2 {
 .sero div {
     text-align-last: center;
     width: 60%;
-    margin-right: auto;
     margin-left: auto;
+    margin-right: auto;
 }
 
 .sero h1 {
@@ -350,6 +354,8 @@ img {
     top: 200px;
     color: #000;
 }
+
+
 /* style the maincontainer class with all child div's of class .front */
 
 .maincontainer>.front {
@@ -361,11 +367,13 @@ img {
     /* cant see the backside elements as theyre turning around */
     transition: transform .5s linear 0s;
 }
+
+
 /* style the maincontainer class with all child div's of class .back */
 
 .maincontainer>.back {
     position: absolute;
-    transform: perspective(600px) rotateY(-180deg);
+    transform: perspective(600px) rotateY(180deg);
     background: #262626;
     color: #fff;
     width: 302px;
@@ -378,7 +386,7 @@ img {
 }
 
 .maincontainer:hover>.front {
-    transform: perspective(600px) rotateY(180deg);
+    transform: perspective(600px) rotateY(-180deg);
 }
 
 .maincontainer:hover>.back {
@@ -405,13 +413,7 @@ img {
     width: 100%;
 }
 
-footer {
-    background-color: rgb(39, 49, 138);
-    color: white;
-    text-align-last: center;
-    width: 100%;
-    padding: 15px;
-}
+
 /* Extra small devices (phones, 600px and down) */
 
 @media only screen and (max-width: 600px) {
@@ -425,6 +427,8 @@ footer {
         height: fit-content;
     }
 }
+
+
 /* Small devices (portrait tablets and large phones, 600px and up) */
 
 @media only screen and (min-width: 600px) {
@@ -438,6 +442,8 @@ footer {
         height: fit-content;
     }
 }
+
+
 /* Medium devices (landscape tablets, 768px and up) */
 
 @media only screen and (min-width: 768px) {
@@ -445,13 +451,15 @@ footer {
         height: fit-content;
         padding: 50px;
         background-size: 100% 100%;
-        background-position: 0% 100%;
+        background-position: 100% 100%;
         background-image: url(../img/0003.jpg);
     }
     .services {
         height: fit-content;
     }
 }
+
+
 /* Large devices (laptops/desktops, 992px and up) */
 
 @media only screen and (min-width: 992px) {
@@ -459,13 +467,15 @@ footer {
         height: fit-content;
         padding: 50px;
         background-size: 100% 100%;
-        background-position: 0% 100%;
+        background-position: 100% 100%;
         background-image: url(../img/0003.jpg);
     }
     .services {
         height: fit-content;
     }
 }
+
+
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 
 @media only screen and (min-width: 1200px) {
@@ -474,7 +484,7 @@ footer {
         min-height: 150vh;
         padding: 50px;
         background-size: 100% 100%;
-        background-position: 0% 100%;
+        background-position: 100% 100%;
         background-image: url(../img/0003.jpg);
     }
     .btn1 .btn {
@@ -484,6 +494,8 @@ footer {
         height: fit-content;
     }
 }
+
+
 /* start services */
 
 .services {
@@ -522,28 +534,26 @@ footer {
     color: #fff;
     box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);
     transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
-    padding: 14px 36px 18px 80px;
+    padding: 14px 80px 18px 36px;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    align-content: center;
-    font-size: 1.5rem !important;
 }
 
 .card1:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
 }
 
 .card1 h3 {
-    font-weight: 900;
+    font-weight: 600;
 }
 
 .card1 img {
     position: absolute;
     top: 20px;
-    left: 15px;
+    right: 15px;
     max-height: 120px;
 }
 
@@ -578,25 +588,33 @@ footer {
 }
 
 .panel input {
-    border: 1px solid black;
-    background: rgba(255, 255, 255, 0.6);
-    color: black;
+    border: 1px solid rgb(255, 255, 255);
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+}
+
+.panel input:hover {
+    border-color: rgba(39, 49, 139);
 }
 
 .panel select {
-    border: 1px solid black;
-    background: rgba(255, 255, 255, 0.6);
-    color: black;
+    border: 1px solid rgb(255, 255, 255);
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+}
+
+.panel select:hover {
+    border-color: rgba(39, 49, 139);
 }
 
 .panel .input-group input {
-    border: 1px solid black !important;
-    color: black;
+    border: 1px solid white !important;
+    color: white !important;
     border-radius: 5px;
 }
 
-.panel .input-group input::placeholder {
-    color: black;
+.panel input::placeholder {
+    color: white;
 }
 
 .panel input #date-out ::placeholder {
@@ -617,7 +635,376 @@ footer {
     color: rgba(255, 255, 255);
 }
 
-.tabs {
+a.btn-secondary {
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+    box-shadow: 1px 1px 7px rgb(144 144 144 / 50%);
+    font-size: 8px;
+    line-height: 1;
+    font-weight: 300;
+    padding: 9px 12px;
+    overflow: hidden;
+    height: 40px;
+}
+
+.dropdown ul.dropdown-menu-sp {
+    position: relative;
+    inset: 0px auto auto 0px;
+    margin: 0px;
+    transform: translate(0px, 40px);
+    width: 100%;
+    height: fit-content;
+    z-index: 1000;
+    display: none;
+    min-width: 10rem;
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 0.25rem;
+}
+
+.dropdown ul.dropdown-menu-sp.show {
+    display: block;
     position: absolute;
-    transform: translate(0, -50%);
+    z-index: 1;
+}
+
+a.btn-secondary:hover {
+    color: white;
+    background-color: transparent;
+    border-color: rgba(39, 49, 139);
+}
+
+a.btn-secondary:focus {
+    color: white;
+    background-color: transparent;
+    box-shadow: 1px 1px 7px rgb(144 144 144 / 50%);
+}
+
+a.btn-secondary::after {
+    display: none;
+}
+
+.li_parent {
+    position: relative !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    flex-direction: row !important;
+    align-content: center !important;
+    justify-content: space-evenly !important;
+    align-items: center !important;
+    padding: 10px 0 !important;
+}
+
+.li_parent .minus_btn {
+    position: relative;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    font-size: 30px;
+    font-weight: 600;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 0.7;
+    border-radius: 50%;
+    background-color: transparent;
+    transform: translateY(1px);
+    cursor: pointer;
+    transition: .3s;
+    color: #3195e5;
+    user-select: none;
+}
+
+.li_parent .positive_btn {
+    position: relative;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: center;
+    font-size: 23px;
+    font-weight: 600;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 1.1;
+    border-radius: 50%;
+    background-color: transparent;
+    transform: translateY(2px);
+    cursor: pointer;
+    transition: .3s;
+    color: #3195e5;
+    user-select: none;
+}
+
+.li_parent .minus_btn:hover,
+.li_parent .positive_btn:hover {
+    background-color: #e9e9e9;
+}
+
+.li_parent .num_parent {
+    cursor: default;
+}
+
+.li_parent .num_parent .num {
+    margin-right: 10px !important;
+    font-size: 18px !important;
+    font-family: sans-serif !important;
+    font-weight: 600 !important;
+    color: #3195e5 !important;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.li_parent .num_parent .label {
+    color: #8e8e8e;
+    font-weight: 500;
+    font-size: 15px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.datepicker.datepicker-dropdown.dropdown-menu {
+    top: 341.594px;
+    left: 95.5px;
+    z-index: 10;
+    display: block;
+    box-shadow: rgb(124 124 124 / 43%) 1px 2px 7px;
+}
+
+.datepicker-days {
+    padding: 20px;
+}
+
+.property-card {
+    height: 18em;
+    width: 16em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    position: relative;
+    -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -o-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    border-radius: 16px;
+    overflow: hidden;
+    -webkit-box-shadow: 15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff;
+    box-shadow: 15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff;
+    margin: 2rem 0;
+}
+
+
+/* ^-- The margin bottom is necessary for the drop shadow otherwise it gets clipped in certain cases. */
+
+
+/* Top Half of card, image. */
+
+.property-image {
+    height: 6em;
+    width: 16em;
+    padding: 1em 2em;
+    position: Absolute;
+    top: 0px;
+    -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -o-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    background-image: url('https://cdn.photographylife.com/wp-content/uploads/2017/01/What-is-landscape-photography.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+/* Bottom Card Section */
+
+.property-description {
+    background-color: #FAFAFC;
+    height: 12em;
+    width: 16em;
+    position: absolute;
+    bottom: 0em;
+    -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -o-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    padding: 0.5em 1em;
+    text-align: center;
+}
+
+
+/* Social Icons */
+
+.property-social-icons {
+    width: 1em;
+    height: 1em;
+    background-color: black;
+    position: absolute;
+    bottom: 1em;
+    left: 1em;
+    -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -o-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+
+/* Property Cards Hover States */
+
+.property-card:hover .property-description {
+    height: 0em;
+    padding: 0px 1em;
+}
+
+.property-card:hover .property-image {
+    height: 18em;
+}
+
+.property-card:hover .property-social-icons {
+    background-color: white;
+}
+
+.property-card:hover .property-social-icons:hover {
+    background-color: blue;
+    cursor: pointer;
+}
+
+
+/* Optional
+
+.property-image-title
+{
+text-align:center;
+position:Relative;
+top:30%;
+opacity:0;
+transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
+color:black;
+font-size:1.2em;
+}
+
+.property-card:hover .property-image-title
+{
+opacity:1;
+}
+
+*/
+
+.card {
+    color: #757575 !important;
+    background-color: #fff !important;
+    align-items: center !important;
+    background: url('https://i.imgur.com/9djv5sH.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right calc(110px + (150 - 110) * ((100vw - 360px) / (1600 - 360))) bottom !important
+}
+
+img {
+    vertical-align: middle !important;
+    width: 100%;
+    height: auto;
+    width: calc(17px + 6 * ((100vw - 320px) / 680))
+}
+
+li:first-child {
+    color: #757575 !important
+}
+
+footer {
+    color: #fff !important;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.53) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%);
+    direction: rtl;
+}
+
+.social {
+    position: relative;
+    left: -10px
+}
+
+.cursor-pointer {
+    cursor: pointer !important;
+    color: green;
+    font-weight: bold
+}
+
+.list-unstyled li a {
+    text-decoration: none;
+    text-align: center;
+}
+
+
+/***** Footer *****/
+
+.footer-top {
+    padding: 60px 0 40px 0;
+}
+
+.footer-top h3 {
+    padding-bottom: 10px;
+}
+
+.footer-contact i {
+    padding-right: 10px;
+    font-size: 18px;
+    color: #ddd;
+}
+
+.footer-contact p a {
+    text-decoration: none;
+    color: #fff;
+    padding: 0;
+}
+
+.footer-contact p a:hover,
+.footer-contact p a:focus {
+    color: #888;
+}
+
+.footer-links a {
+    color: #fff;
+    border: 0;
+    text-decoration: none;
+}
+
+.footer-links a:hover,
+.footer-links a:focus {
+    color: #888;
+    margin-left: 3px;
+}
+
+.footer-bottom {
+    padding: 0 0 60px 0;
+}
+
+.footer-social a {
+    margin: 0 10px;
+    color: #bbb;
+    border: 0;
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+.footer-social a:hover,
+.footer-social a:focus {
+    color: #888;
+    border: 0;
+}
+
+.footer-social i {
+    font-size: 24px;
+    vertical-align: middle;
+}
+
+p {
+    margin-bottom: 0.3rem;
 }
