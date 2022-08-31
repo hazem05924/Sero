@@ -14,8 +14,17 @@
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
+
+
+    <!-- if language ar and en -->
+    @if (  LaravelLocalization::getCurrentLocaleDirection()  == 'rtl')
+    <link href="{{ asset('cms/css/styles.rtl.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('cms/css/style2.rtl.css') }}">
+    <link rel="stylesheet" href="{{ asset('cms/css/bootstrap.rtl.min.css') }}">
+    @else
     <link href="{{ asset('cms/css/styles.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('cms/css/style2.css') }}">
+    @endif
 
     <link rel="stylesheet" href="{{ asset('cms/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
 
@@ -74,6 +83,8 @@
                                         <li>
                                             <a class="dropdown-item" rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
                                                 {{ $properties['native'] }}
+
+
                                             </a>
                                         </li>
                                     @endforeach
@@ -167,8 +178,8 @@
                           </select>
                         </div>
                         <div class="col-12 col-sm-12 col-md-6 col-lg-3">
-                            <label for="checkout" class="form-label">{{__("Checkin")}} <span>*</span></label>
-                            <input type="date" name="checkout" @if( request()->checkin) value={{request()->checkin}} @endif id="date-in" class="form-control col-3">
+                            <label for="checkin" class="form-label">{{__("Checkin")}} <span>*</span></label>
+                            <input type="date" name="checkin" @if( request()->checkin) value={{request()->checkin}} @endif id="date-in" class="form-control col-3">
                         </div>
                         <div class="col-12 col-sm-12 col-md-6 col-lg-3">
                             <label for="checkout" class="form-label">{{__("Checkout")}} <span>*</span></label>
@@ -682,7 +693,6 @@
     <script src="{{ asset('cms/js/scripts.js') }}"></script>
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 
-    <script src="scripts/third_page.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 

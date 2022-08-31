@@ -78,7 +78,7 @@
 
 .label {
     position: absolute;
-    left: 10px;
+    right: 10px;
     top: 14px;
     transition: all 0.5s;
     padding: 0 2px;
@@ -104,7 +104,7 @@
     height: 5px;
     /* background: #272530; */
     position: absolute;
-    left: 0px;
+    right: 0px;
     top: 10px;
     width: 100px;
     z-index: -1;
@@ -135,14 +135,14 @@ main {
     /* height: 100vh; */
     /* background-image: url(../img/0003.jpg); */
     background-repeat: no-repeat;
-    background-position: 100% 100%;
+    background-position: 0% 100%;
     background-size: cover;
     position: relative;
 }
 
 main .para {
     Text-align-last: center;
-    color: rgb(39, 49, 138);
+    color: #27318a;
     position: relative;
     font-weight: bold;
     width: 100%;
@@ -209,7 +209,6 @@ h2 {
     align-items: center;
     position: relative;
     width: 100%;
-    direction: rtl;
 }
 
 .tab {
@@ -301,8 +300,8 @@ h2 {
 }
 
 .video img {
-    margin-left: auto;
     margin-right: auto;
+    margin-left: auto;
 }
 
 .sero {
@@ -312,8 +311,8 @@ h2 {
 .sero div {
     text-align-last: center;
     width: 60%;
-    margin-left: auto;
     margin-right: auto;
+    margin-left: auto;
 }
 
 .sero h1 {
@@ -373,7 +372,7 @@ img {
 
 .maincontainer>.back {
     position: absolute;
-    transform: perspective(600px) rotateY(180deg);
+    transform: perspective(600px) rotateY(-180deg);
     background: #262626;
     color: #fff;
     width: 302px;
@@ -386,7 +385,7 @@ img {
 }
 
 .maincontainer:hover>.front {
-    transform: perspective(600px) rotateY(-180deg);
+    transform: perspective(600px) rotateY(180deg);
 }
 
 .maincontainer:hover>.back {
@@ -451,7 +450,7 @@ img {
         height: fit-content;
         padding: 50px;
         background-size: 100% 100%;
-        background-position: 100% 100%;
+        background-position: 0% 100%;
         background-image: url(../img/0003.jpg);
     }
     .services {
@@ -467,7 +466,7 @@ img {
         height: fit-content;
         padding: 50px;
         background-size: 100% 100%;
-        background-position: 100% 100%;
+        background-position: 0% 100%;
         background-image: url(../img/0003.jpg);
     }
     .services {
@@ -484,7 +483,7 @@ img {
         min-height: 150vh;
         padding: 50px;
         background-size: 100% 100%;
-        background-position: 100% 100%;
+        background-position: 0% 100%;
         background-image: url(../img/0003.jpg);
     }
     .btn1 .btn {
@@ -534,7 +533,7 @@ img {
     color: #fff;
     box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);
     transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
-    padding: 14px 80px 18px 36px;
+    padding: 14px 36px 18px 80px;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -553,7 +552,7 @@ img {
 .card1 img {
     position: absolute;
     top: 20px;
-    right: 15px;
+    left: 15px;
     max-height: 120px;
 }
 
@@ -591,6 +590,7 @@ img {
     border: 1px solid rgb(255, 255, 255);
     background-color: transparent;
     color: rgb(255, 255, 255);
+    text-align: center;
 }
 
 .panel input:hover {
@@ -601,6 +601,7 @@ img {
     border: 1px solid rgb(255, 255, 255);
     background-color: transparent;
     color: rgb(255, 255, 255);
+    text-align: center;
 }
 
 .panel select:hover {
@@ -639,7 +640,7 @@ a.btn-secondary {
     color: white;
     background-color: transparent;
     border: 1px solid white;
-    box-shadow: 1px 1px 7px rgb(144 144 144 / 50%);
+    box-shadow: -1px 1px 7px rgb(144 144 144 / 50%);
     font-size: 8px;
     line-height: 1;
     font-weight: 300;
@@ -661,7 +662,7 @@ a.btn-secondary {
     padding: 0.5rem 0;
     font-size: 1rem;
     color: #212529;
-    text-align: left;
+    text-align: right;
     list-style: none;
     background-color: #fff;
     background-clip: padding-box;
@@ -684,7 +685,7 @@ a.btn-secondary:hover {
 a.btn-secondary:focus {
     color: white;
     background-color: transparent;
-    box-shadow: 1px 1px 7px rgb(144 144 144 / 50%);
+    box-shadow: -1px 1px 7px rgb(144 144 144 / 50%);
 }
 
 a.btn-secondary::after {
@@ -752,7 +753,7 @@ a.btn-secondary::after {
 }
 
 .li_parent .num_parent .num {
-    margin-right: 10px !important;
+    margin-left: 10px !important;
     font-size: 18px !important;
     font-family: sans-serif !important;
     font-weight: 600 !important;
@@ -775,10 +776,10 @@ a.btn-secondary::after {
 
 .datepicker.datepicker-dropdown.dropdown-menu {
     top: 341.594px;
-    left: 95.5px;
+    right: 95.5px;
     z-index: 10;
     display: block;
-    box-shadow: rgb(124 124 124 / 43%) 1px 2px 7px;
+    box-shadow: rgb(124 124 124 / 43%) -1px 2px 7px;
 }
 
 .datepicker-days {
@@ -801,8 +802,8 @@ a.btn-secondary::after {
     transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
     border-radius: 16px;
     overflow: hidden;
-    -webkit-box-shadow: 15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff;
-    box-shadow: 15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff;
+    -webkit-box-shadow: -15px 15px 27px #e1e1e3, 15px -15px 27px #ffffff;
+    box-shadow: -15px 15px 27px #e1e1e3, 15px -15px 27px #ffffff;
     margin: 2rem 0;
 }
 
@@ -851,7 +852,7 @@ a.btn-secondary::after {
     background-color: black;
     position: absolute;
     bottom: 1em;
-    left: 1em;
+    right: 1em;
     -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
     -o-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
     transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -906,7 +907,7 @@ opacity:1;
     background: url('https://i.imgur.com/9djv5sH.jpg');
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: right calc(110px + (150 - 110) * ((100vw - 360px) / (1600 - 360))) bottom !important
+    background-position: left calc(110px + (150 - 110) * ((100vw - 360px) / (1600 - 360))) bottom !important
 }
 
 img {
@@ -922,13 +923,12 @@ li:first-child {
 
 footer {
     color: #fff !important;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.53) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%);
-    direction: rtl;
+    background: linear-gradient(to bottom, rgba(39, 49, 139, 0.5) 0%, rgba(39, 49, 139, 0.7) 75%, rgba(39, 49, 139) 100%);
 }
 
 .social {
     position: relative;
-    left: -10px
+    right: -10px
 }
 
 .cursor-pointer {
@@ -954,7 +954,7 @@ footer {
 }
 
 .footer-contact i {
-    padding-right: 10px;
+    padding-left: 10px;
     font-size: 18px;
     color: #ddd;
 }
@@ -967,7 +967,7 @@ footer {
 
 .footer-contact p a:hover,
 .footer-contact p a:focus {
-    color: #888;
+    color: #ddd;
 }
 
 .footer-links a {
@@ -978,8 +978,8 @@ footer {
 
 .footer-links a:hover,
 .footer-links a:focus {
-    color: #888;
-    margin-left: 3px;
+    color: #ddd;
+    margin-right: 3px;
 }
 
 .footer-bottom {
@@ -996,7 +996,7 @@ footer {
 
 .footer-social a:hover,
 .footer-social a:focus {
-    color: #888;
+    color: #ddd;
     border: 0;
 }
 
