@@ -40,8 +40,8 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 // });
 
 
-Route::get('/register', [RegisterController::class,'create'])->name('register');
-Route::post('/register', [RegisterController::class,'store']);
+Route::get('/register', [UserController::class,'create'])->name('register');
+Route::post('/register', [UserController::class,'store']);
 
 
 
@@ -125,8 +125,8 @@ Route::prefix( LaravelLocalization::setLocale())->group(function(){
     Route::get('local', function () {return view('front_end.local');})->name('local');
 });
 Route::prefix('/')->middleware('auth:web')->group(function(){
-    Route::get('edit/profile' , [RegisterController::class , 'edit'])->name('profile_edit_user');
-    Route::post('update/profile' , [RegisterController::class , 'update'])->name('update.profile');
+    Route::get('edit/profile' , [UserController::class , 'edit'])->name('profile_edit_user');
+    Route::post('update/profile' , [UserController::class , 'update'])->name('update.profile');
     Route::get('/logout',[UserAuthController::class,'logOut'])->name('logout');
     Route::post('/password/update', [UserController::class, 'updatePassword']);
     Route::resource('ways', BookHotelController::class);
@@ -137,7 +137,7 @@ Route::prefix('/')->middleware('auth:web')->group(function(){
 });
 
 Route::prefix('/')->group(function(){
-    Route::get('search-hotels' , [SearchController::class , 'search_hotel'])->name('search-hotels');
+    Route::get('search-hotels' , [BookHotelController::class , 'search_hotel'])->name('search-hotels');
     Route::get('/create/book-hotel/{id}', [BookHotelController::class, 'createBook'])->name('create-book-hotel');
     Route::get('/index/book-hotel/{id}', [BookHotelController::class, 'indexBook'])->name('index-book-hotel');
 

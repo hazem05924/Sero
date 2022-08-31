@@ -51,12 +51,12 @@
             <div class="item item1">
                 <div class="parent">
                     <div class="label-name">وجهة السفر</div>
-                    <div class="value">
+                    <div class="value">المدينة:
                         @foreach ($cities as $city )
                         @if($city->id == request()->city_id)
-                         <span class="des">{{ __($city->name)}} </span> 
+                         <span class="des"> {{$city->name}} </span>
                          @endif
-   
+
                         @endforeach
                     </div>
                 </div>
@@ -73,7 +73,7 @@
                             <li><a class="dropdown-item" href="#">الخيار التالت</a></li>
                         </ul>
                     </li>
-                    <div class="value"><span class="day">19</span> <span class="month">أغسطس</span> <span class="year">2022</span></div>
+                    <div class="value"><span class="day"> ( {{ request()->checkin}} )</span></div>
                 </div>
             </div>
             <div class="item item3">
@@ -88,7 +88,7 @@
                             <li><a class="dropdown-item" href="#">الخيار التالت</a></li>
                         </ul>
                     </li>
-                    <div class="value"><span class="day">31</span> <span class="month">أغسطس</span> <span class="year">2022</span></div>
+                    <div class="value"><span class="day">({{ request()->checkout}})</span></div>
                 </div>
             </div>
             <div class="item item4">
@@ -103,7 +103,7 @@
                             <li><a class="dropdown-item" href="#">الخيار التالت</a></li>
                         </ul>
                     </li>
-                    <div class="value"><span class="num">2</span> <span class="label">الكبار</span></div>
+                    <div class="value"><span class="num">{{ request()->number_of_people}}</span> <span class="label">الكبار</span></div>
                 </div>
             </div>
             <div class="item item5">
@@ -118,7 +118,7 @@
                             <li><a class="dropdown-item" href="#">الخيار التالت</a></li>
                         </ul>
                     </li>
-                    <div class="value"><span class="num">1</span> <span class="label">الغرف</span></div>
+                    <div class="value"><span class="num">{{ request()->number_of_room}}</span> <span class="label">الغرف</span></div>
                 </div>
             </div>
             <div class="item item6">
@@ -221,22 +221,22 @@
                             <div class="label"><i class="fas fa-tag"></i><span>{{ $hotel->name }} </span></div>
                             <div class="address"><img src="{{ asset('cms/assets/img/map.svg') }}"><span>{{ $hotel->city->name }} - {{ $hotel->address }}</span></div>
                             <div class="rating">
-                                @if ($hotel->rate  ==='5')
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span class="ratings_num">{{ $hotel->rate }}</span>
-                                @elseif ($hotel->rate  ==='4')
-                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><span class="ratings_num">{{ $hotel->rate }}</span>
-                                    @elseif ($hotel->rate  ==='3')
+                                @if ($hotel->rate  =='5')
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span class="ratings_num">{{ $hotel->rate }}</span>
+                                    @elseif ($hotel->rate  =='4')
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><span class="ratings_num">{{ $hotel->rate }}</span>
+                                    @elseif ($hotel->rate  =='3')
                                     <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><span class="ratings_num">{{ $hotel->rate }}</span>
-                                    @elseif ($hotel->rate  ==='2')
+                                    @elseif ($hotel->rate  =='2')
                                     <i class="fas fa-star"></i><i class="fas fa-star"></i><span class="ratings_num">{{ $hotel->rate }}</span>
-                                    @elseif ($hotel->rate  ==='1')
+                                    @elseif ($hotel->rate  =='1')
                                     <i class="fas fa-star"></i><span class="ratings_num">{{ $hotel->rate }}</span>
                                     @else
                                     <span class="badge bg-danger">not found</span>
-                                    
+
                                     @endif
-                                    
-                                        
+
+
                                     <a href="{{route('create-book-hotel',['id'=>$hotel->id])}}" class="btn btn-danger btn-sm "> حجز الفندق</a>
                             </div>
                         </div>

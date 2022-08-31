@@ -95,10 +95,26 @@
                     @foreach ($hotels as $hotel)
                         
                     <div class="name_parent"><span class="name">{{ $hotel->name }}</span></div>
-                    @endforeach
                     <div class="phone"><span>(+966) 055 9148 410</span><i class="fas fa-phone"></i></div>
-                    <div class="map"><i class="fas fa-map-marker-alt"></i><span>ذات النطاقين, مكة المكرمة, Saudi Arabia, Makkah</span></div>
-                    <div class="rating"><span class="num">1</span><span> :التقييم</span><i class="fas fa-star"></i></div>
+                    <div class="map"><i class="fas fa-map-marker-alt"></i><span> </span></div>
+                    <div class="rating"><span class="num">{{ $hotel->rate }}</span><span> :التقييم</span>
+                                    @if ($hotel->rate  =='5')
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 
+                                    @elseif ($hotel->rate  =='4')
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    @elseif ($hotel->rate  =='3')
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    @elseif ($hotel->rate  =='2')
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    @elseif ($hotel->rate  =='1')
+                                    <i class="fas fa-star"></i>
+                                    @else
+                                    <span class="badge bg-danger">not found</span>
+
+                                    @endif
+                        
+                    </div>
+                    @endforeach
                 </div>
             </div>
             <div class="block full"></div>

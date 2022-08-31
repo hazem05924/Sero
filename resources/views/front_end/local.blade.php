@@ -176,8 +176,8 @@
                           </select>
                         </div>
                         <div class="col-12 col-sm-12 col-md-6 col-lg-3">
-                            <label for="checkout" class="form-label">{{__("Checkin")}} <span>*</span></label>
-                            <input type="date" name="checkout" @if( request()->checkin) value={{request()->checkin}} @endif id="date-in" class="form-control col-3">
+                            <label for="checkin" class="form-label">{{__("Checkin")}} <span>*</span></label>
+                            <input type="date" name="checkin" @if( request()->checkin) value={{request()->checkin}} @endif id="date-in" class="form-control col-3">
                         </div>
                         <div class="col-12 col-sm-12 col-md-6 col-lg-3">
                             <label for="checkout" class="form-label">{{__("Checkout")}} <span>*</span></label>

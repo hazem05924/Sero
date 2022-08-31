@@ -11,11 +11,57 @@ use Illuminate\Http\Request;
 
 class BookHotelController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+    public function search_hotel(Request $request ){
+        $hotels = Hotel::with("city")->orderBy('id' ,'desc');
+        if ($request->get('search')) {
+            $moduleIndex = Hotel::where('created_at', 'like', '%' . $request->search . '%');
+        }
+
+        if ($request->get('checkin')) {
+            $hotels = Hotel::where('checkin', 'like', '%' . $request->checkin . '%');
+        }
+        if ($request->get('checkout')) {
+            $hotels = Hotel::where('checkout', 'like', '%' . $request->checkout . '%');
+        }
+        if ($request->get('number_of_room')) {
+            $hotels = Hotel::where('number_of_room', 'like', '%' . $request->number_of_room . '%');
+        }
+        if ($request->get('number_of_people')) {
+            $hotels = Hotel::where('number_of_people', 'like', '%' . $request->number_of_people . '%');
+        }
+        if ($request->get('number_of_children')) {
+            $hotels = Hotel::where('number_of_children', 'like', '%' . $request->number_of_children . '%');
+        }
+        if ($request->get('city_id')) {
+            $hotels = Hotel::with("city")->where('city_id', 'like', '%' . $request->city_id . '%');
+        }
+        //  form search all 
+        if( $request->get('city_id') && $request->get('checkin') && $request->get('checkout') && $request->get('number_of_room') && $request->get('number_of_people') &&$request->get('number_of_children')){
+            $hotels = Hotel::with("city")->where('city_id', 'like', '%' . $request->city_id . '%');
+            $hotels = Hotel::where('checkin', 'like', '%' . $request->checkin . '%');
+            $hotels = Hotel::where('checkout', 'like', '%' . $request->checkout . '%');
+            $hotels = Hotel::where('number_of_room', 'like', '%' . $request->number_of_room . '%');
+            $hotels = Hotel::where('number_of_people', 'like', '%' . $request->number_of_people . '%');
+            $hotels = Hotel::where('number_of_children', 'like', '%' . $request->number_of_children . '%');
+
+
+
+
+
+
+        }
+
+        if ($request->status != null) {
+            $hotels = Hotel::where('status', $request->status);
+        }
+        $hotels = $hotels->paginate(5);
+        return response()->view('front_end.search-hotel' , compact('hotels' ,'request'));
+
+    }
+
+
+
     public function indexBook($id)
     {
         $book_hotels=BookHotel::where('hotel_id', $id)->orderBy('created_at', 'desc')->paginate(4);
@@ -36,74 +82,5 @@ class BookHotelController extends Controller
     }
 
 
-    public function index()
-    {
-        //
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }
