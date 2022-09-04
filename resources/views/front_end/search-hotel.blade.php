@@ -103,7 +103,7 @@
                             <li><a class="dropdown-item" href="#">الخيار التالت</a></li>
                         </ul>
                     </li>
-                    <div class="value"><span class="num">{{ request()->number_of_people}}</span> <span class="label">الكبار</span></div>
+                    <div class="value"><span class="label">الكبار:</span><span class="num">({{ request()->number_of_people}}) </span> - <span class="label">الصغار:</span> <span class="num">({{ request()->number_of_children}}) </span></div>
                 </div>
             </div>
             <div class="item item5">
@@ -118,7 +118,7 @@
                             <li><a class="dropdown-item" href="#">الخيار التالت</a></li>
                         </ul>
                     </li>
-                    <div class="value"><span class="num">{{ request()->number_of_room}}</span> <span class="label">الغرف</span></div>
+                    <div class="value"><span class="label">الغرف</span><span class="num">({{ request()->number_of_room}})</span> </div>
                 </div>
             </div>
             <div class="item item6">

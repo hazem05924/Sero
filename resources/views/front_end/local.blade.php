@@ -161,7 +161,7 @@
 
                 <div class="panel" id="one-panel">
                     <div class="add1 d-flex flex-wrap justify-content-center align-content-center align-items-center">
-                        <form action="{{ route("search-hotels") }}" class="d-flex flex-wrap justify-content-center align-content-center align-items-center">
+                        <form action="{{ route("search-hotels") }}" onsubmit="people1(),room1(),children1()"class="d-flex flex-wrap justify-content-center align-content-center align-items-center">
                         <div class="col-12 col-sm-12 col-md-6 col-lg-3">
                             <label for="Location" class="form-label">{{ __("Destination") }} <span>*</span></label>
                             <select id="Location" class="form-control col-4" name="city_id" @if( request()->city_id) value={{request()->city->name}} @endif>
@@ -189,12 +189,36 @@
                         <div class="dropdown col-12 col-sm-12 col-md-6 col-lg-3">
                             <label for="btnMenu" class="form-label">{{__("Details")}} <span>*</span></label>
                             <a class="btn btn-secondary dropdown-toggle-sp form-control w-100">
-                                <span class="adults_num">0</span> {{__("Adults")}} <span class="children_num">0</span> {{__("Children")}} <span class="rooms_num">0</span> {{__("Rooms")}}
+
+                                <input type="text" hidden id="input1"  name='number_of_people' @if( request()->number_of_people) value={{request()->number_of_people}} @endif >
+                                <input type="text" hidden id="input2"  name='number_of_room' @if( request()->number_of_room) value={{request()->number_of_room}} @endif >
+                                <input type="text" hidden id="input3"  name='number_of_children' @if( request()->number_of_children) value={{request()->number_of_children}} @endif >
+
+                                <span class="adults_num" id="number_of_people">0</span> {{__("Adults")}} <span class="children_num" id='number_of_children'>0</span> {{__("Children")}} <span class="rooms_num" id='number_of_room'>0</span> {{__("Rooms")}}
+                                <script>
+                                    // let people=document.querySelector('#number_of_people');
+                                    // console.log(people.innerHTML);
+                                    function people1() {
+                                        let people=document.querySelector('#number_of_people');
+                                        let input1=document.querySelector('#input1');
+                                        return input1.value=people.innerHTML;
+                                    }
+                                    function room1() {
+                                        let room=document.querySelector('#number_of_room');
+                                        let input2=document.querySelector('#input2');
+                                        return input2.value=room.innerHTML;
+                                    }
+                                    function children1() {
+                                        let children=document.querySelector('#number_of_children');
+                                        let input3=document.querySelector('#input3');
+                                        return input3.value=children.innerHTML;
+                                    }
+                                </script>
                             </a>
                             <ul class="dropdown-menu-sp" id="btnMenu">
                                 <div class="li_parent adults">
                                     <div class="minus_btn"><span> - </span></div>
-                                    <div class="num_parent"><span class="num">0</span><span class="label"> {{__("Adults")}} </span></div>
+                                    <div class="num_parent"><span class="num" >0</span><span class="label"> {{__("Adults")}} </span></div>
                                     <div class="positive_btn"><span>+</span></div>
                                 </div>
                                 <div class="li_parent children">
