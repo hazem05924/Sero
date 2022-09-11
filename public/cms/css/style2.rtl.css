@@ -787,24 +787,13 @@ a.btn-secondary::after {
 }
 
 .property-card {
-    height: 18em;
-    width: 16em;
-    display: -webkit-box;
-    display: -ms-flexbox;
+    height: 18rem !important;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
     position: relative;
-    -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
-    -o-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
     transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
     border-radius: 16px;
     overflow: hidden;
-    -webkit-box-shadow: -15px 15px 27px #e1e1e3, 15px -15px 27px #ffffff;
-    box-shadow: -15px 15px 27px #e1e1e3, 15px -15px 27px #ffffff;
-    margin: 2rem 0;
+    box-shadow: 15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff;
 }
 
 
@@ -815,7 +804,7 @@ a.btn-secondary::after {
 
 .property-image {
     height: 6em;
-    width: 16em;
+    width: 100%;
     padding: 1em 2em;
     position: Absolute;
     top: 0px;
@@ -833,7 +822,7 @@ a.btn-secondary::after {
 .property-description {
     background-color: #FAFAFC;
     height: 12em;
-    width: 16em;
+    width: 100%;
     position: absolute;
     bottom: 0em;
     -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -923,7 +912,19 @@ li:first-child {
 
 footer {
     color: #fff !important;
-    background: linear-gradient(to bottom, rgba(39, 49, 139, 0.5) 0%, rgba(39, 49, 139, 0.7) 75%, rgba(39, 49, 139) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0) 75%, #000 100%), url("../assets/img/444.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 100% 50%;
+}
+
+.save {
+    height: 100vh;
+}
+
+.save img {
+    height: auto;
+    width: 100%;
 }
 
 .social {
@@ -947,6 +948,12 @@ footer {
 
 .footer-top {
     padding: 60px 0 40px 0;
+    direction: rtl;
+}
+
+.footer-top .row {
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 .footer-top h3 {
@@ -1007,4 +1014,141 @@ footer {
 
 p {
     margin-bottom: 0.3rem;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:200);
+.snip1577 {
+    font-family: 'Montserrat', Arial, sans-serif;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    margin: 10px;
+    min-width: 230px;
+    max-width: 315px;
+    width: 100%;
+    height: 18rem;
+    color: #fff;
+    text-align: left;
+    font-size: 16px;
+    background: #000;
+    border-radius: 1rem;
+}
+
+.snip1577 *,
+.snip1577:before,
+.snip1577:after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.snip1577 img {
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+}
+
+.snip1577:before,
+.snip1577:after {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    content: '';
+    background-color: #fff;
+    z-index: 1;
+    opacity: 0;
+}
+
+.snip1577:before {
+    width: 0;
+    height: 1px;
+}
+
+.snip1577:after {
+    height: 0;
+    width: 1px;
+}
+
+.snip1577 figcaption {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 15px 20px;
+}
+
+.snip1577 h3,
+.snip1577 h4 {
+    margin: 0;
+    font-size: 1.1em;
+    font-weight: normal;
+    opacity: 0;
+}
+
+.snip1577 h4 {
+    font-size: .8em;
+    text-transform: uppercase;
+}
+
+.card-social {
+    display: flex;
+    justify-content: center;
+    gap: 1;
+    color: white;
+}
+
+.snip1577 a {
+    /* position: absolute; */
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    color: white;
+}
+
+.snip1577:hover img,
+.snip1577.hover img {
+    zoom: 1;
+    filter: alpha(opacity=20);
+    -webkit-opacity: 0.2;
+    opacity: 0.2;
+}
+
+.snip1577:hover:before,
+.snip1577.hover:before,
+.snip1577:hover:after,
+.snip1577.hover:after {
+    opacity: 1;
+    -webkit-transition-delay: 0.25s;
+    transition-delay: 0.25s;
+}
+
+.snip1577:hover:before,
+.snip1577.hover:before {
+    width: 40px;
+}
+
+.snip1577:hover:after,
+.snip1577.hover:after {
+    height: 40px;
+}
+
+.snip1577:hover h3,
+.snip1577.hover h3,
+.snip1577:hover h4,
+.snip1577.hover h4 {
+    opacity: 1;
+}
+
+.snip1577:hover h3,
+.snip1577.hover h3 {
+    -webkit-transition-delay: 0.3s;
+    transition-delay: 0.3s;
+}
+
+.snip1577:hover h4,
+.snip1577.hover h4 {
+    -webkit-transition-delay: 0.35s;
+    transition-delay: 0.35s;
 }

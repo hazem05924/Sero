@@ -136,3 +136,9 @@ $('.datepicker.input-daterange').datepicker({
     defaultViewDate: { year: 1977, month: 04, day: 25 },
     container: 'body'
 });
+
+$(".hover").mouseleave(
+    function() {
+        $(this).removeClass("hover");
+    }
+);

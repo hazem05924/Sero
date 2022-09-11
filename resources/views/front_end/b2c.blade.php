@@ -755,75 +755,57 @@
             <!-- Project One Row-->
         </div>
     </section>
-    <!-- Project One Row-->
-    <section class="container d-flex justify-content-center justify-content-sm-evenly align-items-center align-content-center flex-wrap" style="padding: 10rem 0;">
-        <div class="center">
-            <div class="property-card col-12 col-sm-12 col-md-6 col-lg-4">
-                <a href="#">
-                    <div class="property-image">
-                        <div class="property-image-title">
-                            <!-- Optional <h5>Card Title</h5> If you want it, turn on the CSS also. -->
-                        </div>
-                    </div>
-                </a>
-                <div class="property-description">
-                    <h5> Card Title </h5>
-                    <p>Lorem Ipsum Dipsum hortata. Mixcall Horcho. Mixwell Chingo. More Bingo. Lorem Ipum doth be hard.</p>
-                </div>
-            </div>
-        </div>
-        <div class="center">
-            <div class="property-card col-12 col-sm-12 col-md-6 col-lg-4">
-                <a href="#">
-                    <div class="property-image">
-                        <div class="property-image-title">
-                            <!-- Optional <h5>Card Title</h5> If you want it, turn on the CSS also. -->
-                        </div>
-                    </div>
-                </a>
-                <div class="property-description">
-                    <h5> Card Title </h5>
-                    <p>Lorem Ipsum Dipsum hortata. Mixcall Horcho. Mixwell Chingo. More Bingo. Lorem Ipum doth be hard.</p>
-                </div>
-            </div>
-        </div>
-        <div class="center">
-            <div class="property-card col-12 col-sm-12 col-md-6 col-lg-4">
-                <a href="#">
-                    <div class="property-image">
-                        <div class="property-image-title">
-                            <!-- Optional <h5>Card Title</h5> If you want it, turn on the CSS also. -->
-                        </div>
-                    </div>
-                </a>
-                <div class="property-description">
-                    <h5> Card Title </h5>
-                    <p>Lorem Ipsum Dipsum hortata. Mixcall Horcho. Mixwell Chingo. More Bingo. Lorem Ipum doth be hard.</p>
-                </div>
-            </div>
-        </div>
-        <div class="center">
-            <div class="property-card col-12 col-sm-12 col-md-6 col-lg-4">
-                <a href="#">
-                    <div class="property-image">
-                        <div class="property-image-title">
-                            <!-- Optional <h5>Card Title</h5> If you want it, turn on the CSS also. -->
-                        </div>
-                    </div>
-                </a>
-                <div class="property-description">
-                    <h5> Card Title </h5>
-                    <p>Lorem Ipsum Dipsum hortata. Mixcall Horcho. Mixwell Chingo. More Bingo. Lorem Ipum doth be hard.</p>
-                </div>
-            </div>
-        </div>
+    <section class="save container col-10">
+        <img src="{{ asset('cms/assets/img/save.jpeg') }}" alt="">
+    </section>
+    <!-- Travel packages-->
+    <section id="packages" class="container d-flex justify-content-center align-items-center align-content-center flex-wrap gap-4" style="padding: 10rem 0;">
+        <figure class="snip1577">
+            <img src="{{ asset('cms/assets/img/111.jpg') }}" alt="sample99" />
+            <figcaption>
+              <h3 class="p-1">{{ __('Abha city tour') }}</h3>
+              <h4><div class="col card-social">
+                <a class="mx-2 " href="https://twitter.com/serovision1?s=21&t=ObGKxjr4RhzOnCC9EgP2mg"><i class="fab fa-twitter "></i></a>
+                <a class="mx-2 " href="https://www.facebook.com/profile.php?id=100082581573020"><i class="fab fa-facebook-f "></i></a>
+                <a class="mx-2 " href="https://www.instagram.com/serovision.1/"><i class="fab fa-instagram "></i></a>
+                <a class="mx-2 " href="https://wa.me/message/PTITBIUHHPWWJ1"><i class="fab fa-whatsapp "></i></a>
+                </div></h4>
+            </figcaption>
+            <a href="#"></a>
+          </figure>
+          <figure class="snip1577">
+            <img src="{{ asset('cms/assets/img/222.jpg') }}" alt="sample99" />
+            <figcaption>
+              <h3 class="p-1">{{ __('A tour in Taif') }}</h3>
+              <h4><div class="col card-social">
+                <a class="mx-2 " href="https://twitter.com/serovision1?s=21&t=ObGKxjr4RhzOnCC9EgP2mg"><i class="fab fa-twitter "></i></a>
+                <a class="mx-2 " href="https://www.facebook.com/profile.php?id=100082581573020"><i class="fab fa-facebook-f "></i></a>
+                <a class="mx-2 " href="https://www.instagram.com/serovision.1/"><i class="fab fa-instagram "></i></a>
+                <a class="mx-2 " href="https://wa.me/message/PTITBIUHHPWWJ1"><i class="fab fa-whatsapp "></i></a>
+                </div></h4>
+            </figcaption>
+            <a href="#"></a>
+          </figure>
+          <figure class="snip1577">
+            <img src="{{ asset('cms/assets/img/333.jpg') }}" alt="sample99" />
+            <figcaption>
+              <h3 class="p-1">{{ __('Diving trip in Jeddah') }}</h3>
+              <h4><div class="col card-social">
+                <a class="mx-2 " href="https://twitter.com/serovision1?s=21&t=ObGKxjr4RhzOnCC9EgP2mg"><i class="fab fa-twitter "></i></a>
+                <a class="mx-2 " href="https://www.facebook.com/profile.php?id=100082581573020"><i class="fab fa-facebook-f "></i></a>
+                <a class="mx-2 " href="https://www.instagram.com/serovision.1/"><i class="fab fa-instagram "></i></a>
+                <a class="mx-2 " href="https://wa.me/message/PTITBIUHHPWWJ1"><i class="fab fa-whatsapp "></i></a>
+                </div></h4>
+            </figcaption>
+            <a href="#"></a>
+          </figure>
     </section>
 
     <!-- Footer -->
         <footer>
         	<div class="footer-top">
 		        <div class="container">
-		        	<div class="row d-flex justify-content-center">
+		        	<div class="row">
 		        		<div class="col-md-3 footer-about wow fadeInUp">
 		        			<h3>{{__("About us")}}</h3>
 		        			<p>
@@ -838,13 +820,9 @@
 		                	<p><i class="fas fa-envelope"></i> {{__("Email")}} : <a href="mailto:info@sero.com.sa">info@sero.com.sa</a></p>
 	                    </div>
 	                    <div class="col-md-4 footer-links wow fadeInUp">
-	                    	<div class="row d-flex justify-content-center">
-	                    		<div class="col">
-	                    			<h3>{{__("Links")}}</h3>
-	                    		</div>
-	                    	</div>
 	                    	<div class="row">
 	                    		<div class="footer-contact col-md-6">
+                                    <h3>{{__("Links")}}</h3>
 	                    			<p><a href="{{ route("home") }}">{{__("Home")}}</a></p>
 	                    			<p><a href="#projects">{{__("About us")}}</a></p>
 	                    			<p><a href="#packages">{{__("Travel packages")}}</a></p>
@@ -990,7 +968,7 @@
  <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 
     <script src="scripts/third_page.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    {{--  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>  --}}
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>

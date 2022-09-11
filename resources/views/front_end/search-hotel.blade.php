@@ -19,7 +19,7 @@
 
         <div class="background">
 
-            <img src="images/background2.jpg">
+            <img src="{{ asset('cms/assets/img/background2.jpg') }}">
             <div class="gradiant"></div>
             <div class="steps">
                 <div class="step search_step done"><i class="fas fa-search step_icon"></i></div>

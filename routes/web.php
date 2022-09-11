@@ -45,6 +45,7 @@ Route::post('/register', [UserController::class,'store']);
 
 
 
+
 Route::prefix('cms/')->middleware('guest:admin,web')->group(function(){
     route::get('{guard}/login' , [UserAuthController::class , 'showLogin'])->name('view.login');
     route::post('{guard}/login' , [UserAuthController::class , 'Login']);
@@ -129,11 +130,19 @@ Route::prefix('/')->middleware('auth:web,admin')->group(function(){
     Route::post('update/profile' , [UserController::class , 'update'])->name('update.profile');
     Route::get('/logout',[UserAuthController::class,'logOut'])->name('logout');
     Route::post('/password/update', [UserController::class, 'updatePassword']);
+<<<<<<< HEAD
     Route::resource('book_hotels', BookHotelController::class);
     Route::post('book_hotels/{id}' , [BookHotelController::class , 'update'])->name('book_hotels');
     
     
     
+=======
+    Route::resource('ways', BookHotelController::class);
+    Route::post('update_ways/{id}' , [BookHotelController::class , 'update'])->name('update_ways');
+
+
+
+>>>>>>> c445b78c2102103aa7e7b51018cbbcac7ac9ebfa
 });
 
 Route::prefix('/')->group(function(){

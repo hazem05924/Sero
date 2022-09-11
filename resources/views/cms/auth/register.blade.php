@@ -25,7 +25,8 @@
     <div class="card-body">
       <p class="login-box-msg">Register a new membership</p>
 
-      <form action="cms/index.html" method="post">
+      <form  method="post">
+        @csrf
         <div class="row">
         <div class="input-group mb-3 col-6">
           <input type="text" class="form-control" name="first_name" id="first_name" placeholder="الاسم الاول">
@@ -72,7 +73,7 @@
               <input type="text" class="form-control" name="visa_number" id="visa_number" placeholder="رقم الفيزا ">
               <div class="input-group-append">
                 <div class="input-group-text">
-                    <i class="fas fa-id-card-alt"></i>  
+                    <i class="fas fa-id-card-alt"></i>
                 </div>
               </div>
             </div> --}}
@@ -80,23 +81,23 @@
                 <select class="form-control" name="city_id" id="city_id" >
                     @foreach ($cities as$city )
                     <option value="{{ $city->id }}">{{ $city->name }}</option>
-                    
+
                     @endforeach
-                    
+
                 </select>
                 <div class="input-group-append">
                     <div class="input-group-text">
                         <span class="fas fa-city"></span>
                     </div>
                 </div>
-                
+
             </div>
             <div class="custom-file col-12 mb-3 input-group">
-                
+
                 <input type="file" class="custom-file-input" name="image" id="image">
                 <label class="custom-file-label">اختر الصورة الشخصية </label>
               </div>
-            
+
          --}}
 
         <div class="row">
@@ -116,7 +117,7 @@
         </div>
       </form>
 
-      
+
 
       <a href="{{ url('/cms/web/login') }}" class="text-center">تسجيل دخول</a>
     </div>
@@ -126,11 +127,11 @@
 <!-- /.register-box -->
 
 <!-- jQuery -->
-<script src="{{ asset("cms/plugins/jquery/jquery.min.js") }}"></script>
+<script src="{{ asset('cms/plugins/jquery/jquery.min.js') }}"></script>
 <!-- Bootstrap 4 -->
-<script src="{{ asset("cms/plugins/bootstrap/js/bootstrap.bundle.min.js") }}"></script>
+<script src="{{ asset('cms/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- AdminLTE App -->
-<script src="{{ asset("cms/dist/js/adminlte.min.js") }}"></script>
+<script src="{{ asset('cms/dist/js/adminlte.min.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
@@ -146,10 +147,11 @@ let formData = new FormData();
     formData.append('email',document.getElementById('email').value);
     formData.append('password',document.getElementById('password').value);
     formData.append('mobile',document.getElementById('mobile').value);
-
-store('/register',formData);
+    var APP_URL = {!! json_encode(url('register')) !!}
+store( APP_URL ,formData);
 
 }
 </script>
+
 </body>
 </html>
