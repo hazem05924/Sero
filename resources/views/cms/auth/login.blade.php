@@ -98,7 +98,16 @@
 <script>
     function login(){
         var guard = '{{request('guard')}}';
-    axios.post('/cms/'+guard+'/login', {
+        var LOGIN_URL = '';
+        if(guard=== 'web'){
+
+            LOGIN_URL = {!! json_encode(url('/cms/web/login') ) !!};
+        }else{
+
+            LOGIN_URL = {!! json_encode(url('/cms/admin/login') ) !!};
+        }
+
+    axios.post(LOGIN_URL, {
       email: document.getElementById('email').value,
       password: document.getElementById('password').value,
       remember_me: document.getElementById('remember').checked,
@@ -107,10 +116,10 @@
         .then(function (response) {
             if(guard=== 'web'){
 
-                window.location.href = '/'
+                window.location.href = {!! json_encode(url('/') ) !!};
             }else{
 
-                window.location.href = '/cms/admin'
+                window.location.href = {!! json_encode(url('/cms/admin') ) !!};
             }
     })
         .catch(function (error) {

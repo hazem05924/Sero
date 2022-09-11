@@ -5,7 +5,7 @@ html {
 * {
     padding: 0;
     margin: 0;
-    list-style:none ;
+    list-style: none;
 }
 
 body {
@@ -30,13 +30,13 @@ body {
     min-width: 900px;
 }
 
-.background .gradiant{
+.background .gradiant {
     position: absolute;
     left: 0;
     bottom: 0;
     width: 100%;
     height: 40%;
-    background-image: linear-gradient(to top, rgb(54 184 86 / 86%) , rgba(31, 219, 78, 0));
+    background-image: linear-gradient(to top, rgb(54 184 86 / 86%), rgba(31, 219, 78, 0));
 }
 
 .steps {
@@ -61,7 +61,8 @@ body {
     opacity: .9;
 }
 
-.steps .step i, .steps .step svg {
+.steps .step i,
+.steps .step svg {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -84,7 +85,7 @@ body {
 }
 
 .step_line.done {
-    border: 1px solid #50a768;
+    border: 1px solid rgba(39, 49, 139, 0.5);
     border-style: solid;
 }
 
@@ -99,7 +100,7 @@ body {
 }
 
 .step.done {
-    background-color: #5dc179;
+    background-color: rgba(39, 49, 139, 0.5);
 }
 
 .step.active {
@@ -129,27 +130,28 @@ body {
 }
 
 @keyframes line_motion {
-    0%{
+    0% {
         right: -2%;
     }
-    40%{
+    40% {
         right: -2%;
     }
-    100%{
+    100% {
         right: 100%;
     }
 }
+
 @keyframes line_opacity {
-    0%{
+    0% {
         opacity: 0;
     }
-    40%{
+    40% {
         opacity: 0;
     }
-    70%{
+    70% {
         opacity: 1;
     }
-    100%{
+    100% {
         opacity: 0;
     }
 }
@@ -200,12 +202,14 @@ body {
     position: absolute;
 }
 
-.page_navbar .item .nav-link, .page_navbar .item .label-name {
+.page_navbar .item .nav-link,
+.page_navbar .item .label-name {
     color: #ffffff;
     width: 90%;
 }
 
-.page_navbar .item .nav-link, .page_navbar .item .dropdown-menu {
+.page_navbar .item .nav-link,
+.page_navbar .item .dropdown-menu {
     text-align: right;
 }
 
@@ -213,7 +217,7 @@ body {
     display: block;
     padding: 0.5rem 1rem;
     text-decoration: none;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
     cursor: default;
     white-space: nowrap;
 }
@@ -474,7 +478,8 @@ button.btn.btn-secondary.btn-sm {
     justify-content: flex-end;
 }
 
-.btn-group, .btn-group-vertical {
+.btn-group,
+.btn-group-vertical {
     position: relative;
     display: flex;
 }

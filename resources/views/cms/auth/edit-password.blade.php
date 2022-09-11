@@ -34,7 +34,7 @@
                                 <input type="password"  class="form-control" id="current_password"
                                     placeholder="أدخل كلمة المرور الحالية ">
                             </div>
-                        
+
                            <div class="form-group col-md-6">
                         </div>
 
@@ -89,7 +89,8 @@
             formData.append('new_password',document.getElementById('new_password').value);
             formData.append('new_password_confirmation',document.getElementById('new_password_confirmation').value);
 
-            store('/cms/admin/update/password',formData);
+            var APP_URL = {!! json_encode(url('/cms/admin/password/update')) !!}
+        store( APP_URL ,formData);
 
     }
 

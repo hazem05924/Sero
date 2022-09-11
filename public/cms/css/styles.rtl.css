@@ -277,8 +277,7 @@ kbd,
 samp {
     font-family: var(--bs-font-monospace);
     font-size: 1em;
-    direction: ltr
-    ;
+    direction: ltr;
     unicode-bidi: bidi-override;
 }
 
@@ -469,12 +468,11 @@ legend+* {
     -webkit-appearance: textfield;
 }
 
-
 [type="tel"],
 [type="url"],
 [type="email"],
 [type="number"] {
-  direction: ltr;
+    direction: ltr;
 }
 
 ::-webkit-search-decoration {
@@ -5337,7 +5335,7 @@ fieldset:disabled .btn {
     float: right;
     padding-left: 0.5rem;
     color: #6c757d;
-    content:  var(--bs-breadcrumb-divider, "/") ;
+    content: var(--bs-breadcrumb-divider, "/");
 }
 
 .breadcrumb-item.active {
@@ -6583,8 +6581,7 @@ fieldset:disabled .btn {
 .popover {
     position: absolute;
     top: 0;
-    left: 0
-    ;
+    left: 0;
     z-index: 1070;
     display: block;
     max-width: 276px;
@@ -6949,15 +6946,13 @@ fieldset:disabled .btn {
 
 @-webkit-keyframes spinner-border {
     to {
-        transform: rotate(360deg)
-        ;
+        transform: rotate(360deg);
     }
 }
 
 @keyframes spinner-border {
     to {
-        transform: rotate(360deg)
-        ;
+        transform: rotate(360deg);
     }
 }
 
@@ -11359,6 +11354,7 @@ body {
         border-bottom: none;
         background-color: transparent;
         transition: background-color 0.3s ease-in-out;
+        direction: rtl;
     }
     #mainNav .navbar-brand {
         padding: 0.5rem 0;
@@ -11489,6 +11485,13 @@ body {
 
 .projects-section {
     padding: 5rem 0;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.projects-section .row {
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 .projects-section .featured-text {
