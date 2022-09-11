@@ -11,8 +11,58 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="{{ asset('cms/plugins/toastr/toastr.min.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"> 
+
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha384-xBuQ/xzmlsLoJpyjoggmTEz8OWUFM0/RC5BsqQBDX2v5cMvDHcMakNTNrHIW2I5f" crossorigin="anonymous"></script>
         <script src="https://kit.fontawesome.com/189263d7ef.js" crossorigin="anonymous"></script>
+        <style>
+            * {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: top;
+}
+
+.gallery {
+  display: flex;
+  margin: 10px auto;
+  max-width: 600px;
+  position: relative;
+  padding-top: 66.6666666667%;
+}
+@media screen and (min-width: 600px) {
+  .gallery {
+    padding-top: 400px;
+  }
+}
+.gallery__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.gallery__thumb {
+  padding-top: 6px;
+  margin: 6px;
+  display: block;
+}
+.gallery__selector {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+}
+.gallery__selector:checked + .gallery__img {
+  opacity: 1;
+}
+.gallery__selector:checked ~ .gallery__thumb > img {
+  box-shadow: 0 0 0 3px #0be2f6;
+}
+        </style>
 
     </head>
 
@@ -43,60 +93,87 @@
             </div>
 
         </div>
+   
 
         <div class="page_contain">
-            <div class="div2">
-                <div class="header">
-                    <div class="header_price"><span class="coin">SAR</span><span class="price">511.24</span><div class="info">* شامل ضريبة القيمة المضافة</div></div>
+            <section class="gallery " >
+                @foreach ($images as $image)
+                        
+                
+                <div class="gallery__item">
+                  <input type="radio" id="{{ $image->id }}" checked name="gallery" class="gallery__selector" value="{{ $image->id }}" />
+                  <img class="gallery__img" src="{{asset('storage/image_hotel/'.$image->image)}}" alt="" width="600px" height="400px" />
+                  <label for="{{ $image->id }}" class="gallery__thumb"><img src="{{asset('storage/image_hotel/'.$image->image)}}" alt="" width="150px" height="100px" /></label>
                 </div>
+                
+                @endforeach
+            </section>
+            <div class="div2">
+                <form>
+
+                
+                <div class="header">
+                        
+                    <div class="header_price"><span class="coin">SAR</span><span class="price">75.4</span><div class="info">* شامل ضريبة القيمة المضافة</div></div>
+                    
+                </div>
+                @foreach ($hotels as $hotel )
                 <div class="block"></div>
                 <div class="info2">السعر ل 1 سعر الغرف ل ليالي 12</div>
                 <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">فرز حسب السعر</label>
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected>حدد طلب السعر</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
+                    <label for="exampleFormControlInput1" class="form-label">وقت الدخول *  </label>
+                    <input type="text" class="form-control" disabled name="date_of_arrival" id="date_of_arrival" value="{{ $hotel->checkin }}">
+                    
                 </div>
                 <input type="hidden" name="hotel_id" id="hotel_id" value="{{$id}}">
                 <div class="mb-2">
-                    <label for="exampleFormControlInput1" class="form-label">فرز حسب السعر</label>
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected>حدد طلب السعر</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </div>
+                    <label for="exampleFormControlInput1" class="form-label"> عدد الغرف *</label>
+                     <input type="text" class="form-control" disabled name="number_of_room" id="number_of_room" value="{{ $hotel->number_of_room}}">
+                </div> 
                 <div class="mb-2 leave">
-                    <label for="exampleFormControlInput1" class="form-label">فرز حسب السعر</label>
-                    <select class="form-select" aria-label="Default select example">
+                    <label for="exampleFormControlInput1" class="form-label">  عدد المسافرين *</label>
+                     <input type="text" class="form-control" disabled name="number_of_people" id="number_of_people" value="{{ $hotel->number_of_people }}">
+                    </div> 
+                    
+                    
+                    {{-- <div class="mb-2 leave">
+                        <label for="exampleFormControlInput1" class="form-label">فرز حسب السعر</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>حدد طلب السعر</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div> --}}
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">وقت المغادرة *</label>
+                        <input type="text" class="form-control" disabled name="departure_date" id="departure_date" value="{{ $hotel->checkout }}">
+                   {{-- <select class="form-select" aria-label="Default select example">
                         <option selected>حدد طلب السعر</option>
                         <option value="1">One</option>
                         <option value="2">Two</option>
                         <option value="3">Three</option>
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">فرز حسب السعر</label>
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected>حدد طلب السعر</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </div>
-                <button type="button" class="btn btn-secondary btn-sm">احجز الان</button>
+                    </select> --}}
+                    </div>
+                    @endforeach
+                <button type="button" onclick="performStore()" class="btn btn-secondary btn-sm">احجز الان</button>
+            </form>
             </div>
+            
             <div class="div3">
+                
                 <div class="header">
+                     
                     @foreach ($hotels as $hotel)
                         
                     <div class="name_parent"><span class="name">{{ $hotel->name }}</span></div>
                     <div class="phone"><span>(+966) 055 9148 410</span><i class="fas fa-phone"></i></div>
-                    <div class="map"><i class="fas fa-map-marker-alt"></i><span> </span></div>
+                    <div class="map">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span> 
+                        {{$hotel->city->name}} - {{ $hotel->address }}
+                        </span>
+                    </div>
                     <div class="rating"><span class="num">{{ $hotel->rate }}</span><span> :التقييم</span>
                                     @if ($hotel->rate  =='5')
                                     <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 
@@ -117,6 +194,7 @@
                     @endforeach
                 </div>
             </div>
+            
             <div class="block full"></div>
             <div class="select-btns">
                 <ul class="nav nav-pills" role="tablist">
@@ -175,17 +253,37 @@
                 </div>
                 @endforeach
               </div>
-              <div class="row">
-                @foreach ($images as $image)
-                        
-                    <img src="{{asset('storage/image_hotel/'.$image->image)}}"  class="img-fluid img-circle col-3">
-                    @endforeach
-              </div>
+              
         </div>
+
 
         <script src="{{ asset('cms/js/second_page.js') }}"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 
+        <script src="{{asset('cms/plugins/toastr/toastr.min.js')}}"></script>
+        <script src="{{asset('cms/js/crud.js')}}"></script>
+        <script>
+
+
+
+            function performStore() {
+        
+                let formData = new FormData();
+                    formData.append('date_of_arrival',document.getElementById('date_of_arrival').value);
+                    formData.append('departure_date',document.getElementById('departure_date').value);
+                    formData.append('number_of_room',document.getElementById('number_of_room').value);
+                    formData.append('number_of_people',document.getElementById('number_of_people').value);
+                    formData.append('hotel_id',document.getElementById('hotel_id').value);
+        
+        
+                store('/book_hotels',formData);
+        
+            }
+        
+        </script>
     </body>
 
 </html>

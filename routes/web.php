@@ -124,13 +124,13 @@ Route::prefix( LaravelLocalization::setLocale())->group(function(){
     Route::get('b2c', function () {return view('front_end.b2c');})->name('b2c');
     Route::get('local', function () {return view('front_end.local');})->name('local');
 });
-Route::prefix('/')->middleware('auth:web')->group(function(){
+Route::prefix('/')->middleware('auth:web,admin')->group(function(){
     Route::get('edit/profile' , [UserController::class , 'edit'])->name('profile_edit_user');
     Route::post('update/profile' , [UserController::class , 'update'])->name('update.profile');
     Route::get('/logout',[UserAuthController::class,'logOut'])->name('logout');
     Route::post('/password/update', [UserController::class, 'updatePassword']);
-    Route::resource('ways', BookHotelController::class);
-    Route::post('update_ways/{id}' , [BookHotelController::class , 'update'])->name('update_ways');
+    Route::resource('book_hotels', BookHotelController::class);
+    Route::post('book_hotels/{id}' , [BookHotelController::class , 'update'])->name('book_hotels');
     
     
     

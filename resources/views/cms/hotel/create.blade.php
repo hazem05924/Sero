@@ -153,9 +153,6 @@
 
 <script>
 
-$('.group_id').select2({
-      theme: 'bootstrap4'
-    })
 
 
     function performStore() {
