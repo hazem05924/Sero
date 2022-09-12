@@ -36,7 +36,7 @@
                                     placeholder="أدخل الاسم الشركة">
                             </div>
 
-                            
+
                         </div>
 
                           <br>
@@ -71,7 +71,9 @@
 
         let formData = new FormData();
             formData.append('name',document.getElementById('name').value);
-        store('/cms/admin/companes',formData);
+            var APP_URL = {!! json_encode(url('/cms/admin/companes')) !!}
+        store( APP_URL ,formData);
+        //store('/cms/admin/companes',formData);
 
     }
 

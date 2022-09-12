@@ -58,7 +58,7 @@
 
                             <div class="form-group col-md-4">
                                 <label for="car_color"> لون المركبة </label>
-                                <input type="color" name="car_color" class="form-control" id="car_color" 
+                                <input type="color" name="car_color" class="form-control" id="car_color"
                                     placeholder="ادخل اسم الصلاحية ">
                             </div>
                             <div class="form-group col-md-4">
@@ -73,7 +73,7 @@
                                 <label for="compane_id">الشركة</label>
                                 <select type="text" name="compane_id" class="form-control" id="compane_id">
                                     @foreach ($companes as $compane )
-                                        
+
                                     <option value="{{ $compane->id }}">{{ $compane->name }}</option>
                                     @endforeach
                                 </select>
@@ -85,22 +85,22 @@
                                     <input type="file" class="custom-file-input" id="image" name="image">
                                     <label class="custom-file-label" for="image">Choose file</label>
                                   </div>
-                                  
+
                                 </div>
                               </div>
-                           
+
 
                             </div>
-                            
-{{--                             
+
+{{--
                                  --}}
                             {{-- <div class="col-lg-6 form-group "  >
                                 <label for="image"  > --}}
                             {{-- </label> --}}
-                        
+
                      </div>
                       </div>
-                  
+
                           <br>
 
                       <!-- /.card-body -->
@@ -140,7 +140,10 @@
         formData.append('car_number',document.getElementById('car_number').value);
         formData.append('compane_id',document.getElementById('compane_id').value);
         formData.append('image',document.getElementById('image').files[0]);
-        store('/cms/admin/cars',formData);
+        var APP_URL = {!! json_encode(url('/cms/admin/cars')) !!}
+        store( APP_URL ,formData);
+
+        //store('/cms/admin/cars',formData);
 
     }
 

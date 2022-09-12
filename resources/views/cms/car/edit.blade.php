@@ -27,7 +27,7 @@
 
                         <br>
                         <div class="row">
-  
+
                             <div class="form-group col-md-4">
                                 <label for="name"> اسم المركبة </label>
                                 <input type="text" name="name" class="form-control" id="name" value="{{ $cars->name }}"
@@ -45,7 +45,7 @@
                             </div>
                         </div>
                         <div class="row">
-  
+
                               <div class="form-group col-md-4">
                                   <label for="vehicle_class">فئة السيارة</label>
                                   <select type="text" name="vehicle_class" class="form-control" id="vehicle_class">
@@ -54,7 +54,7 @@
                                       <option value="عادي">عادي</option>
                                   </select>
                               </div>
-  
+
                               <div class="form-group col-md-4">
                                   <label for="car_color"> لون المركبة </label>
                                   <input type="color" name="car_color" class="form-control" id="car_color"  value="{{ $cars->car_color }}"
@@ -66,13 +66,13 @@
                                       placeholder="ادخل نمرة المركبة  ">
                               </div>
                           </div>
-  
+
                           <div class="row">
                               <div class="form-group col-md-6">
                                   <label for="compane_id">الشركة</label>
                                   <select type="text" name="compane_id" class="form-control" id="compane_id">
                                       @foreach ($companes as $compane )
-                                          
+
                                       <option value="{{ $compane->id }}">{{ $compane->name }}</option>
                                       @endforeach
                                   </select>
@@ -84,19 +84,19 @@
                                       <input type="file" class="custom-file-input" id="image" name="image">
                                       <label class="custom-file-label" for="image">Choose file</label>
                                     </div>
-                                    
+
                                   </div>
                                 </div>
-                             
-  
+
+
                               </div>
-                              
-  {{--                             
+
+  {{--
                                    --}}
                               {{-- <div class="col-lg-6 form-group "  >
                                   <label for="image"  > --}}
                               {{-- </label> --}}
-                          
+
                        </div>
                         </div>
 
@@ -136,7 +136,10 @@
         formData.append('car_number',document.getElementById('car_number').value);
         formData.append('compane_id',document.getElementById('compane_id').value);
         formData.append('image',document.getElementById('image').files[0]);
-    storeRoute('/cms/admin/update_cars/'+id , formData );
+        var APP_URL = {!! json_encode(url('/cms/admin/update_cars/')) !!}
+        storeRoute( APP_URL+id ,formData);
+
+    storeRoute(url('/cms/admin/update_cars/')+id , formData );
     }
     </script>
 

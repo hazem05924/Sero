@@ -61,19 +61,19 @@
                                     <input type="text" name="mobile" class="form-control"
                                         id="mobile" placeholder="ادخل رقم الجوال  ">
                                 </div>
-                                
+
                                 <div class="form-group col-md-4">
                                     <label for="date_of_birth">تاريخ الولادة  </label>
                                     <input type="date" name="date_of_birth" class="form-control"
                                         id="date_of_birth" placeholder=" تاريخ الولادة  ">
                                 </div>
-                                
-                                
+
+
                             </div>
-                            
-                            
-                            
-                            
+
+
+
+
                             <div class="row">
                                     <div class="form-group col-md-4">
                                         <label for="salary_value">قيمة الراتب  </label>
@@ -86,19 +86,19 @@
                                         id="city_id">
                                         @foreach ($cities as $city)
                                         <option value="{{ $city->id }}">{{ $city->name }}</option>
-                                        
+
                                         @endforeach
                                     </select>
                                 </div>
-                                
-                                
+
+
                                 <div class="form-group col-md-4">
                                     <label for="image">الصورة </label>
                                     <input type="file" name="image" class="form-control"
                                         id="image" placeholder=" اضف صورة ">
                                 </div>
 
-                            
+
                             </div>
                         </div>
 
@@ -156,8 +156,10 @@ $('.group_id').select2({
             formData.append('date_of_birth',document.getElementById('date_of_birth').value);
             formData.append('city_id',document.getElementById('city_id').value);
             formData.append('image',document.getElementById('image').files[0]);
+            var APP_URL = {!! json_encode(url('/cms/admin/admins')) !!}
+        store( APP_URL ,formData);
 
-        store('/cms/admin/admins',formData);
+        //store('/cms/admin/admins',formData);
 
     }
 

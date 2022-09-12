@@ -76,6 +76,8 @@
         let formData = new FormData();
             formData.append('name',document.getElementById('name').value);
             formData.append('street',document.getElementById('street').value);
+            var APP_URL = {!! json_encode(url('/cms/admin/cities')) !!}
+        store( APP_URL ,formData);
         store('/cms/admin/cities',formData);
 
     }

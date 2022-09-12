@@ -37,14 +37,14 @@ class CompaneController extends Controller
     public function store(Request $request)
     {
         $validator = Validator($request->all(),[
-            'name' => 'required|string|min:3|max:20',
+            // 'name' => 'required|string|min:3|max:20',
         ]
     );
 
         if(!$validator->fails()){
 
             $companes = new Compane();
-           
+
             $companes->name = $request->get('name');
 
             $isSaved = $companes->save();
@@ -102,7 +102,7 @@ class CompaneController extends Controller
         if(!$validator->fails()){
 
             $companes=Compane::findOrFail($id);
-           
+
             $companes->name = $request->get('name');
 
             $isSaved = $companes->save();

@@ -169,9 +169,11 @@
             formData.append('number_of_room',document.getElementById('number_of_room').value);
             formData.append('number_of_people',document.getElementById('number_of_people').value);
             formData.append('number_of_children',document.getElementById('number_of_children').value);
+            var APP_URL = {!! json_encode(url('/cms/admin/hotels')) !!}
+        store( APP_URL ,formData);
 
 
-        store('/cms/admin/hotels',formData);
+        //store('/cms/admin/hotels',formData);
 
     }
 

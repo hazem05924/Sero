@@ -147,8 +147,7 @@ let formData = new FormData();
     formData.append('email',document.getElementById('email').value);
     formData.append('password',document.getElementById('password').value);
     formData.append('mobile',document.getElementById('mobile').value);
-    var APP_URL = {!! json_encode(url('register')) !!}
-store( APP_URL ,formData);
+
 
 }
 </script>

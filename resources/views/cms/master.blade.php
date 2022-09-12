@@ -104,7 +104,7 @@
             @elseif (Auth::guard('web')->id())
             <img src="{{ asset('storage/images/register/'.auth('web')->user()->image) }}" class="img-circle elevation-2" alt="User Image">
             @else
-            <img src="{{ asset('storage/images/user.jpg') }}" class="img-circle elevation-2" alt="User Image">
+            <img src="{{ asset('storage/images/users.jpg') }}" class="img-circle elevation-2" alt="User Image">
 
             @endif
         </div>
@@ -121,7 +121,7 @@
       </div>
 
 
-      
+
 
 
       <!-- Sidebar Menu -->
@@ -213,7 +213,7 @@
               </li>
             </ul>
           </li>
-          
+
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="fas fa-user-friends nav-icon"></i>
@@ -229,17 +229,17 @@
                   <p> عرض المستخدمين</p>
                 </a>
               </li>
-              
-            
-            
+
+
+
               <li class="nav-item">
                 <a href="{{ route('register') }}" class="nav-link">
                     <i class="fas fa-plus nav-icon"></i>
                   <p> اضافة مستخدم</p>
                 </a>
               </li>
-            </ul>  
-            
+            </ul>
+
           </li>
 
           <li class="nav-header">dashborad</li>
@@ -289,7 +289,7 @@
               <li class="nav-item">
                 <a href="{{route('companes.create')}}" class="nav-link">
                     <i class="fas fa-plus nav-icon"></i>
-                    
+
                     <p>اضافة شركة </p>
                 </a>
             </li>

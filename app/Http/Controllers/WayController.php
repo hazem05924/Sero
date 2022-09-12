@@ -25,7 +25,7 @@ class WayController extends Controller
      */
     public function create()
     {
-        return response()->view('cms.Way.create');
+        return response()->view('cms.way.create');
     }
 
     /**
@@ -44,7 +44,7 @@ class WayController extends Controller
         if(!$validator->fails()){
 
             $ways = new way();
-           
+
             $ways->name_way = $request->get('name_way');
 
             $isSaved = $ways->save();
@@ -102,7 +102,7 @@ class WayController extends Controller
         if(!$validator->fails()){
 
             $ways=way::findOrFail($id);
-           
+
             $ways->name_way = $request->get('name_way');
 
             $isSaved = $ways->save();

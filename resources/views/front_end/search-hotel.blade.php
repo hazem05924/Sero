@@ -64,14 +64,9 @@
             <div class="item item2">
                 <div class="parent">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link"  id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             الوصول
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarDarkDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">الخيار الاول</a></li>
-                            <li><a class="dropdown-item" href="#">الخيار التاني</a></li>
-                            <li><a class="dropdown-item" href="#">الخيار التالت</a></li>
-                        </ul>
                     </li>
                     <div class="value"><span class="day"> ( {{ request()->checkin}} )</span></div>
                 </div>
@@ -79,14 +74,10 @@
             <div class="item item3">
                 <div class="parent">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link"  id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             المغادرة
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarDarkDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">الخيار الاول</a></li>
-                            <li><a class="dropdown-item" href="#">الخيار التاني</a></li>
-                            <li><a class="dropdown-item" href="#">الخيار التالت</a></li>
-                        </ul>
+
                     </li>
                     <div class="value"><span class="day">({{ request()->checkout}})</span></div>
                 </div>
@@ -94,14 +85,10 @@
             <div class="item item4">
                 <div class="parent">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link"  id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             المسافرين
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarDarkDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">الخيار الاول</a></li>
-                            <li><a class="dropdown-item" href="#">الخيار التاني</a></li>
-                            <li><a class="dropdown-item" href="#">الخيار التالت</a></li>
-                        </ul>
+
                     </li>
                     <div class="value"><span class="label">الكبار:</span><span class="num">({{ request()->number_of_people}}) </span> - <span class="label">الصغار:</span> <span class="num">({{ request()->number_of_children}}) </span></div>
                 </div>
@@ -109,14 +96,10 @@
             <div class="item item5">
                 <div class="parent">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link"  id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             الغرف
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarDarkDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">الخيار الاول</a></li>
-                            <li><a class="dropdown-item" href="#">الخيار التاني</a></li>
-                            <li><a class="dropdown-item" href="#">الخيار التالت</a></li>
-                        </ul>
+
                     </li>
                     <div class="value"><span class="label">الغرف</span><span class="num">({{ request()->number_of_room}})</span> </div>
                 </div>
