@@ -62,11 +62,11 @@ class BookHotelController extends Controller
 
     // end function search 
 
-    public function indexBook($id)
-    {
-        $book_hotels=BookHotel::where('hotel_id', $id)->orderBy('created_at', 'desc')->paginate(4);
-        return response()->view('front_end.book-hotel', compact('book_hotels','id'));
-    }
+    // public function indexBook($id)
+    // {
+    //     $book_hotels=BookHotel::where('hotel_id', $id)->orderBy('created_at', 'desc')->paginate(4);
+    //     return response()->view('front_end.book-hotel', compact('book_hotels','id'));
+    // }
 
     public function createBook($id)
     {
