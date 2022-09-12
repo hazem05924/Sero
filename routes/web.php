@@ -125,7 +125,9 @@ Route::prefix( LaravelLocalization::setLocale())->group(function(){
     Route::get('b2c', function () {return view('front_end.b2c');})->name('b2c');
     Route::get('local', function () {return view('front_end.local');})->name('local');
 });
-Route::prefix('/')->middleware('auth:web,admin')->group(function(){
+
+
+Route::prefix('/')->middleware('auth:web')->group(function(){
     Route::get('edit/profile' , [UserController::class , 'edit'])->name('profile_edit_user');
     Route::post('update/profile' , [UserController::class , 'update'])->name('update.profile');
     Route::get('/logout',[UserAuthController::class,'logOut'])->name('logout');
@@ -133,16 +135,24 @@ Route::prefix('/')->middleware('auth:web,admin')->group(function(){
 
     Route::resource('book_hotels', BookHotelController::class);
     Route::post('book_hotels/{id}' , [BookHotelController::class , 'update'])->name('book_hotels');
+<<<<<<< HEAD
+=======
+    
+    
+    Route::get('/create/book-hotel/{id}', [BookHotelController::class, 'createBook'])->name('create-book-hotel');
+>>>>>>> bf7a51155f73831cb36f06a92a81e6ea7a6f8f0c
 
 
 
 
+<<<<<<< HEAD
+=======
+    // Route::get('/index/book-hotel/{id}', [BookHotelController::class, 'indexBook'])->name('index-book-hotel');
+>>>>>>> bf7a51155f73831cb36f06a92a81e6ea7a6f8f0c
 });
 
 Route::prefix('/')->group(function(){
     Route::get('search-hotels' , [BookHotelController::class , 'search_hotel'])->name('search-hotels');
-    Route::get('/create/book-hotel/{id}', [BookHotelController::class, 'createBook'])->name('create-book-hotel');
-    Route::get('/index/book-hotel/{id}', [BookHotelController::class, 'indexBook'])->name('index-book-hotel');
 
     // Route::get('get',function()
     // {
